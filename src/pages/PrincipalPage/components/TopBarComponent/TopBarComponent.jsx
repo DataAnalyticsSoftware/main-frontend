@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from '../../../../components/Button/Button'
 
 export const TopBarComponent = (props) => {
     return (
@@ -22,7 +23,9 @@ export const TopBarComponent = (props) => {
                         <a class="nav-link" href="#">Enter</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="#">
+                            <Button label={'Contact Us'} />
+                        </a>
                     </li>
                 </ul>
             </div>

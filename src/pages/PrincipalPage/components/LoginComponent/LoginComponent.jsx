@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from '../../../../components/Button/Button'
 
 export const LoginComponent = (props) => {
     return (
@@ -13,7 +14,7 @@ export const LoginComponent = (props) => {
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Your Password" />
                 </div>
-                <button type="submit" class="btn btn-primary">Log In</button>
+                <Button label={'Log in'} />
             </form>
             <h6 class="mt-2">Or</h6>
             <div class='pb-2'>
