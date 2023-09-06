@@ -3,7 +3,7 @@ import { Button } from '../../../../components/Button/Button'
 
 export const TopBarComponent = (props) => {
     return (
-        <nav class="navbar navbar-expand-lg navbar-light mr-auto ">
+        <nav class="navbar navbar-expand-lg navbar-light mr-auto align-middle">
             <a class="navbar-brand " style={{ marginLeft: '64px' }} href="#">SOFTWARE DEV</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

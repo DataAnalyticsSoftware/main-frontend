@@ -1,0 +1,33 @@
+@font-face {
+  font-family: gilroy;
+  src: url(../public/Gilroy-Black.ttf);
+}
+@font-face {
+  font-family: quicksand;
+  src: url(../public/Quicksand-Regular.ttf);
+}
+
+.App {
+  text-align: center;
+  h1, h2,h3,h4,h5{
+    font-family: gilroy;
+  }
+  font-family: quicksand;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
