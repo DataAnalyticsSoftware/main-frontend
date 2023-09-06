@@ -1,9 +1,12 @@
 import './App.scss';
-import { PrincipalPage } from './pages/PrincipalPage/PrincipalPage';
+import { DashboardContainer } from './pages/DashboardPage/components';
+import { PrincipalPage } from './pages/PrincipalPage/index';
 function App() {
   return (
     <div className="App">
-      <div><PrincipalPage/></div>
+      { /*<div><PrincipalPage /></div> */}
+
+      <div><DashboardContainer/></div>
     </div>
   );
 }
