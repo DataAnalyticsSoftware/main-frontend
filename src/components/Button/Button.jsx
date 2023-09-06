@@ -5,7 +5,7 @@ export const Button = (props) => {
 
     return (
         <button class='p-3 bg-dark text-white shadow' style={{ borderRadius: '40px' }} onClick={onClick}>
-            <div class='pl-2 pr-2'>
+            <div class='pl-5 pr-5'>
                 {label}
             </div>
         </button>
