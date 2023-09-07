@@ -4,8 +4,7 @@ import { PrincipalPage } from './pages/PrincipalPage/index';
 function App() {
   return (
     <div className="App">
-      { /*<div><PrincipalPage /></div> */}
-
+      <div><PrincipalPage /></div> 
       <div><DashboardContainer/></div>
     </div>
   );

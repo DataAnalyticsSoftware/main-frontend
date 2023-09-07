@@ -9,20 +9,20 @@ export const TopBarComponent = (props) => {
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end " style={{ marginRight: '64px' }} id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
+                <ul class="navbar-nav d-flex flex-row align-items-center">
+                    <li class="nav-item ml-4">
                         <a class="nav-link" href="#">Functions <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ml-4">
                         <a class="nav-link" href="#">About Us</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ml-4">
                         <a class="nav-link" href="#">Pricing</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ml-4">
                         <a class="nav-link" href="#">Enter</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item ml-4">
                         <a class="nav-link" href="#">
                             <Button label={'Contact Us'} />
                         </a>
