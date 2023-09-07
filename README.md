@@ -8,6 +8,7 @@ Technologies
 A list of technologies used within the project:
 
 Boostrap: Latest version
+
 TypeScript: (POR DEFINIR)
 
 
