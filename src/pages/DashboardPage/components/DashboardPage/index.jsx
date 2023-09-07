@@ -1,5 +1,5 @@
 import React from 'react'
-import '../DashboardPage/DashboardPage.scss'
+import styles from './styles.module.scss'
 
 export const DashboardPage = (props) => {
     return (

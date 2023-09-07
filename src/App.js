@@ -1,5 +1,5 @@
 import './App.scss';
-import { DashboardContainer } from './pages/DashboardPage/components';
+import { DashboardContainer } from './pages/DashboardPage';
 import { PrincipalPage } from './pages/PrincipalPage/index';
 function App() {
   return (

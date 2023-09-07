@@ -1,6 +1,6 @@
 import React from 'react'
-import { TopBarComponent } from './components/TopBarComponent/TopBarComponent';
-import { ContentComponent } from './components/ContentComponent/ContentComponent';
+import { TopBarComponent } from './components/TopBarComponent';
+import { ContentComponent } from './components/ContentComponent';
 
 export const PrincipalPage = (props) => {
     return (

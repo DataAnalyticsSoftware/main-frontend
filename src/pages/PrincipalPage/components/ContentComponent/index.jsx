@@ -1,8 +1,8 @@
 import React from 'react'
-import { LoginComponent } from '../../components/LoginComponent/LoginComponent'
+import { LoginComponent } from '../LoginComponent'
 import { Button } from '../../../../components/Button/Button'
-import { PricingTableComponent } from './../PricingTableComponent/PricingTableComponent';
-import { BottomBarComponent } from './../BottomBarComponent/BottomBarComponent';
+import { PricingTableComponent } from '../PricingTableComponent';
+import { BottomBarComponent } from '../BottomBarComponent';
 export const ContentComponent = (props) => {
     return (
         <>
