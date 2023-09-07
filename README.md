@@ -4,7 +4,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Main frontend of analytics data
 
+
+
 Technologies
+
 A list of technologies used within the project:
 
 Boostrap: Latest version
