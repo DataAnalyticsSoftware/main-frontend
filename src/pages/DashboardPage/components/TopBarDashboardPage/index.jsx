@@ -1,0 +1,56 @@
+import React from 'react'
+import { Button } from '../../../../components/Button/Button'
+
+
+
+export const TopBarDashboardPage = (props) => {
+    return (
+        <>
+
+            <div class="container">
+                <div class="row mt-4">
+                    <div class="col-sm">
+                        <h1>Home</h1>
+                    </div>
+                    <div class="col-sm">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2" />
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-primary position-relative mr-4">
+                                    lupa
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <button type="button" class="btn btn-primary position-relative mr-4">
+                            lo
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                99+
+                            </span>
+                        </button>
+                        <button type="button" class="btn btn-primary position-relative">
+                            em
+                        </button>
+                    </div>
+                    <div class="col-sm">
+                        <div class="dropdown">
+                            <a class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2" />
+                                <strong class='ml-2' style={{ color: 'black' }}>mdo</strong>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">My Profile</a>
+                                <a class="dropdown-item" href="#">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class='mt-4' />
+            </div>
+
+
+
+        </>
+    )
+}
