@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from '../../../../components/Button/Button'
+import ScrollToElementButton from './../../../../utils/index';
 
 export const TopBarComponent = (props) => {
     return (
@@ -11,16 +12,13 @@ export const TopBarComponent = (props) => {
             <div class="collapse navbar-collapse justify-content-end " style={{ marginRight: '64px' }} id="navbarNav">
                 <ul class="navbar-nav d-flex flex-row align-items-center">
                     <li class="nav-item ml-4">
-                        <a class="nav-link" href="#">Functions <span class="sr-only">(current)</span></a>
+                        <ScrollToElementButton targetId="aboutUs" label="About Us" className="custom-button" />
                     </li>
                     <li class="nav-item ml-4">
-                        <a class="nav-link" href="#">About Us</a>
+                        <ScrollToElementButton targetId="functions" label="Functions" className="custom-button" />
                     </li>
                     <li class="nav-item ml-4">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
-                    <li class="nav-item ml-4">
-                        <a class="nav-link" href="#">Enter</a>
+                        <ScrollToElementButton targetId="pricingTable" label="Pricing" className="custom-button" />
                     </li>
                     <li class="nav-item ml-4">
                         <a class="nav-link" href="#">

@@ -24,13 +24,13 @@ export const ContentComponent = (props) => {
                     </div>
                 </div>
 
-                <div class="row mb-5" style={{ marginTop: '120px', marginBottom: '120px' }} >
+                <div class="row mb-5" style={{ marginTop: '120px', marginBottom: '120px' }}  >
                     <div class="col">
                         <div class="text-left">
                             foto
                         </div>
                     </div>
-                    <div class="col text-left">
+                    <div id='aboutUs' class="col text-left">
                         <h3>About Us</h3>
                         <div class='mt-4'>
                             <h5 style={{ color: '#0179FE' }}>Quality Assurance</h5>
@@ -53,8 +53,8 @@ export const ContentComponent = (props) => {
 
                 <div class="row mb-5" style={{ marginTop: '200px', marginBottom: '200px' }} >
                     <div class="col text-left" >
-                        <div >
-                            <h5 style={{ color: '#0179FE' }}>Organic Views Enhancement</h5>
+                        <div id='functions'>
+                            <h5 style={{ color: '#0179FE' }} >Organic Views Enhancement</h5>
                             <text>We specialize in providing genuine, organic views that align with YouTube's guidelines. Our methods ensure that your view count grows naturally, helping your video gain traction and credibility.</text>
                         </div>
                         <div class="text-left mt-4">
@@ -103,7 +103,7 @@ export const ContentComponent = (props) => {
                         </div>
                     </div>
                 </div>
-                <div style={{ marginTop: '140px', marginBottom: '80px' }}>
+                <div id="pricingTable" style={{ marginTop: '140px', marginBottom: '80px' }}>
                     <h1>Our Pricing</h1>
                     <text>ur goal is to offer solutions that cater to a wide range of needs and budgets, empowering creators and businesses to enhance their YouTube presence effectively. Explore our pricing packages below to find the perfect fit for your goals.</text>
                 </div>
