@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { LoginComponent } from '../LoginComponent'
 import { Button } from '../../../../components/Button/Button'
 import { PricingTableComponent } from '../PricingTableComponent';
 import { BottomBarComponent } from '../BottomBarComponent';
+import { GenericContext } from '../../../../context/GenericContext';
 export const ContentComponent = (props) => {
+    const { token } = useContext(GenericContext)
     return (
         <>
             <div class="container-fluid" style={{ marginTop: '150px', marginBottom: '120px', paddingRight: '80px', paddingLeft: '80px' }}  >
@@ -20,7 +22,7 @@ export const ContentComponent = (props) => {
 
                     </div>
                     <div class="col">
-                        <LoginComponent />
+                        {!token && <LoginComponent />}
                     </div>
                 </div>
 
