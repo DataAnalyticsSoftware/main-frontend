@@ -1,4 +1,5 @@
 import React from 'react'
+import '../StickySideBarComponent/styles.module.scss'
 
 export const StickySideBarComponent = (props) => {
     return (
@@ -8,38 +9,38 @@ export const StickySideBarComponent = (props) => {
                 <hr></hr>
                 <div class='d-flex flex-column flex-shrink-0 p-3 d-flex align-items-center ' style={{ color: 'black' }}>
                     <ul class="nav nav-pills flex-column mb-auto">
-                        <li class="nav-item text-left">
-                            <a href="#" class="nav-link" aria-current="page">
+                        <li class="nav-item text-left  ">
+                            <a href="#" class="nav-link hover-effect" style={{ color: '#808080' }} aria-current="page">
                                 <i class="bi bi-house-fill" style={{ marginRight: '8px' }}></i>
                                 Home
                             </a>
                         </li>
-                        <li class="nav-item text-left">
-                            <a href="#" class="nav-link text-black">
+                        <li class="nav-item text-left ">
+                            <a href="#" style={{ color: '#808080' }} class="nav-link text-black">
                                 <i class="bi bi-pie-chart-fill" style={{ marginRight: '8px' }}></i>
                                 Dashboard
                             </a>
                         </li>
                         <li class="nav-item text-left">
-                            <a href="#" class="nav-link text-black">
+                            <a href="#" style={{ color: '#808080' }} class="nav-link text-black">
                                 <i class="bi bi-file-earmark-bar-graph-fill" style={{ marginRight: '8px' }}></i>
                                 Data Import
                             </a>
                         </li>
                         <li class="nav-item text-left">
-                            <a href="#" class="nav-link text-black">
+                            <a href="#" style={{ color: '#808080' }} class="nav-link text-black">
                                 <i class="bi bi-rocket-fill" style={{ marginRight: '8px' }}></i>
                                 Upgrade
                             </a>
                         </li>
                         <li class="nav-item text-left">
-                            <a href="#" class="nav-link text-black">
+                            <a href="#" style={{ color: '#808080' }} class="nav-link text-black">
                                 <i class="bi bi-person-fill" style={{ marginRight: '8px' }}></i>
                                 Support
                             </a>
                         </li>
                         <li class="nav-item text-left">
-                            <a href="#" class="nav-link text-black">
+                            <a href="#" style={{ color: '#808080' }} class="nav-link text-black">
                                 <i class="bi bi-info-circle-fill" style={{ marginRight: '8px' }}></i>
                                 About Us
                             </a>

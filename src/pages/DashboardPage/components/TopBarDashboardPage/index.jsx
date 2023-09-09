@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from '../../../../components/Button/Button'
-
+import { menuSticky } from '../../../../utils/menuSticky'
 
 
 export const TopBarDashboardPage = (props) => {
@@ -17,20 +17,23 @@ export const TopBarDashboardPage = (props) => {
                             <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2" />
                             <div class="input-group-append">
                                 <button type="button" class="btn btn-primary position-relative mr-4">
-                                    lupa
+                                    <i class="bi bi-search"></i>
                                 </button>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm" style={{ marginTop: ' 8px' }}>
                         <button type="button" class="btn btn-primary position-relative mr-4">
-                            lo
+                            <i class="bi bi-bell-fill"></i>
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                 99+
                             </span>
                         </button>
                         <button type="button" class="btn btn-primary position-relative">
-                            em
+                            <i class="bi bi-headset"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                +
+                            </span>
                         </button>
                     </div>
                     <div class="col-sm" style={{ marginTop: ' 8px' }}>
