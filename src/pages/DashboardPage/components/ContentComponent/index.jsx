@@ -1,20 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { PricingTableComponentDashboard } from '../PricingTable'
-
-
+import { DashboardContext } from '../../context/DashboardContext';
 
 export const ContentComponent = (props) => {
-    /*ESTE COMPONENTE SERÁ LA CARD QUE SE PINTARA EN TODA LA DASHBOARD, PENSAR EN COMO PLANTEARLA PARA HACERLA DINÁMICA */
+    const { infoContainer, menuSelected } = useContext(DashboardContext)
+
     return (
         <div class='text-left mt-5 '>
-            <h2 style={{ marginLeft: '88px' }}>Choose Your Plan</h2>
-            <p style={{ marginLeft: '88px' }}>You can change your plan anytime. Cancel before 27 Jun to avoid charges.</p>
-
-            <div style={{ marginTop: '112px' }}>
+            {infoContainer?.map((value =>
+                value.name === menuSelected ?
+                    <div key={value.name}>
+                        <h2 style={{ marginLeft: '88px' }}>{value.title}</h2>
+                        <p style={{ marginLeft: '88px' }}>{value.text}</p>
+                    </div> : ''
+            ))}
+            {menuSelected === 'Upgrade' ? <div style={{ marginTop: '112px' }}>
                 <PricingTableComponentDashboard />
-            </div>
-
-
+            </div> : ''}
         </div>
     )
 }

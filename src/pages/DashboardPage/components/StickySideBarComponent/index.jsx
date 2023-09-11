@@ -4,8 +4,8 @@ import { DashboardContext } from '../../context/DashboardContext'
 
 export const StickySideBarComponent = (props) => {
 
-    const { menu, setMenuSelected }  = useContext(DashboardContext)
-    
+    const { menu, setMenuSelected } = useContext(DashboardContext)
+
     return (
         <>
             <div className="col-3 px-1 bg-white position-fixed " id="sticky-sidebar">
@@ -13,13 +13,13 @@ export const StickySideBarComponent = (props) => {
                 <hr></hr>
                 <div className='d-flex flex-column flex-shrink-0 p-3 d-flex align-items-center ' style={{ color: 'black' }}>
                     <ul className="nav nav-pills flex-column mb-auto">
-                        {menu?.map((value) => 
-                        <li key={value.name} className="nav-item text-left">
-                            <a onClick={() => setMenuSelected(value.name)} className="nav-link hover-effect" style={{ color: '#808080' }} aria-current="page">
-                                <i className={`bi bi-${value.icon}`} style={{ marginRight: '8px' }}></i>
-                                {value.name}
-                            </a>
-                        </li>)}
+                        {menu?.map((value) =>
+                            <li key={value.name} className="nav-item text-left">
+                                <a onClick={() => setMenuSelected(value.name)} className="nav-link hover-effect" style={{ color: '#808080' }} aria-current="page">
+                                    <i className={`bi bi-${value.icon}`} style={{ marginRight: '8px' }}></i>
+                                    {value.name}
+                                </a>
+                            </li>)}
                     </ul>
                 </div>
             </div>

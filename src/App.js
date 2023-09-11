@@ -8,6 +8,7 @@ import {
 import { DashboardContainer } from './pages/DashboardPage'
 import { PrincipalPage } from './pages/PrincipalPage'
 import GenericContextProvider from './context/GenericContext'
+import { UserProfile } from './pages/UserProfile'
 
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
         <GenericContextProvider>
           <Routes>
             <Route path='/' element={<PrincipalPage/>} />
-            <Route path='/dashboards' element={<DashboardContainer/>} />
+            <Route path='/dashboards' element={<DashboardContainer />} />
+            <Route path='/myAccount' element={<UserProfile/>} />
           </Routes>
         </GenericContextProvider>
       </div>

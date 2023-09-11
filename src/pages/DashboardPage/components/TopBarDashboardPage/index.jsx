@@ -1,19 +1,20 @@
 import React, { useContext } from 'react'
 import { DashboardContext } from '../../context/DashboardContext'
 import { GenericContext } from '../../../../context/GenericContext'
+import { useNavigate } from "react-router-dom"
 
 export const TopBarDashboardPage = (props) => {
-    
-    const { menuSelected }  = useContext(DashboardContext)
-    const { setDeleteToken }  = useContext(GenericContext)
+
+    const { menuSelected } = useContext(DashboardContext)
+    const { setDeleteToken } = useContext(GenericContext)
+    const navigate = useNavigate()
 
     return (
         <>
-
             <div className="container " style={{ backgroundColor: '##ededed !important' }}>
                 <div className="row mt-4" >
                     <div className="col-sm">
-                        <h1>{ menuSelected }</h1>
+                        <h1>{menuSelected}</h1>
                     </div>
                     <div className="col-sm" style={{ marginTop: ' 8px' }}>
                         <div className="input-group mb-3">
@@ -46,8 +47,8 @@ export const TopBarDashboardPage = (props) => {
                                 <strong className='ml-2' style={{ color: 'black' }}>mdo</strong>
                             </a>
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a className="dropdown-item" href="#">My Profile</a>
-                                <a className="dropdown-item" onClick={() => setDeleteToken(true)}  href="/">Log Out</a>
+                                <a className="dropdown-item" href="#" onClick={() => navigate('/myAccount', { replace: true })} >My Profile</a>
+                                <a className="dropdown-item" onClick={() => setDeleteToken(true)} href="/">Log Out</a>
                             </div>
                         </div>
                     </div>
