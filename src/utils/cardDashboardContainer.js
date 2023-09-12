@@ -1,7 +1,7 @@
 export const cardDashboardContainer = [
   {
     name: "Home",
-    title:'Activity and DOC help',
+    title:'Activity and DOCs',
     text:'You can see all your activity right here. If you prefer you can see all DOC to help you using this app.',
   },
   {
@@ -14,6 +14,11 @@ export const cardDashboardContainer = [
     title:'Import your Data',
     text:'You can import all your contacts using a .csv file. Just drop it in the box below.',
   },
+    {
+    name: 'Collections',
+    title:'Saved Collections',
+    text:'You can contact with us at this hours:',
+  },
   {
     name: 'Upgrade',
     title:'Choose Your Plan',
@@ -21,8 +26,8 @@ export const cardDashboardContainer = [
   },
   {
     name: 'Support',
-    title:'Choose Your Plan',
-    text:'You can change your plan anytime. Cancel before 27 Jun to avoid charges.',
+    title:'Contact with Us',
+    text:'You can contact with us at this hours:',
   },
   {
     name: 'About Us',

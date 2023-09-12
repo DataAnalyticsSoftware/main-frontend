@@ -8,26 +8,31 @@ export const menuSticky = [
   {
     name: 'Dashboard',
     icon: 'pie-chart-fill',
-    route: '/home'
+    route: '/dashboard'
   },
   {
     name: 'Data Import',
     icon: 'file-earmark-bar-graph-fill',
-    route: '/home'
+    route: '/dataImport'
+  },
+    {
+    name: 'Collections',
+    icon: 'archive-fill',
+    route: '/collections'
   },
   {
     name: 'Upgrade',
     icon: 'rocket-fill',
-    route: '/home'
+    route: '/upgrade'
   },
   {
     name: 'Support',
     icon: 'person-fill',
-    route: '/home'
+    route: '/support'
   },
   {
     name: 'About Us',
     icon: 'info-circle-fill',
-    route: '/home'
+    route: '/aboutUs'
   }
 ]
