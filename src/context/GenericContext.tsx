@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 export const GenericContext = createContext({})
 
-export default function GenericContextProvider({children}) {
+export default function GenericContextProvider({children}:any) {
     const [token, setToken] = useState(localStorage.getItem('access_token'))
     const navigate = useNavigate()
     const [deleteToken, setDeleteToken] = useState(false)

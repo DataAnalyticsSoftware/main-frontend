@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "../../../../components/Button/Button";
 
-export const PricingTableComponent = (props) => {
+export const PricingTableComponent = (props:any) => {
     return (
         <div className="container" >
             <div className="card-deck mb-3 text-center">

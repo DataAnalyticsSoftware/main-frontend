@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import { PricingTableComponentDashboard } from '../PricingTable'
 import { DashboardContext } from '../../context/DashboardContext';
+import { DisplayLayout } from '../DisplayLayout';
 
-export const ContentComponent = (props) => {
+export const ContentComponent = (props:any) => {
     const { infoContainer, menuSelected } = useContext(DashboardContext)
 
     return (
-        <div class='container text-left '>
+        <div className='container text-left '>
             {infoContainer?.map((value =>
                 value.name === menuSelected ?
                     <div key={value.name} style={{ padding: '5px', paddingLeft: '40px' }}>
@@ -16,7 +17,8 @@ export const ContentComponent = (props) => {
             ))}
             {menuSelected === 'Upgrade' ? <div style={{ marginTop: '4px' }}>
                 <PricingTableComponentDashboard />
-            </div> : ''}
+            </div> : <DisplayLayout />}
+
         </div>
     )
 }

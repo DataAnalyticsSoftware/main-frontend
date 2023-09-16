@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Button } from "../../../../components/Button/Button";
 import { DashboardContext } from "../../context/DashboardContext";
 
-export const PricingTableComponentDashboard = (props) => {
+export const PricingTableComponentDashboard = (props:any) => {
     const { pricing } = useContext(DashboardContext)
     return (
         <div className="container" >
@@ -27,9 +27,9 @@ export const PricingTableComponentDashboard = (props) => {
                                     <h5 key={value.name} className="mt-4">Features Included</h5>
                                     <hr></hr>
                                     <ul key={value.name} className="list-unstyled mt-3 mb-4" style={{ display: 'flex', flexDirection: 'column-reverse' }}>
-                                        {value?.plusInfo?.map((value => {
+                                        {value?.plusInfo?.map(((value:any) => {
                                             return (
-                                                <l1>{value.replace(',', ',\n')}</l1>
+                                                <li>{value.replace(',', ',\n')}</li>
                                             )
                                         }))}
                                     </ul>

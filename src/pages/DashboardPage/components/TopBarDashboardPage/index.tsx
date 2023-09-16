@@ -2,11 +2,12 @@ import React, { useContext } from 'react'
 import { DashboardContext } from '../../context/DashboardContext'
 import { GenericContext } from '../../../../context/GenericContext'
 import { useNavigate } from "react-router-dom"
+import { NotificationHistorial } from './NotificationsHistorial/index'
 
-export const TopBarDashboardPage = (props) => {
+export const TopBarDashboardPage = (props:any) => {
 
     const { menuSelected } = useContext(DashboardContext)
-    const { setDeleteToken } = useContext(GenericContext)
+    const { setDeleteToken }:any = useContext(GenericContext)
     const navigate = useNavigate()
 
     return (
@@ -27,11 +28,12 @@ export const TopBarDashboardPage = (props) => {
                         </div>
                     </div>
                     <div className="col-sm" style={{ marginTop: ' 8px' }}>
-                        <button type="button" className="btn btn-primary position-relative mr-4">
+                        <button type="button" className="btn btn-primary position-relative mr-4 " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i className="bi bi-bell-fill"></i>
                             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                                 99+
                             </span>
+                            <NotificationHistorial />
                         </button>
                         <button type="button" className="btn btn-primary position-relative">
                             <i className="bi bi-headset"></i>

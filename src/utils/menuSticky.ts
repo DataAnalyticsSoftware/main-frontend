@@ -33,6 +33,6 @@ export const menuSticky = [
   {
     name: 'About Us',
     icon: 'info-circle-fill',
-    route: '/aboutUs'
+    route: '/about'
   }
 ]

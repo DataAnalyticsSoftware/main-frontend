@@ -1,0 +1,18 @@
+
+
+li:hover{
+    background-color:#fafafa !important;
+    border-radius: 10px;    
+    box-shadow: 5px 0px 1px #2f69eb;
+    transition: 0.25s;
+    color: #82a1ad !important;
+}
+.nav-link i{
+    transition:all 1s;
+}
+.nav-link:hover i{
+    transform:rotate(360deg);
+}
+.nav-pills .nav-link:hover{
+    color:blue !important
+}

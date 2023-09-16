@@ -1,7 +1,7 @@
 import React from 'react';
 
-function ScrollToElementButton(props) {
-    const { targetId, label, className } = props;
+function ScrollToElementButton(props:any) {
+    const { targetId, label, className }:any = props;
 
     const handleClick = () => {
         const targetElement = document.getElementById(targetId);
@@ -12,7 +12,7 @@ function ScrollToElementButton(props) {
     };
 
     return (
-        <a class="nav-link" style={{ color: 'black' }} className={`scroll-button ${className}`} onClick={handleClick} href="#">{label}</a>
+        <a  style={{ color: 'black' }} className={`nav-link scroll-button  ${className}`} onClick={handleClick} href="#">{label}</a>
     );
 }
 

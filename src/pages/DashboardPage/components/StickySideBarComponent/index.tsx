@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import '../StickySideBarComponent/styles.module.scss'
 import { DashboardContext } from '../../context/DashboardContext'
 
-export const StickySideBarComponent = (props) => {
+export const StickySideBarComponent = (props:any) => {
 
     const { menu, setMenuSelected } = useContext(DashboardContext)
 
@@ -14,10 +14,10 @@ export const StickySideBarComponent = (props) => {
                 <div className='d-flex flex-column flex-shrink-0 p-3 d-flex align-items-center ' style={{ color: 'black' }}>
                     <ul className="nav nav-pills flex-column mb-auto">
                         {menu?.map((value) =>
-                            <li key={value.name} className="nav-item text-left">
-                                <a onClick={() => setMenuSelected(value.name)} className="nav-link hover-effect" style={{ color: '#808080' }} aria-current="page">
+                            <li key={value.name} className="nav-item text-left p-1">
+                                <a onClick={() => setMenuSelected(value.name)} className="nav-link" style={{ color: '#808080' }} aria-current="page">
                                     <i className={`bi bi-${value.icon}`} style={{ marginRight: '8px' }}></i>
-                                    {value.name}
+                                    <span className='name'>{value.name}</span>
                                 </a>
                             </li>)}
                     </ul>
