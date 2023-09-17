@@ -18,6 +18,8 @@ type DashboardContextValue = {
   setInfoContainer: React.Dispatch<React.SetStateAction<any[]>>; // Reemplaza "any[]" si es posible
   pricing: any[]; // Reemplaza "any[]" con el tipo correcto de tu "pricing" si es posible
   setPricing: React.Dispatch<React.SetStateAction<any[]>>; // Reemplaza "any[]" si es posible
+  displaySelected:string;
+  setDisplaySelected:React.Dispatch<React.SetStateAction<string>>;
 };
 
 export const DashboardContext = createContext<DashboardContextValue>({
@@ -28,7 +30,9 @@ export const DashboardContext = createContext<DashboardContextValue>({
   infoContainer: [],
   setInfoContainer: () => {},
   pricing: [],
-  setPricing: () => {},
+  setPricing: () => { },
+  displaySelected:'',
+  setDisplaySelected:() => {}
 });
 
 type DashboardContextProviderProps = {
@@ -41,6 +45,7 @@ export default function DashboardContextProvider({ children }: any) {
     const [menuSelected, setMenuSelected] = useState<any>('Home')
     const [infoContainer, setInfoContainer] = useState<any[]>([])
     const [pricing, setPricing] = useState<any[]>([])
+    const [displaySelected, setDisplaySelected] = useState<any>('Display 1')
 
     useEffect(() =>{
         setMenu(menuSticky);
@@ -57,6 +62,8 @@ export default function DashboardContextProvider({ children }: any) {
     setInfoContainer,
     pricing,
     setPricing,
+    displaySelected,
+    setDisplaySelected
   };
 
     return (

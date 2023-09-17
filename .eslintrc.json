@@ -1,35 +1,4 @@
 {
-  "parserOptions": { 
-    "ecmaVersion": 2018 
-  },
-  "env": { 
-    "es6": true, 
-    "node": true, 
-    "mocha": true ,
-    "bootstrap": "^5.3.1",
-    "bootstrap-icons": "^1.10.5",
-    "d3": "^7.8.5",
-    "localforage": "^1.10.0",
-    "match-sorter": "^6.3.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.15.0",
-    "react-scripts": "5.0.1",
-    "react-scripts-scss-ts": "^2.17.1",
-    "sass": "^1.66.1",
-    "sort-by": "^1.2.0",
-    "typescript": "^5.2.2",
-    "web-vitals": "^2.1.4"
-  }, 
-  "parser": "babel-eslint", 
-  "rules": { 
-    "no-console": "warn", 
-    "no-use-before-define": "warn", 
-    "spaced-comment": "warn" 
-  }, 
-  "extends": [ 
-    "standard" 
-  ],
   "overrides": [
     {
         "files": ["*.tsx","ts"],
