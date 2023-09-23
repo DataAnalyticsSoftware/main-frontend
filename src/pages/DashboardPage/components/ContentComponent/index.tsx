@@ -3,6 +3,7 @@ import { PricingTableComponentDashboard } from '../PricingTable'
 import { DashboardContext } from '../../context/DashboardContext';
 import { DisplayLayout } from '../DisplayLayout';
 import { ChooseDisplay } from '../ButtonDisplays';
+import { DataImport } from '../../../DataImport';
 
 export const ContentComponent = (props:any) => {
     const { infoContainer, menuSelected, displaySelected, setDisplaySelected } = useContext(DashboardContext)
@@ -25,7 +26,8 @@ export const ContentComponent = (props:any) => {
             {menuSelected === 'Upgrade' ? <div style={{ marginTop: '4px' }}>
                 <PricingTableComponentDashboard />
             </div> : ''}
-            {menuSelected==='Dashboard' ? <div><DisplayLayout props={{displaySelected,setDisplaySelected}}/></div>:''}
+            {menuSelected === 'Dashboard' ? <div><DisplayLayout props={{ displaySelected, setDisplaySelected }} /></div> : ''}
+            {menuSelected === 'Data Import' ? <div><DataImport/></div> : ''}
 
         </div>
     )

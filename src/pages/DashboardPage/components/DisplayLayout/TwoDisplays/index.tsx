@@ -3,13 +3,16 @@ import { Bars } from '../../Bars'
 
 export const TwoDisplays = (props:any) => {
     return (
-        <div className='row' style={{ height:'620px'}}>
-            <div className='container w-100 mt-3 col-md-6 h-100' style={{ borderRadius: '10px', backgroundColor: 'white', padding: '24px' }}>
-                <Bars />
-            </div>
-            <div className='container w-100 mt-3 col-md-6 h-100 ' style={{ borderRadius: '10px', backgroundColor: 'white', padding: '24px' }}>
-                <Bars />
+        <div className="container px-4 h-100" >
+            <div className="row gx-5" style={{height:'640px'}}>
+                <div className="col">
+                <div className="p-3 border bg-light h-100"><Bars /></div>
+                </div>
+                <div className="col">
+                <div className="p-3 border bg-light h-100"><Bars /></div>
+                </div>
             </div>
         </div>
+
     )
 }

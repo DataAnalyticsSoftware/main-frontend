@@ -77,7 +77,7 @@ const colorScale = scaleOrdinal<CityName, string>({
 
 let tooltipTimeout: number;
 
-export const Azucar = withTooltip<BarStackHorizontalProps, TooltipData>(
+export const HorizontalBars = withTooltip<BarStackHorizontalProps, TooltipData>(
   ({
     width,
     height,
