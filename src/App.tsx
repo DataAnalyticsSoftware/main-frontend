@@ -13,7 +13,7 @@ import { UserProfile } from './pages/UserProfile'
 
 function App() {
   return (
-    <Router >
+    <Router  >
     <React.StrictMode>
       <div className="App">
         <GenericContextProvider>
