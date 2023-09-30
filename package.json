@@ -6,20 +6,21 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@visx/visx": "^3.3.0",
     "bootstrap": "^5.3.1",
     "bootstrap-icons": "^1.10.5",
     "d3": "^7.8.5",
+    "install": "^0.13.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
+    "npm": "^10.1.0",
     "papaparse": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",
-    "react-scripts": "5.0.1",
-    "react-scripts-scss-ts": "^2.17.1",
-    "sass": "^1.66.1",
+    "react-scripts": "^5.0.1",
+    "sass": "^1.68.0",
     "sort-by": "^1.2.0",
-    "typescript": "^5.2.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -47,15 +48,6 @@
     ]
   },
   "devDependencies": {
-    "@types/papaparse": "^5.3.8",
-    "@types/react": "^18.2.21",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^8.49.0",
-    "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.28.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-standard": "^5.0.0",
-    "standard": "^17.1.0"
+    "@types/papaparse": "^5.3.9"
   }
 }

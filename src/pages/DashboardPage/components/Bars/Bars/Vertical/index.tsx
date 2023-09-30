@@ -46,7 +46,7 @@ const tooltipStyles = {
 const data = cityTemperature.slice(0, 12);
 const keys = Object.keys(data[0]).filter((d) => d !== 'date') as CityName[];
 
-const temperatureTotals = data.reduce((allTotals, currentDate) => {
+const temperatureTotals = data.reduce((allTotals: any, currentDate: any) => {
   const totalTemperature = keys.reduce((dailyTotal, k) => {
     dailyTotal += Number(currentDate[k]);
     return dailyTotal;
@@ -129,9 +129,9 @@ export const VerticalBars=({
             yScale={temperatureScale}
             color={colorScale}
           >
-            {(barStacks) =>
-              barStacks.map((barStack) =>
-                barStack.bars.map((bar) => (
+            {(barStacks: any) =>
+              barStacks.map((barStack: any) =>
+                barStack.bars.map((bar: any) => (
                   <rect
                     key={`bar-stack-${barStack.index}-${bar.index}`}
                     x={bar.x}
