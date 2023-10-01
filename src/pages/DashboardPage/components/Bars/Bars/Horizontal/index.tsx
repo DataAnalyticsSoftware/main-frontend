@@ -92,7 +92,7 @@ export const HorizontalBars = withTooltip<BarStackHorizontalProps, TooltipData>(
   }: BarStackHorizontalProps & WithTooltipProvidedProps<TooltipData>) => {
     // bounds
     const xMax = width - margin.left - margin.right;
-    const yMax = height - margin.top - margin.bottom;
+    const yMax = height - 5 - 65;
 
     temperatureScale.rangeRound([0, xMax]);
     dateScale.rangeRound([yMax, 0]);

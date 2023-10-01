@@ -5,8 +5,7 @@ import { GenericContext } from '../../../../context/GenericContext'
 
 export const LoginComponent = (props:any) => {
 
-    const { setToken }: any = useContext(GenericContext)
-    
+    const { setToken, token }: any = useContext(GenericContext)
     const handleSubmit= () => {return false}
 
     return (
@@ -22,12 +21,12 @@ export const LoginComponent = (props:any) => {
                     <input type="password" className={`${style.inputStyle} form-control` } id="exampleInputPassword1" placeholder="Enter Your Password" style={{ borderRadius: '20px', height: '42px' }} />
                 </div>
                 <div>
-                    <Button onClick={() => setToken('xdddddddddddddddd')} label={'Log in'} />
+                    <Button onClick={() => setToken(`${token}`)} label={'Log in'} />
                 </div>
             </div>
             <h6 className="mt-2">Or</h6>
             <div className='pb-2'>
-                <h5>Sig Up with google</h5>
+                <h5>Sign Up with google</h5>
             </div>
         </div>
 

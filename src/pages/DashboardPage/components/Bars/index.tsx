@@ -1,11 +1,16 @@
 import React from 'react';
 import {  Graphics } from './Bars';
+import ParentSize from '@visx/responsive/lib/components/ParentSize';
 
 
 export const Bars = () => {
     return (
-        <div className='container h-100 w-100'>
-            <Graphics />
-      </div>
+    <ParentSize>
+      {({ width, height }: any) => (        
+            <Graphics width={width} height={height} />
+        /*<VerticalBars width={width} height={height}/>*/       
+            )}
+    </ParentSize>
+
     );
 };
