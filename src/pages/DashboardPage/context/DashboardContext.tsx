@@ -19,7 +19,11 @@ type DashboardContextValue = {
   pricing: any[]; // Reemplaza "any[]" con el tipo correcto de tu "pricing" si es posible
   setPricing: React.Dispatch<React.SetStateAction<any[]>>; // Reemplaza "any[]" si es posible
   displaySelected:string;
-  setDisplaySelected:React.Dispatch<React.SetStateAction<string>>;
+  setDisplaySelected: React.Dispatch<React.SetStateAction<string>>;
+  displayGraphic:string,
+  setDisplayGraphic: React.Dispatch<React.SetStateAction<string>>,
+  displayCollection:string,
+  setDisplayCollection:React.Dispatch<React.SetStateAction<string>>
 };
 
 export const DashboardContext = createContext<DashboardContextValue>({
@@ -32,7 +36,11 @@ export const DashboardContext = createContext<DashboardContextValue>({
   pricing: [],
   setPricing: () => { },
   displaySelected:'',
-  setDisplaySelected:() => {}
+  setDisplaySelected: () => { },
+  displayGraphic:'',
+  setDisplayGraphic: () => { },
+  displayCollection:'',
+  setDisplayCollection:() => { }
 });
 
 type DashboardContextProviderProps = {
@@ -46,7 +54,9 @@ export default function DashboardContextProvider({ children }: any) {
     const [infoContainer, setInfoContainer] = useState<any[]>([])
     const [pricing, setPricing] = useState<any[]>([])
     const [displaySelected, setDisplaySelected] = useState<any>('Display 1')
-
+    const [displayGraphic, setDisplayGraphic] = useState<any>('Vertical Bars')
+    const [displayCollection,setDisplayCollection] = useState<any>('collection 1')
+  
     useEffect(() =>{
         setMenu(menuSticky);
         setInfoContainer(cardDashboardContainer);
@@ -63,7 +73,11 @@ export default function DashboardContextProvider({ children }: any) {
     pricing,
     setPricing,
     displaySelected,
-    setDisplaySelected
+    setDisplaySelected,
+    displayGraphic,
+    setDisplayGraphic,
+    displayCollection,
+    setDisplayCollection
   };
 
     return (

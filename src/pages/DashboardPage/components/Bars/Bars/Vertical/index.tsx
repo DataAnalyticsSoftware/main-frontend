@@ -102,7 +102,7 @@ export const VerticalBars=({
 
   useEffect(() => {
     dateScale.rangeRound([0, width]);
-    temperatureScale.range([height - margin.top - 100, 0]);
+    temperatureScale.range([height - margin.top - 40, 0]);
   }, [width, height]);
 
   return width < 10 ? null : (

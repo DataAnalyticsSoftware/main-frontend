@@ -9,10 +9,8 @@ import { SixDisplays } from './SixDisplays';
 
 
 export const DisplayLayout = ({props}:any) => {
-console.log(props.displaySelected);
-
     return (
-        <div className='container h-100'>
+        <div className='container h-100 w-100'>
             {props.displaySelected === 'Display 1' ? <OneDisplay /> : ''}
             {props.displaySelected === 'Display 2' ? <TwoDisplays /> : ''}
             {props.displaySelected === 'Display 3' ? <ThreeDisplays /> : ''}
