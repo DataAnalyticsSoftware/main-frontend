@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Papa, { ParseResult } from 'papaparse';
+import { GenericContext } from '../../../context/GenericContext';
 
 interface CSVData {
   [key: string]: string;
@@ -7,33 +8,42 @@ interface CSVData {
 
 const CSVViewer: React.FC = () => {
   const [csvData, setCsvData] = useState<CSVData[]>([]);
+  const [csvHeaders, setCsvHeaders ] = useState<string[] | undefined>([])
+  const { token }: any = useContext(GenericContext)
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files && event.target.files[0];
-
+    console.log(file)
     if (file) {
       Papa.parse(file, {
         complete: (result: ParseResult<CSVData>) => {
+          setCsvHeaders(result.meta.fields)
           setCsvData(result.data);
         },
         header: true,
         dynamicTyping: true,
-      });
+      })
     }
-  };
+  }
 
   const handleFormSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    const dataToSend = {
+      name: 'Default',
+      headers: csvHeaders,
+      data: csvData
 
+    }
     try {
       // Envía los datos CSV al servidor (aquí debes implementar la lógica para enviar los datos al backend)
-      const response = await fetch('URL_DEL_BACKEND', {
+      const response = await fetch('http://79.143.94.15:8001/api/data', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': 'Token ' + token
         },
-        body: JSON.stringify(csvData),
-      });
+        body: JSON.stringify(dataToSend),
+      })
 
       if (response.ok) {
         // El CSV se ha enviado correctamente al backend
@@ -45,11 +55,12 @@ const CSVViewer: React.FC = () => {
     } catch (error) {
       console.error('Error en la solicitud POST al backend:', error);
     }
-  };
+  }
 
   const handleCancelImport = () => {
     // Limpia los datos CSV y la tabla
-    setCsvData([]);
+    setCsvData([])
+    setCsvHeaders([])
   };
 
   return (
