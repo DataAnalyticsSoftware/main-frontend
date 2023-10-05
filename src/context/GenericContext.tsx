@@ -16,6 +16,7 @@ export default function GenericContextProvider({ children }: any) {
         if(!login) return 
         fetch('http://79.143.94.15:8001/api/login', {
             method: 'POST',
+            mode: 'cors',
             headers: {
               'Content-Type': 'application/json',
             },

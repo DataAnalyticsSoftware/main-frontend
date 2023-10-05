@@ -38,6 +38,7 @@ const CSVViewer: React.FC = () => {
       // Envía los datos CSV al servidor (aquí debes implementar la lógica para enviar los datos al backend)
       const response = await fetch('http://79.143.94.15:8001/api/data', {
         method: 'POST',
+        mode: 'cors',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Token ' + token
