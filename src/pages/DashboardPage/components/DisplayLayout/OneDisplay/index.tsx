@@ -12,14 +12,13 @@ export const OneDisplay = (props: any) => {
         setDisplayGraphic(display);
 };
     return (
-        <div className='container' style={{display:'flex',flexDirection:'column'}}>
-            <div className='display'>
+        <div className='container' style={{display:'flex',flexDirection:'column'}}>         
+            <div className='row'>
+                <div className='pt-3 col' style={{ borderRadius: '10px', backgroundColor: 'white', height: '620px', padding: '24px' }}>
+                <div className='display' style={{zIndex:500}}>
                     <SelectCollectionDisplay/>
                     <SelectGraphicDisplay/>
                 </div>
-            <div className='row'>
-                
-                <div className='pt-3 col' style={{ borderRadius: '10px', backgroundColor: 'white', height: '620px', padding: '24px' }}>
                     <Bars />
                 </div>
             </div>

@@ -106,7 +106,7 @@ export const VerticalBars=({
   }, [width, height]);
 
   return width < 10 ? null : (
-    <div style={{ position: 'relative' }}>
+    <div >
       <svg ref={containerRef} width={width} height={height}>
         <rect x={0} y={0} width={width} height={height} fill={background} rx={14} />
         <Grid
