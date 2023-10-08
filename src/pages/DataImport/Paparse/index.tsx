@@ -13,7 +13,6 @@ const CSVViewer: React.FC = () => {
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files && event.target.files[0];
-    console.log(file)
     if (file) {
       Papa.parse(file, {
         complete: (result: ParseResult<CSVData>) => {

@@ -3,6 +3,7 @@ import { Button } from '../../../../components/Button/Button'
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import { Channel } from './Channel';
 
 firebase.initializeApp({
   apiKey: "AIzaSyDcVvcqv2nvVUZGVpUHLWWKCX2u--5mDBk",
@@ -15,6 +16,7 @@ firebase.initializeApp({
 })
 
 const auth = firebase.auth();
+const db = firebase.firestore();
 
 export const Support = (props:any) => {
     const [user, setUser] = useState(() => auth.currentUser)
@@ -59,11 +61,11 @@ export const Support = (props:any) => {
 
 
     return (
-        <div>
+        <div >
             {user ? (
                 <>
                 <Button label={'Sign Out'} onClick={signOut}>Sign Out</Button>
-                <p>Welcome to the chat</p>
+                    <Channel user={user} db={db} />
                 </>
             ) : (<Button label={'Sign in'} onClick={signInWithGoogle} />)}
             
