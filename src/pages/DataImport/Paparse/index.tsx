@@ -9,7 +9,7 @@ interface CSVData {
 const CSVViewer: React.FC = () => {
   const [csvData, setCsvData] = useState<CSVData[]>([]);
   const [csvHeaders, setCsvHeaders ] = useState<string[] | undefined>([])
-  const { token }: any = useContext(GenericContext)
+  const { token,setHasFetchedData }: any = useContext(GenericContext)
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files && event.target.files[0];
@@ -55,6 +55,7 @@ const CSVViewer: React.FC = () => {
     } catch (error) {
       console.error('Error en la solicitud POST al backend:', error);
     }
+    setHasFetchedData(false)
   }
 
   const handleCancelImport = () => {

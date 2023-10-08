@@ -5,6 +5,7 @@ import { DisplayLayout } from '../DisplayLayout';
 import { ChooseDisplay } from '../ButtonDisplays';
 import { DataImport } from '../../../DataImport';
 import { Support } from '../Support';
+import { Collections } from '../Collections';
 
 export const ContentComponent = (props:any) => {
     const { infoContainer, menuSelected, displaySelected, setDisplaySelected } = useContext(DashboardContext)
@@ -29,7 +30,8 @@ export const ContentComponent = (props:any) => {
             </div> : ''}
             {menuSelected === 'Dashboard' ? <div><DisplayLayout props={{ displaySelected, setDisplaySelected }} /></div> : ''}
             {menuSelected === 'Data Import' ? <div><DataImport /></div> : ''}
-            {menuSelected === 'Support' ? <div><Support/></div> : ''}
+            {menuSelected === 'Support' ? <div><Support /></div> : ''}
+            {menuSelected === 'Collections' ? <div><Collections/></div> : ''}
 
         </div>
     )

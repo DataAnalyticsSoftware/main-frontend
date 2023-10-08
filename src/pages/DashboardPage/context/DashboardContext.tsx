@@ -23,7 +23,9 @@ type DashboardContextValue = {
   displayGraphic:string,
   setDisplayGraphic: React.Dispatch<React.SetStateAction<string>>,
   displayCollection:string,
-  setDisplayCollection:React.Dispatch<React.SetStateAction<string>>
+  setDisplayCollection: React.Dispatch<React.SetStateAction<string>>,
+  collectionData:any[],
+  setCollectionData:React.Dispatch<React.SetStateAction<any[]>>
 };
 
 export const DashboardContext = createContext<DashboardContextValue>({
@@ -40,13 +42,10 @@ export const DashboardContext = createContext<DashboardContextValue>({
   displayGraphic:'',
   setDisplayGraphic: () => { },
   displayCollection:'',
-  setDisplayCollection:() => { }
+  setDisplayCollection: () => { },
+  collectionData:[],
+  setCollectionData: () => { }
 });
-
-type DashboardContextProviderProps = {
-  children: ReactNode;
-};
-
 
 export default function DashboardContextProvider({ children }: any) {
     const [menu, setMenu] = useState<any[]>([])
@@ -56,11 +55,12 @@ export default function DashboardContextProvider({ children }: any) {
     const [displaySelected, setDisplaySelected] = useState<any>('Display 1')
     const [displayGraphic, setDisplayGraphic] = useState<any>('Vertical Bars')
     const [displayCollection,setDisplayCollection] = useState<any>('collection 1')
+    const [collectionData, setCollectionData] = useState<any[]>([])
   
     useEffect(() =>{
-        setMenu(menuSticky);
-        setInfoContainer(cardDashboardContainer);
-        setPricing(pricingTable);
+      setMenu(menuSticky);
+      setInfoContainer(cardDashboardContainer);
+      setPricing(pricingTable);      
     }, [])
     
   const contextValue: DashboardContextValue = {
@@ -77,11 +77,13 @@ export default function DashboardContextProvider({ children }: any) {
     displayGraphic,
     setDisplayGraphic,
     displayCollection,
-    setDisplayCollection
+    setDisplayCollection,
+    collectionData,
+    setCollectionData
   };
 
     return (
     <DashboardContext.Provider value={contextValue}>
-        {children}
+      {children}
     </DashboardContext.Provider>)
 }
