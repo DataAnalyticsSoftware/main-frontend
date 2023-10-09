@@ -70,33 +70,32 @@ export default function GenericContextProvider({ children }: any) {
         }
     }, [])
 
-useEffect(() => {
-    if (!hasFetchedData) {
-        const fetchData = async () => {
-            try {
-                const response = await fetch('http://79.143.94.15:8001/api/data', {
-                    method: 'GET',
-                    headers: {
-                        Authorization: `Token ${token}`,
-                        'Content-Type': 'application/json',
-                    },
-                });
+    useEffect(() => {
+        if (!hasFetchedData) {
+            const fetchData = async () => {
+                try {
+                    const response = await fetch('http://79.143.94.15:8001/api/data', {
+                        method: 'GET',
+                        headers: {
+                            Authorization: `Token ${token}`,
+                            'Content-Type': 'application/json',
+                        },
+                    });
 
-                if (response.status === 200) {
-                    const responseData = await response.json();
-                    console.log(responseData,'responseData');                    
-                    setData(responseData);
-                    setHasFetchedData(true); // Marcar que se ha realizado la solicitud
-                } else {
-                    console.error(`Error: ${response.status}`);
+                    if (response.status === 200) {
+                        const responseData = await response.json();                    
+                        setData(responseData);
+                        setHasFetchedData(true); // Marcar que se ha realizado la solicitud
+                    } else {
+                        console.error(`Error: ${response.status}`);
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
                 }
-            } catch (error) {
-                console.error('Error:', error);
-            }
-        };
+            };
 
-        fetchData();
-    }
+            fetchData();
+        }
 }, [hasFetchedData]);
 
 

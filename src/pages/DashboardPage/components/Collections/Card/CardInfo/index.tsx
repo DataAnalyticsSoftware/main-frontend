@@ -1,53 +1,62 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import { GenericContext } from '../../../../../../context/GenericContext';
 
 export const CardInfo = () => {
   const [csvData, setCsvData] = useState<any>([]);
-  const [file, setFile] = useState<any>(null);
-const { dataCollection } = useContext(GenericContext)
+  const [data, setData] = useState(false);
+  const { dataCollection }:any = useContext(GenericContext);
 
-  const handleFileChange = (event:any) => {
-    const selectedFile = dataCollection[0];
-    setFile(selectedFile);
-
-    Papa.parse(selectedFile, {
-      header: true,
-      dynamicTyping: true,
-      skipEmptyLines: true,
-        complete: (result) => {
-          console.log(result.data);
-        // Transform the Papaparse result into your desired format
-        const formattedData = result.data.map((row:any) => ({
-          id: row.id, // Assuming the "id" column exists in the CSV
-          headers: row.headers.split(','), // Split headers into an array
-        }));
-        setCsvData(formattedData);
-      },
-    });
-  };
+  useEffect(() => {
+    if (dataCollection && dataCollection.data ) {
+      // Transforma los datos de dataCollection.data en un formato que Papaparse puede procesar.
+      var csv = Papa.unparse(dataCollection);
+      // Crea un objeto Blob a partir de la cadena CSV.
+      const blob = new Blob([csv], { type: 'text/csv' });
+      // Utiliza FileReader para leer el Blob y pasárselo a Papaparse.
+      const reader = new FileReader();
+      reader.onload = (event:any) => {
+        const csvText = event.target.result as string;
+        Papa.parse(csvText, {
+          complete: (result) => {
+            setCsvData(result.data);
+            setData(true);
+          },
+          header: true,
+          dynamicTyping: true,
+        });
+      };
+      reader.readAsText(blob);
+    }
+    setData(false)
+  }, [dataCollection]);
 
   return (
-    <div>
+    <div className="container mt-4" >
       <h1>CSV Renderer</h1>
-      <input type="file" onChange={handleFileChange} accept=".csv" />
-      {csvData.length > 0 && (
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Headers</th>
-            </tr>
-          </thead>
-          <tbody>
-            {csvData.map((row:any, rowIndex:any) => (
-              <tr key={rowIndex}>
-                <td>{row.id}</td>
-                <td>{row.headers.join(', ')}</td>
+      {data ? (
+        csvData.length > 0 && (
+          <table className="table table-bordered">
+            <thead>
+              <tr>
+                {Object.keys(csvData[0]).map((key) => (
+                  <th key={key}>{key}</th>
+                ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {csvData.map((row: any, rowIndex: any) => (
+                <tr key={rowIndex}>
+                  {Object.values(row).map((value: any, colIndex: any) => (
+                    <td key={colIndex}>{value}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )
+      ) : (
+        'No hay datos para mostrar.'
       )}
     </div>
   );

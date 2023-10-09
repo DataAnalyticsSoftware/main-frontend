@@ -6,6 +6,7 @@ export const Card = ()  => {
     const { data, setIdDataCollection, getIdCollection, token,setDataCollection } = useContext(GenericContext)
     const callCollection = async (props: any) => {
         setIdDataCollection(props)
+        setDataCollection([])
         try {
         const response = fetch(`http://79.143.94.15:8001/api/data/${props}`, {
             method: 'GET',
@@ -29,8 +30,7 @@ export const Card = ()  => {
         });
     } catch (error) {
         console.error('Error en la solicitud POST al backend:', error);
-    }
-        
+    }       
     }
 
     return (
@@ -44,28 +44,26 @@ export const Card = ()  => {
                                 <h2 className='mt-2'>{value.id}</h2>
                                 <img  />
                                 <hr ></hr>
-                                <button onClick={()=>callCollection(value.id)} type="button" className="btn btn-primary" data-toggle="modal" data-target={`#exampleModal-${value.id}`} >Edit</button>                                
-                                <div className="modal fade" id={`exampleModal-${value.id}`} role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div className="modal-dialog" role="document">
+                                <button onClick={() => callCollection(value.id)} type="button" className="btn btn-primary" data-toggle="modal" data-target={`#exampleModal-${value.id}`} >Edit</button>
+
+                                <div className="modal fade" id={`exampleModal-${value.id}`} data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div className="modal-dialog">
                                         <div className="modal-content">
                                         <div className="modal-header">
-                                            <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-                                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                                    
+                                            <h1 className="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
-                                            <div className="modal-body">
+                                        <div className="modal-body">
                                             <CardInfo/>
                                         </div>
-                                                
                                         <div className="modal-footer">
-                                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" className="btn btn-primary">Save changes</button>
+                                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" className="btn btn-primary">Understood</button>
                                         </div>
                                         </div>
                                     </div>
-                                </div>  
+                                </div>
+
                             </div>                                        
                         </>
                     )
