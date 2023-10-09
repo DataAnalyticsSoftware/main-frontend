@@ -32,7 +32,6 @@ export const ContentComponent = (props:any) => {
             {menuSelected === 'Data Import' ? <div><DataImport /></div> : ''}
             {menuSelected === 'Support' ? <div><Support /></div> : ''}
             {menuSelected === 'Collections' ? <div><Collections/></div> : ''}
-
         </div>
     )
 }

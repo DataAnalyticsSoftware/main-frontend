@@ -12,7 +12,11 @@ type GenericContextValue = {
     setPassword:React.Dispatch<React.SetStateAction<string | undefined>>,
     setLogin: React.Dispatch<React.SetStateAction<boolean>>,
     setHasFetchedData: React.Dispatch<React.SetStateAction<boolean>>,
-    hasFetchedData:boolean
+    hasFetchedData: boolean,
+    dataCollection:any[],
+    setDataCollection: React.Dispatch<React.SetStateAction<any[]>>,
+    getIdCollection:any[],
+    setIdDataCollection: React.Dispatch<React.SetStateAction<any[]>>,
 };
 
 export const GenericContext = createContext<GenericContextValue>({
@@ -25,7 +29,11 @@ export const GenericContext = createContext<GenericContextValue>({
     setPassword:() => { },
     setLogin: () => { },
     setHasFetchedData: () => { },
-    hasFetchedData:false
+    hasFetchedData: false,
+    dataCollection:[],
+    setDataCollection: () => { },
+    getIdCollection:[],
+    setIdDataCollection:() => { }
 });
 
 export default function GenericContextProvider({ children }: any) {
@@ -37,6 +45,8 @@ export default function GenericContextProvider({ children }: any) {
     const [deleteToken, setDeleteToken] = useState(false)
     const [data, setData] = useState<any>([])
     const [hasFetchedData, setHasFetchedData] = useState<boolean>(false);
+    const [dataCollection, setDataCollection] = useState<any>([])
+    const [getIdCollection, setIdDataCollection] = useState<any>([])
     useEffect(() => {
         if(!login) return 
         fetch('http://79.143.94.15:8001/api/login', {
@@ -62,7 +72,6 @@ export default function GenericContextProvider({ children }: any) {
 
 useEffect(() => {
     if (!hasFetchedData) {
-        console.log('entro');
         const fetchData = async () => {
             try {
                 const response = await fetch('http://79.143.94.15:8001/api/data', {
@@ -119,7 +128,11 @@ useEffect(() => {
         setPassword,
         setLogin,
         setHasFetchedData,
-        hasFetchedData
+        hasFetchedData,
+        dataCollection,
+        setDataCollection,
+        getIdCollection,
+        setIdDataCollection
     };
     
     return (
