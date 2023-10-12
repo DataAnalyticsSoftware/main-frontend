@@ -8,7 +8,7 @@ export const Card = ()  => {
         setIdDataCollection(props)
         setDataCollection([])
         try {
-        const response = fetch(`http://79.143.94.15:8001/api/data/${props}`, {
+        const response = fetch(`https://www.main-backend.webdatanets.com/api/data/${props}`, {
             method: 'GET',
             mode: 'cors',
             headers: {

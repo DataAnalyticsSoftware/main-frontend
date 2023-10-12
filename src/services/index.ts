@@ -6,7 +6,7 @@ import { GenericContext } from "../context/GenericContext";
 export const getCollectionData = async () => {
     const { token, setData }: any = useContext(GenericContext)
 
-    fetch(`http://79.143.94.15:8001/api/data`, {
+    fetch(`https://www.main-backend.webdatanets.com/api/data`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ export const getCollectionData = async () => {
 {/*export const getDataFromAnyCollection = async (props: any) => {
     const { setDataCollection, token, getIdCollection }: any = useContext(GenericContext)
 
-    fetch(`http://79.143.94.15:8001/api/data/${props}`, {
+    fetch(`https://www.main-backend.webdatanets.com/api/data/${props}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

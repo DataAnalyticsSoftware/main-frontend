@@ -49,7 +49,7 @@ export default function GenericContextProvider({ children }: any) {
     const [getIdCollection, setIdDataCollection] = useState<any>([])
     useEffect(() => {
         if(!login) return 
-        fetch('http://79.143.94.15:8001/api/login', {
+        fetch('https://www.main-backend.webdatanets.com/api/login', {
             method: 'POST',
             mode: 'cors',
             headers: {
@@ -74,7 +74,7 @@ export default function GenericContextProvider({ children }: any) {
         if (!hasFetchedData) {
             const fetchData = async () => {
                 try {
-                    const response = await fetch('http://79.143.94.15:8001/api/data', {
+                    const response = await fetch('https://www.main-backend.webdatanets.com/api/data', {
                         method: 'GET',
                         headers: {
                             Authorization: `Token ${token}`,
