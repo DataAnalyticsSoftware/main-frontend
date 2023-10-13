@@ -1,40 +1,12 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useState } from 'react'
+import { useGenericRequest } from '../hooks/useGenericRequest';
 import { useNavigate } from "react-router-dom"
+import { initialValue } from './initialValues';
+import { GenericContextValue } from './type';
+import { useTokenStorage } from '../hooks/useTokenStorage';
+import { useLogin } from '../hooks/useLogin';
 
-
-type GenericContextValue = {
-    data:any[],
-    setData: React.Dispatch<React.SetStateAction<any[]>>,
-    setToken:React.Dispatch<React.SetStateAction<string | null>>,
-    token: string | null;
-    setDeleteToken:React.Dispatch<React.SetStateAction<boolean>>,
-    setUserEmail:React.Dispatch<React.SetStateAction<string | undefined>>,
-    setPassword:React.Dispatch<React.SetStateAction<string | undefined>>,
-    setLogin: React.Dispatch<React.SetStateAction<boolean>>,
-    setHasFetchedData: React.Dispatch<React.SetStateAction<boolean>>,
-    hasFetchedData: boolean,
-    dataCollection:any[],
-    setDataCollection: React.Dispatch<React.SetStateAction<any[]>>,
-    getIdCollection:any[],
-    setIdDataCollection: React.Dispatch<React.SetStateAction<any[]>>,
-};
-
-export const GenericContext = createContext<GenericContextValue>({
-    data: [],
-    setData: () => { },
-    token: '',
-    setToken:() => { },
-    setDeleteToken:() => { },
-    setUserEmail:() => { },
-    setPassword:() => { },
-    setLogin: () => { },
-    setHasFetchedData: () => { },
-    hasFetchedData: false,
-    dataCollection:[],
-    setDataCollection: () => { },
-    getIdCollection:[],
-    setIdDataCollection:() => { }
-});
+export const GenericContext = createContext<GenericContextValue>(initialValue)
 
 export default function GenericContextProvider({ children }: any) {
     const [login, setLogin] = useState<boolean>(false)
@@ -43,96 +15,22 @@ export default function GenericContextProvider({ children }: any) {
     const [token, setToken] = useState(localStorage.getItem('access_token')) 
     const navigate = useNavigate()
     const [deleteToken, setDeleteToken] = useState(false)
-    const [data, setData] = useState<any>([])
-    const [hasFetchedData, setHasFetchedData] = useState<boolean>(false);
-    const [dataCollection, setDataCollection] = useState<any>([])
-    const [getIdCollection, setIdDataCollection] = useState<any>([])
-    useEffect(() => {
-        if(!login) return 
-        fetch('https://www.main-backend.webdatanets.com/api/login', {
-            method: 'POST',
-            mode: 'cors',
-            headers: {
-            'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({username: userEmail, password}),
-        })
-        .then(response => response.json())
-            .then(data => setToken(data?.token)).finally(() => setLogin(false))
-        
-    }, [login])
 
-    useEffect(() => {
-        if(localStorage.getItem('access_token')){
-            setToken(localStorage.getItem('access_token'))
-        }else{
-            navigate('/', { replace: true })
-        }
-    }, [])
+    const { webDataNetsRequest } = useGenericRequest(token)
 
-    useEffect(() => {
-        if (!hasFetchedData) {
-            const fetchData = async () => {
-                try {
-                    const response = await fetch('https://www.main-backend.webdatanets.com/api/data', {
-                        method: 'GET',
-                        headers: {
-                            Authorization: `Token ${token}`,
-                            'Content-Type': 'application/json',
-                        },
-                    });
+    useLogin({webDataNetsRequest, userEmail, password, login, setToken, setLogin})
+    
+    useTokenStorage({setToken, navigate, token, deleteToken, setDeleteToken})
 
-                    if (response.status === 200) {
-                        const responseData = await response.json();                    
-                        setData(responseData);
-                        setHasFetchedData(true); // Marcar que se ha realizado la solicitud
-                    } else {
-                        console.error(`Error: ${response.status}`);
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
-                }
-            };
-
-            fetchData();
-        }
-}, [hasFetchedData]);
-
-
-    useEffect(() => {
-        if (token) {        
-            localStorage.setItem('access_token', token)
-            navigate('/dashboards', { replace: true })
-        } else {
-            localStorage.removeItem('access_token')
-            navigate('/', { replace: true })
-        }
-    }, [token])
-
-    useEffect(() => {
-        if(deleteToken){
-            localStorage.removeItem('access_token')
-            navigate('/', { replace: true })
-            setDeleteToken(false)
-        }
-    }, [deleteToken])
-
-  const contextValue: GenericContextValue = {
-        data,
-        setData,
+    const contextValue: GenericContextValue = {
         token,
         setToken,
         setDeleteToken,
         setUserEmail,
         setPassword,
         setLogin,
-        setHasFetchedData,
-        hasFetchedData,
-        dataCollection,
-        setDataCollection,
-        getIdCollection,
-        setIdDataCollection
-    };
+        webDataNetsRequest
+    }
     
     return (
         <GenericContext.Provider value={contextValue}>

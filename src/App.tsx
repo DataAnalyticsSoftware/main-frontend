@@ -11,7 +11,6 @@ import GenericContextProvider from './context/GenericContext'
 import { UserProfile } from './pages/UserProfile'
 
 
-
 function App() {
   return (
     <Router  >

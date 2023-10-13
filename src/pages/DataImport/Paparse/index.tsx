@@ -9,7 +9,7 @@ interface CSVData {
 const CSVViewer: React.FC = () => {
   const [csvData, setCsvData] = useState<CSVData[]>([]);
   const [csvHeaders, setCsvHeaders ] = useState<string[] | undefined>([])
-  const { token,setHasFetchedData }: any = useContext(GenericContext)
+  //const { token,setHasFetchedData, webDataNetsRequest } = useContext(GenericContext)
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files && event.target.files[0];
@@ -27,35 +27,22 @@ const CSVViewer: React.FC = () => {
 
   const handleFormSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const dataToSend = {
-      name: 'Default',
-      headers: csvHeaders,
-      data: csvData
+      const dataToSend = {
+        name: 'Default',
+        headers: csvHeaders,
+        data: csvData
 
-    }
+      }
     try {
       // Envía los datos CSV al servidor (aquí debes implementar la lógica para enviar los datos al backend)
-      const response = await fetch('https://www.main-backend.webdatanets.com/api/data', {
-        method: 'POST',
-        mode: 'cors',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Token ' + token
-        },
-        body: JSON.stringify(dataToSend),
-      })
-
-      if (response.ok) {
-        // El CSV se ha enviado correctamente al backend
-        console.log('CSV enviado al backend con éxito');
-      } else {
-        // Maneja el caso de error
-        console.error('Error al enviar el CSV al backend');
-      }
+    /**  webDataNetsRequest('api/data', JSON.stringify(dataToSend), 'POST')
+        .then((response: any) => {
+            console.log('CSV enviado al backend con éxito')
+        })*/ 
     } catch (error) {
       console.error('Error en la solicitud POST al backend:', error);
     }
-    setHasFetchedData(false)
+   //setHasFetchedData(false)
   }
 
   const handleCancelImport = () => {

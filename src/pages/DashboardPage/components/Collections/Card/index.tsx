@@ -3,40 +3,24 @@ import { GenericContext } from '../../../../../context/GenericContext';
 import { CardInfo } from './CardInfo';
 
 export const Card = ()  => {
-    const { data, setIdDataCollection, getIdCollection, token,setDataCollection } = useContext(GenericContext)
+   // const { data, setIdDataCollection, getIdCollection, token, setDataCollection, webDataNetsRequest } = useContext(GenericContext)
     const callCollection = async (props: any) => {
-        setIdDataCollection(props)
-        setDataCollection([])
+      //  setIdDataCollection(props)
+      //  setDataCollection([])
         try {
-        const response = fetch(`https://www.main-backend.webdatanets.com/api/data/${props}`, {
-            method: 'GET',
-            mode: 'cors',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Token ' + token
-            },
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Error al realizar la solicitud: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            setDataCollection(data);
-        })
-        .catch(error => {
-            console.error('Error al obtener datos:', error);
-        });
-    } catch (error) {
-        console.error('Error en la solicitud POST al backend:', error);
-    }       
+         //   webDataNetsRequest(`api/data/${props}`)
+        //    .then((response: any) => {
+        //        setDataCollection(response)
+        //    })
+        } catch (error) {
+            console.error('Error en la solicitud POST al backend:', error);
+        }       
     }
 
     return (
         <div style={{ display: 'flex', width:'100%',justifyContent:'space-evenly',flexFlow:'wrap', maxHeight:'750px', overflow:'scroll' }}>           
-            {
-                data.map(value => {                   
+            {/**
+                data?.map(value => {                   
                     return (
                         <>
                             <div className='mr-5 mb-4'
@@ -67,7 +51,7 @@ export const Card = ()  => {
                             </div>                                        
                         </>
                     )
-                }) 
+                    }) **/
             }    
         </div>
     )
