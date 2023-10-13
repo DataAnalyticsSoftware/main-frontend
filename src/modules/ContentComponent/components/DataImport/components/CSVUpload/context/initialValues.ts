@@ -4,8 +4,10 @@ export const initialValue: ICSVContextProps = {
     csvData: [],
     error: undefined,
     handleCancelImport: () => {},
-    handleFileChange: () => {},
+    handleDragOver: () => {},
+    handleDrop: () => {},
     handleFormSubmit: () => fetch(''),
     setName: () => {},
+    setDescription: () => {},
     success: undefined
 }

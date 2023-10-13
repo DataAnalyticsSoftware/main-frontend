@@ -1,7 +1,7 @@
 import React from 'react'
-import { Button } from '../../../../../../components/Button/Button'
 import { LoginComponent } from '../../../LoginComponent'
 import { ITextProps } from '../../types'
+import { Button } from '../../../../../../components/Button'
 
 export const LoginTextComponent = ({dataInformation, index}: ITextProps) => {
     return (

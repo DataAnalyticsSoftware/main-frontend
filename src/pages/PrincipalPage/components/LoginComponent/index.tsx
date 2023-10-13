@@ -1,20 +1,13 @@
-import React, { useContext, useState } from 'react'
-import { Button } from '../../../../components/Button/Button'
+import React, { ChangeEventHandler, useContext, useState } from 'react'
+import { Button } from '../../../../components/Button'
 import style from './styles.module.scss'
 import { GenericContext } from '../../../../context/GenericContext'
 
-export const LoginComponent = () => {
+export const LoginComponent = (props:any) => {
 
-    const { setLogin, setUserData } = useContext(GenericContext)
-    
-    const [userEmail, setUserEmail] = useState<string | undefined>(undefined)
-    const [password, setPassword] = useState<string | undefined>(undefined)
+    const { setUserEmail, setPassword, setLogin }: any = useContext(GenericContext)
+    const handleSubmit= () => {setLogin(true)}
 
-    const handleSubmit= () => {
-        setUserData({ password:password, username: userEmail })
-        setLogin(true)
-    }
-  
     return (
         <div className='rounded shadow-lg p-3 mb-5 bg-white rounded float-right' style={{ width: '620px' }}>
             <div  onSubmit={handleSubmit} className='text-left pl-5 pt-2 pr-5' >
@@ -36,5 +29,6 @@ export const LoginComponent = () => {
                 <h5>Sign Up with google</h5>
             </div>
         </div>
+
     )
 }

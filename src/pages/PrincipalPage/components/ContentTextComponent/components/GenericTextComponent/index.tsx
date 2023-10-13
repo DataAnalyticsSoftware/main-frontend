@@ -1,8 +1,8 @@
 import { IPrincipalPageData } from "../../../../context/type";
 import React from 'react'
 import { PhotoComponent } from "./components/PhotoComponent";
-import { Button } from "../../../../../../components/Button/Button";
 import { ITextProps } from "../../types";
+import { Button } from "../../../../../../components/Button";
 
 export const GenericTextComponent = ({dataInformation, index}: ITextProps) => {
     return (

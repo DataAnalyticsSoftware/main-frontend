@@ -3,7 +3,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import { Channel } from './Channel';
-import { Button } from '../../../../components/Button/Button';
+import { Button } from '../../../../components/Button';
 
 firebase.initializeApp({
   apiKey: "AIzaSyDcVvcqv2nvVUZGVpUHLWWKCX2u--5mDBk",
