@@ -5,7 +5,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import GenericContextProvider from './context/GenericContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
-root.render(
+root.render (
   <React.StrictMode>
       <App />
   </React.StrictMode>
