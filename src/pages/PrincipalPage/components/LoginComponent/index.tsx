@@ -3,10 +3,15 @@ import { Button } from '../../../../components/Button'
 import style from './styles.module.scss'
 import { GenericContext } from '../../../../context/GenericContext'
 
-export const LoginComponent = (props:any) => {
+export const LoginComponent = () => {
 
-    const { setUserEmail, setPassword, setLogin }: any = useContext(GenericContext)
-    const handleSubmit= () => {setLogin(true)}
+    const {  setLogin, setUserData } = useContext(GenericContext)
+    const [email, setEmail] = useState<string>('')
+    const [password, setPassword] = useState<string>('')
+    const handleSubmit= () => {
+        setLogin(true)
+        setUserData({password:password, username: email})
+    }
 
     return (
         <div className='rounded shadow-lg p-3 mb-5 bg-white rounded float-right' style={{ width: '620px' }}>
@@ -14,7 +19,7 @@ export const LoginComponent = (props:any) => {
                 <h1 className='mb-4'>Log In</h1>
                 <div className="form-group" >
                     <label htmlFor="exampleInputEmail1" >Email</label>
-                    <input type="email" className={`${style.inputStyle} form-control` } onChange={(event:React.ChangeEvent<HTMLInputElement>) => setUserEmail(event.target.value)} id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Email" style={{ borderRadius: '20px', height: '42px' }} />
+                    <input type="email" className={`${style.inputStyle} form-control` } onChange={(event:React.ChangeEvent<HTMLInputElement>) => setEmail(event.target.value)} id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Your Email" style={{ borderRadius: '20px', height: '42px' }} />
                 </div>
                 <div className="form-group">
                     <label htmlFor="exampleInputPassword1">Password</label>
