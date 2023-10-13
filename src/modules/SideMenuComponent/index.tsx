@@ -7,10 +7,11 @@ import { IMenu } from './type'
 export const SideMenuComponent = () => {
 
     const [menu, setMenu] = useState<IMenu[]>([])
-    const { webDataNetsRequest } = useContext(GenericContext)
+    const { webDataNetsRequest, token } = useContext(GenericContext)
     const { setMenuSelected } = useContext(DashboardContext)
 
     useEffect(() => {
+        console.log(token)
         webDataNetsRequest('api/menu')
             .then((response: IMenu[]) => setMenu(response))
     }, [])
