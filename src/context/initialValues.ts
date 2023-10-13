@@ -2,8 +2,7 @@ export const initialValue = {
     token: '',
     setToken:() => { },
     setDeleteToken:() => { },
-    setUserEmail:() => { },
-    setPassword:() => { },
+    setUserData:() => { },
     setLogin: () => { },
     webDataNetsRequest: () => { return fetch('') },
 }

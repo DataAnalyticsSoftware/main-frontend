@@ -1,18 +1,15 @@
 import React from 'react'
 import { TopBarComponent } from './components/TopBarComponent';
-import { ContentComponent } from './components/ContentComponent';
 import PrincipalPageContextProvider from './context/PrincipalPageContext';
+import { ContentTextComponent } from './components/ContentTextComponent';
 
-export const PrincipalPage = (props:any) => {
+export const PrincipalPage = () => {
     return (
         <PrincipalPageContextProvider>
-            <div >
+            <div>
                 <TopBarComponent />
-                <ContentComponent />
+                <ContentTextComponent />
             </div>
         </PrincipalPageContextProvider>
     )
 }
-
-
-
