@@ -1,0 +1,15 @@
+{
+    "routes": [
+      {
+        "src": "*",
+        "methods": ["GET", "OPTIONS", "POST", "PUT"],
+        "headers": {
+          "Access-Control-Allow-Origin": "*",  
+          "Access-Control-Allow-Methods": "GET, OPTIONS, PUT, POST",
+          "Access-Control-Allow-Headers": "*", 
+          "Access-Control-Allow-Credentials": "true"
+        }
+      }
+    ]
+  }
+  
