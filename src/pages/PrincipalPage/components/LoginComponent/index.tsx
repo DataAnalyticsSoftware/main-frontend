@@ -1,5 +1,5 @@
 import React, { ChangeEventHandler, useContext, useState } from 'react'
-import { Button } from '../../../../components/Button/Button'
+import { Button } from '../../../../components/Button'
 import style from './styles.module.scss'
 import { GenericContext } from '../../../../context/GenericContext'
 

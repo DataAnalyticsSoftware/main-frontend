@@ -1,9 +1,20 @@
 import React, { useContext } from 'react'
 import { GenericContext } from '../../../../../context/GenericContext';
 import { CardInfo } from './CardInfo';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal'; 
+
 
 export const Card = ()  => {
-    const { data, setIdDataCollection, getIdCollection, token,setDataCollection } = useContext(GenericContext)
+    const { data, setIdDataCollection, getIdCollection, token, setDataCollection } = useContext(GenericContext)
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = (value: any) => {
+        setOpen(true);
+        callCollection(value)
+    }
+    const handleClose = () => setOpen(false);
     const callCollection = async (props: any) => {
         setIdDataCollection(props)
         setDataCollection([])
@@ -44,26 +55,18 @@ export const Card = ()  => {
                                 <h2 className='mt-2'>{value.id}</h2>
                                 <img  />
                                 <hr ></hr>
-                                <button onClick={() => callCollection(value.id)} type="button" className="btn btn-primary" data-toggle="modal" data-target={`#exampleModal-${value.id}`} >Edit</button>
-
-                                <div className="modal fade" id={`exampleModal-${value.id}`} data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                    <div className="modal-dialog">
-                                        <div className="modal-content">
-                                        <div className="modal-header">
-                                            <h1 className="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-                                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div className="modal-body">
+                                <button onClick={() => handleOpen(value.id)} type="button" className="btn btn-primary" data-toggle="modal" data-target={`#exampleModal-${value.id}`} >Edit</button>
+                                        <Modal
+                                            open={open}
+                                            onClose={handleClose}
+                                            aria-labelledby="parent-modal-title"
+                                            aria-describedby="parent-modal-description"
+                                            style={{backgroundColor:'white'}}
+                                                >
+                                            <Box sx={{width: 400 }}>
                                             <CardInfo/>
-                                        </div>
-                                        <div className="modal-footer">
-                                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" className="btn btn-primary">Understood</button>
-                                        </div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                            </Box>
+                                        </Modal>
                             </div>                                        
                         </>
                     )

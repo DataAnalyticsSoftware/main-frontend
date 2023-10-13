@@ -1,5 +1,5 @@
 import React, { useState,useEffect } from 'react'
-import { Button } from '../../../../components/Button/Button'
+import { Button } from '../../../../components/Button'
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';

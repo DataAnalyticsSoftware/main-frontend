@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Button } from "../../../../components/Button/Button";
+import { Button } from "../../../../components/Button";
 import { DashboardContext } from "../../context/DashboardContext";
 
 export const PricingTableComponentDashboard = (props:any) => {

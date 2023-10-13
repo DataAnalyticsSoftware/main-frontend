@@ -1,20 +1,28 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState,useCallback  } from 'react';
 import Papa, { ParseResult } from 'papaparse';
 import { GenericContext } from '../../../context/GenericContext';
+import { InputValidation } from '../../../components/InputValidation';
 
 interface CSVData {
   [key: string]: string;
 }
-
-const CSVViewer: React.FC = () => {
+interface FileDropZoneProps {
+  onFileDrop: (file: File) => void;
+}
+const CSVViewer: React.FC<FileDropZoneProps> = ({ onFileDrop }) => {
   const [csvData, setCsvData] = useState<CSVData[]>([]);
   const [csvHeaders, setCsvHeaders ] = useState<string[] | undefined>([])
-  const { token,setHasFetchedData }: any = useContext(GenericContext)
+  const { token, setHasFetchedData }: any = useContext(GenericContext)  
+  const [formSubmit, setFormSubmit] = useState(false);
+  const [title, setTitle] = useState<any>('Default');
+  const [description, setDescription] = useState<any>('');
 
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files && event.target.files[0];
-    if (file) {
-      Papa.parse(file, {
+  const handleDrop = useCallback(
+    (e: React.DragEvent) => {
+      e.preventDefault();
+      const file = e.dataTransfer.files && e.dataTransfer.files[0];
+      if (file) {
+        Papa.parse(file, {
         complete: (result: ParseResult<CSVData>) => {
           setCsvHeaders(result.meta.fields)
           setCsvData(result.data);
@@ -22,19 +30,21 @@ const CSVViewer: React.FC = () => {
         header: true,
         dynamicTyping: true,
       })
-    }
-  }
-
+        onFileDrop(file);
+      }
+    },
+    [onFileDrop]
+  );
   const handleFormSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+    setFormSubmit(true);   
     const dataToSend = {
-      name: 'Default',
+      name: title,
       headers: csvHeaders,
-      data: csvData
-
+      data: csvData,
+      description:description
     }
     try {
-      // Envía los datos CSV al servidor (aquí debes implementar la lógica para enviar los datos al backend)
       const response = await fetch('http://79.143.94.15:8001/api/data', {
         method: 'POST',
         mode: 'cors',
@@ -57,22 +67,46 @@ const CSVViewer: React.FC = () => {
     }
     setHasFetchedData(false)
   }
-
+  const handleTitleChange= (newTitle: string) => {
+    setTitle(newTitle);  
+  };
+  const handleDescriptionChange= (newDescription: string) => {
+    setDescription(newDescription);
+  };
   const handleCancelImport = () => {
-    // Limpia los datos CSV y la tabla
     setCsvData([])
     setCsvHeaders([])
   };
+    const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+  };
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 needs-validation">
       <form onSubmit={handleFormSubmit}>
-        <div className="form-group">
-          <input type="file" className="form-control-file" accept=".csv" onChange={handleFileChange} />
+        {csvData.length > 0 ?null:<div className="form-group">
+          <div
+            onDrop={handleDrop}
+            onDragOver={handleDragOver}
+            style={{
+            width: '100%',
+            height: '200px',
+            border: '2px dashed #ccc',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer',
+            
+          }}
+          >
+            <p>Arrastra y suelta un archivo CSV aquí o haz clic para seleccionar uno.</p>
         </div>
-        {csvData.length > 0 && (
+        </div>}
+        {csvData.length > 0 && (                  
           <div>
-            <table className="table table-striped table-responsive" style={{ height: '500px' }}>
+            <InputValidation onChange={handleTitleChange} title={'Title'} text={'Please provide a Title.'} styles={"col-md-4 position-relative"} type={"text"} required={'yes'} tooltip={"invalid-tooltip"} isValid={"invalid-feedback"} submit={formSubmit?false:null} />
+            <InputValidation onChange={handleDescriptionChange} title={'Description'} text={''} styles={"col-md-6 position-relative mt-2"} type={"text"} required={'no'} tooltip={"valid-tooltip"} isValid={"valid-feedback"} submit={formSubmit?true:null}  />
+            <table className="table table-striped table-responsive" style={{ height: '380px' }}>
               <thead>
                 <tr>
                   {Object.keys(csvData[0]).map((key) => (
@@ -97,7 +131,8 @@ const CSVViewer: React.FC = () => {
               <button type="button" className="btn btn-secondary ml-2" onClick={handleCancelImport}>
                 Cancelar Importación
               </button>
-            </div>
+              </div>
+          
           </div>
         )}
       </form>

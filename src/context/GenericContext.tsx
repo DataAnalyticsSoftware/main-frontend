@@ -74,7 +74,7 @@ export default function GenericContextProvider({ children }: any) {
         if (!hasFetchedData) {
             const fetchData = async () => {
                 try {
-                    const response = await fetch('http://79.143.94.15:8001/api/data', {
+                    const response = await fetch('http://79.143.94.15:8001/api/data_information', {
                         method: 'GET',
                         headers: {
                             Authorization: `Token ${token}`,

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { LoginComponent } from '../LoginComponent'
-import { Button } from '../../../../components/Button/Button'
+import { Button } from '../../../../components/Button'
 import { PricingTableComponent } from '../PricingTableComponent';
 import { BottomBarComponent } from '../BottomBarComponent';
 import { GenericContext } from '../../../../context/GenericContext';
