@@ -14,7 +14,7 @@ export default function GenericContextProvider({ children }: any) {
     const navigate = useNavigate()
     const [deleteToken, setDeleteToken] = useState(false)
     const [userData, setUserData] = useState<IUserData>({password: undefined, username: undefined})
-    const { webDataNetsRequest } = useGenericRequest(token)
+    const { webDataNetsRequest } = useGenericRequest(token, setToken)
 
     useLogin({webDataNetsRequest, userData, login, setToken, setLogin})
     

@@ -11,7 +11,6 @@ export const SideMenuComponent = () => {
     const { setMenuSelected } = useContext(DashboardContext)
 
     useEffect(() => {
-        console.log(token)
         webDataNetsRequest('api/menu')
             .then((response: IMenu[]) => setMenu(response))
     }, [])
