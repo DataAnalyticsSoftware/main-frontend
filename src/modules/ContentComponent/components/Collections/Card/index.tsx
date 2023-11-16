@@ -15,28 +15,25 @@ export const Card = ()  => {
         webDataNetsRequest('api/data_information')
             .then((response: any) => setData(response))
     }, [])
-
+    const callCollection = (id: string) => {
+        setDataCollection([])
+        webDataNetsRequest(`api/data/${id}`)
+            .then((response: any) => setDataCollection(response))        
+    }
     const handleOpen = (value: any) => {
         setOpen(true);
         callCollection(value)
     }
     const handleClose = () => setOpen(false);
-
-    const callCollection = (id: string) => {
-        setDataCollection([])
-        webDataNetsRequest(`api/data/${id}`)
-            .then((response: any) => setDataCollection(response) )
-    }
-
     return (
-        <div style={{ display: 'flex', width:'100%',justifyContent:'space-evenly',flexFlow:'wrap', maxHeight:'750px', overflow:'scroll' }}>           
+        <div key={Math.random()}  style={{ display: 'flex', width:'100%',justifyContent:'space-evenly',flexFlow:'wrap', maxHeight:'750px', overflow:'scroll' }}>           
             {
-                data?.map(value => {                   
+                data?.map(value => { 
                     return (
                         <>
-                            <div className='mr-5 mb-4'
+                            <div key={value.id} className='mr-5 mb-4'
                                 style={{ height: '300px', width: '250px', backgroundColor: 'red', borderRadius: '15px', textAlign: 'center', }} >
-                                <h2 className='mt-2'>{value.id}</h2>
+                                <h2 className='mt-2'>{value.name}</h2>
                                 <img  />
                                 <hr ></hr>
                                 <button onClick={() => handleOpen(value.id)} type="button" className="btn btn-primary" data-toggle="modal" data-target={`#exampleModal-${value.id}`} >Edit</button>
@@ -45,10 +42,11 @@ export const Card = ()  => {
                                             onClose={handleClose}
                                             aria-labelledby="parent-modal-title"
                                             aria-describedby="parent-modal-description"
-                                            style={{backgroundColor:'white'}}
+                                            style={{ backgroundColor: 'white' }}
+                                            sx={{ '& .MuiBackdrop-root': { backgroundColor: 'transparent' } }}
                                                 >
-                                            <Box sx={{width: 400 }}>
-                                            <CardInfo/>
+                                            <Box sx={{width: 'auto', height:'auto', backgroundColor:'white' }}>
+                                                <CardInfo dataCollection={dataCollection} valueName={value.name} />
                                             </Box>
                                         </Modal>
                             </div>                                        

@@ -16,7 +16,8 @@ export default function GenericContextProvider({ children }: any) {
     const [userData, setUserData] = useState<IUserData>({password: undefined, username: undefined})
     const { webDataNetsRequest } = useGenericRequest(token, setToken)
 
-    useLogin({webDataNetsRequest, userData, login, setToken, setLogin})
+    useLogin({ webDataNetsRequest, userData, login, setToken, setLogin })
+    
     
     useTokenStorage({setToken, navigate, token, deleteToken, setDeleteToken})
 

@@ -15,7 +15,9 @@ export default function PrincipalPageContextProvider({ children }: any) {
 
     useEffect(() => {
         getInformation()
-         .then( response =>{
+            .then(response => {
+             console.log(response);
+             
             setData(response)
         })
     }, [])

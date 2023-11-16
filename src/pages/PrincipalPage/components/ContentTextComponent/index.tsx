@@ -10,6 +10,8 @@ export const ContentTextComponent = () => {
     return (
         <>
             <div className="container-fluid" style={{ marginTop: '150px', marginBottom: '120px', paddingRight: '80px', paddingLeft: '80px' }}  >
+                {console.log(data)
+                }
                 {data?.map((dataInformation: IPrincipalPageData, index: number) =>
                         COMPONENTS_INTERFACE[dataInformation.component](dataInformation, index)
                 )}
