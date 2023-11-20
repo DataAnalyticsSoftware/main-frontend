@@ -18,5 +18,7 @@ export interface DashboardContextValue {
     displayCollection:string,
     setDisplayCollection: React.Dispatch<React.SetStateAction<string>>,
     collectionData:any[],
-    setCollectionData:React.Dispatch<React.SetStateAction<any[]>>
+    setCollectionData:React.Dispatch<React.SetStateAction<any[]>>,
+    modalCreateCollection:boolean,
+    setModalCreateCollection:React.Dispatch<React.SetStateAction<boolean>>
   };

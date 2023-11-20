@@ -13,6 +13,8 @@ export default function DashboardContextProvider({ children }: any) {
   const [displayGraphic, setDisplayGraphic] = useState<string>('Vertical Bars')
   const [displayCollection,setDisplayCollection] = useState<string>('collection 1')
   const [collectionData, setCollectionData] = useState<any[]>([])
+  const [modalCreateCollection, setModalCreateCollection] = useState<boolean>(false)
+
   
   useEffect(() =>{
     setPricing(pricingTable);      
@@ -30,7 +32,9 @@ export default function DashboardContextProvider({ children }: any) {
     displayCollection,
     setDisplayCollection,
     collectionData,
-    setCollectionData
+    setCollectionData,
+    modalCreateCollection,
+    setModalCreateCollection
   }
 
   return (
