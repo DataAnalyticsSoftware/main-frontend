@@ -35,7 +35,7 @@ export const AddCollection = () => {
                 aria-describedby="modal-modal-description"
                 >
                 <Box sx={style}>
-               <FormCollection/>
+                    <FormCollection/>
                 </Box>
             </Modal>
         </div>
