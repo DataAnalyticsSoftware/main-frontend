@@ -12,10 +12,9 @@ export const AddCollectionProvider = ({children}: any) => {
     const { webDataNetsRequest } = useContext(GenericContext)
     const [description, setDescription] = useState<string>('')
     const [success, setSuccess] = useState<string | undefined>(undefined)
+    const [dataId, setDataId] = useState<any>([])
 
     const handleFormSubmit = async (event: React.FormEvent) => {
-        console.log('entro');
-        
         event.preventDefault()
         if(!name || name.trim() === '') {
           setError('The name is mandatory field.')
@@ -25,16 +24,26 @@ export const AddCollectionProvider = ({children}: any) => {
             name: name,
             description: description,
           }
-          console.log(dataToSend,'data');
           
+          webDataNetsRequest('api/collection', JSON.stringify(dataToSend), 'POST')
+          .then((response: any) => {
+            
+            setName('')
+            setDataId(response)
+            console.log('response',dataId);
+            setSuccess('Collection created succesfully!.')
+          })
+
+            console.log(dataId,'dataId');
+
+           
+         webDataNetsRequest('api/relational_collection', JSON.stringify(dataId), 'POST')
+          .then((response: any) => {   
+              setName('')
+              setSuccess('Collection created succesfully!.')
+          })
           
-         webDataNetsRequest('api/collection', JSON.stringify(dataToSend), 'POST')
-            .then((response: any) => {
-                console.log(response);
-                
-                setName('')
-                setSuccess('Collection created succesfully!.')
-            })
+
       }
 
 
