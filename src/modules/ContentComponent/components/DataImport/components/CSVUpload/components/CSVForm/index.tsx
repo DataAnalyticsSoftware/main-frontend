@@ -2,7 +2,8 @@ import React, { useContext } from 'react'
 import { CSVContext } from '../../context/CSVContext'
 import { InputValidation } from '../../../../../../../../components/InputValidation'
 export const CSVForm = () => {
-    const { handleDragOver,handleDrop, setName,setDescription,  success } = useContext(CSVContext)
+    const { handleDragOver,handleDrop, setName,setDescription,  success, setFileDropped,fileDropped } = useContext(CSVContext)
+    
     return (
         <>
             <div style={{marginBottom: '50px'}}>
@@ -10,13 +11,14 @@ export const CSVForm = () => {
                 <InputValidation onChange={setDescription} title={'Description'} text={''} styles={"col-md-6 position-relative mt-2"} type={"text"} required={'no'} tooltip={"valid-tooltip"} isValid={"valid-feedback"} submit={true}  />
             </div>
             <div className="form-group">
-          <div
+            {fileDropped?'':<div
             onDrop={handleDrop}
             onDragOver={handleDragOver}
             style={{ width: '100%', height: '200px', border: '2px dashed #ccc', display: 'flex', alignItems: 'center', justifyContent: 'center',  cursor: 'pointer' }}
           >
             <p>Arrastra y suelta un archivo CSV aquí o haz clic para seleccionar uno.</p>
-        </div>
+        </div>}
+         
         </div>
             {success && <span style={{color: 'green'}}>{success}</span>}
         </>

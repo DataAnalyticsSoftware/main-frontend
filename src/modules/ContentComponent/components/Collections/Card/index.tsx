@@ -13,7 +13,10 @@ export const Card = ()  => {
     const [data, setData] = useState<any[]>([])
     useEffect(() => {
         webDataNetsRequest('api/data_information')
-            .then((response: any) => setData(response))
+            .then((response: any) =>{
+                console.log(response,'response');
+                
+                setData(response)} )
     }, [])
 
     const handleOpen = (value: any) => {
@@ -25,7 +28,10 @@ export const Card = ()  => {
     const callCollection = (id: string) => {
         setDataCollection([])
         webDataNetsRequest(`api/data/${id}`)
-            .then((response: any) => setDataCollection(response) )
+            .then((response: any) => {
+                console.log(response,'response');   
+                setDataCollection(response) 
+            })
     }
 
     return (
@@ -48,7 +54,7 @@ export const Card = ()  => {
                                             style={{backgroundColor:'white'}}
                                                 >
                                             <Box sx={{width: 400 }}>
-                                            <CardInfo/>
+                                                <CardInfo dataCollection={dataCollection}/>
                                             </Box>
                                         </Modal>
                             </div>                                        

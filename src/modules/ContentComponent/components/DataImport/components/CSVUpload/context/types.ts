@@ -11,5 +11,7 @@ export interface ICSVContextProps {
     setName: React.Dispatch<React.SetStateAction<string>>
     setDescription: React.Dispatch<React.SetStateAction<string>>
     success: string | undefined
-    handleDragOver: any
+    handleDragOver: any,
+    fileDropped:boolean
+    setFileDropped:React.Dispatch<React.SetStateAction<boolean>>
 }

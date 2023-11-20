@@ -14,6 +14,7 @@ export const CSVContextProvider = ({children}: any) => {
     const [description, setDescription] = useState<string>('')
     const [error, setError] = useState<string | undefined>(undefined)
     const [success, setSuccess] = useState<string | undefined>(undefined)
+    const [fileDropped, setFileDropped] = useState<boolean>(false)
     const { webDataNetsRequest } = useContext(GenericContext)
 
     const handleFileDrop = useCallback((file: File) => {
@@ -25,6 +26,7 @@ export const CSVContextProvider = ({children}: any) => {
 
     const handleDrop = useCallback(
       (e: React.DragEvent) => {
+        setFileDropped(true)
         e.preventDefault();
         const file = e.dataTransfer.files && e.dataTransfer.files[0];
         if (file) {
@@ -48,6 +50,7 @@ export const CSVContextProvider = ({children}: any) => {
       },[name])
     
       const handleFormSubmit = async (event: React.FormEvent) => {
+        setFileDropped(false)
         event.preventDefault()
         if(!name || name.trim() === '') {
           setError('The name is mandatory field.')
@@ -70,6 +73,7 @@ export const CSVContextProvider = ({children}: any) => {
       }
     
       const handleCancelImport = () => {
+        setFileDropped(false)
         setCsvData([])
         setCsvHeaders([])
       }
@@ -83,7 +87,9 @@ export const CSVContextProvider = ({children}: any) => {
         csvData,
         setName,
         setDescription,
-        success
+        success,
+        fileDropped, 
+        setFileDropped
       }
     
       return (
