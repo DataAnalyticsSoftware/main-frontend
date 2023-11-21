@@ -14,7 +14,7 @@ export const ContentComponent = () => {
                             <h2 style={{ marginLeft: 'auto' }}>{menuSelected.title}</h2>
                             <p style={{ marginLeft: 'auto' }}>{menuSelected.text}</p>
                         </div>
-                       { menuSelected.name== 'Collections' ? <AddCollectionProvider><AddCollection/></AddCollectionProvider>  :'' }   
+                       { menuSelected.name === 'Collections' &&  <AddCollectionProvider><AddCollection/></AddCollectionProvider>  }   
                     </div>
             {renderPage(menuSelected.route)}
         </div>

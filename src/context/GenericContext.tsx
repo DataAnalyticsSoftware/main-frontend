@@ -11,14 +11,13 @@ export const GenericContext = createContext<GenericContextValue>(initialValue)
 export default function GenericContextProvider({ children }: any) {
     const [login, setLogin] = useState<boolean>(false)
     const [token, setToken] = useState(localStorage.getItem('access_token')) 
-    const navigate = useNavigate()
     const [deleteToken, setDeleteToken] = useState(false)
     const [userData, setUserData] = useState<IUserData>({password: undefined, username: undefined})
-    const { webDataNetsRequest } = useGenericRequest(token)
+    const { webDataNetsRequest } = useGenericRequest(token, setToken)
 
     useLogin({webDataNetsRequest, userData, login, setToken, setLogin})
     
-    useTokenStorage({setToken, navigate, token, deleteToken, setDeleteToken})
+    useTokenStorage({setToken, token, deleteToken, setDeleteToken})
 
     const contextValue: GenericContextValue = {
         token,

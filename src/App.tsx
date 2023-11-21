@@ -13,18 +13,16 @@ import { UserProfile } from './pages/UserProfile'
 
 function App() {
   return (
-    <Router  >
-    <React.StrictMode>
-      <div className="App">
-        <GenericContextProvider>
-          <Routes>
-            <Route path='/' element={<PrincipalPage/>} />
-            <Route path='/dashboards' element={<DashboardContainer />} />
-            <Route path='/myAccount' element={<UserProfile/>} />
-          </Routes>
-        </GenericContextProvider>
-      </div>
-    </React.StrictMode>
+    <Router>
+        <div className="App">
+          <GenericContextProvider>
+            <Routes>
+              <Route path='/' element={<PrincipalPage/>} />
+              <Route path='/dashboards' element={<DashboardContainer />} />
+              <Route path='/myAccount' element={<UserProfile/>} />
+            </Routes>
+          </GenericContextProvider>
+        </div>
     </Router>
   );
 }

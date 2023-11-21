@@ -5,4 +5,6 @@ export interface IAddCollection {
     setName: React.Dispatch<React.SetStateAction<string>>
     setDescription: React.Dispatch<React.SetStateAction<string>>
     success: string | undefined
+    dataSelected: any 
+    setDataSelected: any
 }

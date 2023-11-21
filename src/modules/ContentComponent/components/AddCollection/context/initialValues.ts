@@ -5,5 +5,7 @@ export const initialValue: IAddCollection = {
     handleFormSubmit: () => fetch(''),
     setName: () => {},
     setDescription: () => {},
-    success: undefined
+    success: undefined,
+    dataSelected: [],
+    setDataSelected: () => {},
 }
