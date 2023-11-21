@@ -25,7 +25,10 @@ export const Card = ()  => {
     const callCollection = (id: string) => {
         setDataCollection([])
         webDataNetsRequest(`api/data/${id}`)
-            .then((response: any) => setDataCollection(response) )
+            .then((response: any) => {
+                console.log(response,'response');   
+                setDataCollection(response) 
+            })
     }
 /**
  * <button onClick={() => handleOpen(value.id)} type="button" className="btn btn-primary" data-toggle="modal" data-target={`#exampleModal-${value.id}`} >Edit</button>
@@ -37,7 +40,7 @@ export const Card = ()  => {
                                             style={{backgroundColor:'white'}}
                                                 >
                                             <Box sx={{width: 400 }}>
-                                            <CardInfo/>
+                                                <CardInfo dataCollection={dataCollection}/>
                                             </Box>
                                         </Modal>
  */
