@@ -3,7 +3,6 @@ import { IUserData } from "../context/type"
 
 export interface ITokenStorageProps {
     setToken:React.Dispatch<React.SetStateAction<string | null>>
-    navigate:NavigateFunction
     token: string | null
     deleteToken: boolean
     setDeleteToken: React.Dispatch<React.SetStateAction<boolean>>

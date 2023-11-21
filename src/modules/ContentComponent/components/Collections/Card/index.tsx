@@ -10,36 +10,28 @@ export const Card = ()  => {
     const { webDataNetsRequest } = useContext(GenericContext)
     const [dataCollection, setDataCollection] = useState<any>(null)
     const [open, setOpen] = React.useState(false);
-    const [data, setData] = useState<any[]>([])
+    const [collections, setCollections] = useState<any[]>([])
     useEffect(() => {
-        webDataNetsRequest('api/data_information')
-            .then((response: any) => setData(response))
+        webDataNetsRequest('api/collection')
+            .then((response: any) => setCollections(response))
     }, [])
 
     const handleOpen = (value: any) => {
         setOpen(true);
         callCollection(value)
     }
-    const handleClose = () => setOpen(false);
+    const handleClose = () => setOpen(false)
 
     const callCollection = (id: string) => {
         setDataCollection([])
         webDataNetsRequest(`api/data/${id}`)
-            .then((response: any) => setDataCollection(response) )
+            .then((response: any) => {
+                console.log(response,'response');   
+                setDataCollection(response) 
+            })
     }
-
-    return (
-        <div style={{ display: 'flex', width:'100%',justifyContent:'space-evenly',flexFlow:'wrap', maxHeight:'750px', overflow:'scroll' }}>           
-            {
-                data?.map(value => {                   
-                    return (
-                        <>
-                            <div className='mr-5 mb-4'
-                                style={{ height: '300px', width: '250px', backgroundColor: 'red', borderRadius: '15px', textAlign: 'center', }} >
-                                <h2 className='mt-2'>{value.id}</h2>
-                                <img  />
-                                <hr ></hr>
-                                <button onClick={() => handleOpen(value.id)} type="button" className="btn btn-primary" data-toggle="modal" data-target={`#exampleModal-${value.id}`} >Edit</button>
+/**
+ * <button onClick={() => handleOpen(value.id)} type="button" className="btn btn-primary" data-toggle="modal" data-target={`#exampleModal-${value.id}`} >Edit</button>
                                         <Modal
                                             open={open}
                                             onClose={handleClose}
@@ -48,14 +40,33 @@ export const Card = ()  => {
                                             style={{backgroundColor:'white'}}
                                                 >
                                             <Box sx={{width: 400 }}>
-                                            <CardInfo/>
+                                                <CardInfo dataCollection={dataCollection}/>
                                             </Box>
                                         </Modal>
+ */
+    return (
+        <div style={{ display: 'flex', width:'100%',justifyContent:'space-evenly',flexFlow:'wrap' }}>  
+            {
+                collections?.map(value => {                   
+                    return (
+                        <>
+                            <div className="flex justify-between gap-x-6 py-5" style={{display:'flex', justifyContent: 'space-between', gap:'20px'}}>
+                                <div className="flex min-w-0 gap-x-4" style={{display: 'flex'}}>
+                                    <div className='w-14 h-14 relative' style={{width: '50px',height: '50px', position:'relative'}}>
+                                        <img className="w-14 h-14" style={{width: '50px',height: '50px'}} src="/folder.png" alt=""/>
+                                    </div>
+                                    <div className="min-w-0 flex-auto" style={{display: 'flex', flexDirection: 'column'}}>
+                                        <span className="text-sm font-semibold leading-6 text-gray-900">{value.name}</span>
+                                        <span className="mt-1 truncate text-xs leading-5 text-gray-500">descripcion</span>
+                                    </div>
+                                </div>
+                                <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+                                    <i className="bi bi-pencil-square"></i>
+                                </div>
                             </div>                                        
                         </>
-                    )
-                    }) 
-            }    
-        </div>
-    )
+                        )
+                    })
+                } 
+        </div>)
 }

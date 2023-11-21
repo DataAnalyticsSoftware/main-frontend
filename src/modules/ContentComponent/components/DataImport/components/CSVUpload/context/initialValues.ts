@@ -9,5 +9,7 @@ export const initialValue: ICSVContextProps = {
     handleFormSubmit: () => fetch(''),
     setName: () => {},
     setDescription: () => {},
-    success: undefined
+    success: undefined,
+    fileDropped:false, 
+    setFileDropped:() => {}
 }

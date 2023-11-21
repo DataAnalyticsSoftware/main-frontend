@@ -17,5 +17,7 @@ export const initialValues = {
     displayCollection:'',
     setDisplayCollection: () => { },
     collectionData:[],
-    setCollectionData: () => { }
+    setCollectionData: () => { },
+    modalCreateCollection:false, 
+    setModalCreateCollection:() => { }
   }
