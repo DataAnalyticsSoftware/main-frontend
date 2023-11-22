@@ -43,7 +43,7 @@ export const AddCollectionProvider = ({children}: any) => {
         
         //AQUI NO DEBERIA SER DE 0 PERO EL BACK TODAVIA NO ESTA PREPARADO PARA ESTA CALL :D
         let dataToSend = {
-          data_information_id: dataSelected[0],
+          multiple_data_information_id: dataSelected,
           collection_id: collectionID
         }
 

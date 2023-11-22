@@ -5,6 +5,7 @@ import { DataImport } from './components/DataImport'
 import { Collections } from './components/Collections'
 import { PricingTableComponentDashboard } from './components/PricingTable'
 import { Support } from './components/Support'
+import { DataManagement } from './components/DataManagement'
 
 export const renderPage = (route: string): JSX.Element => {
     const RENDER_SECTIONS = {
@@ -15,6 +16,7 @@ export const renderPage = (route: string): JSX.Element => {
         [ROUTES_DASHBOARD.UPGRADE]: <PricingTableComponentDashboard />,
         [ROUTES_DASHBOARD.SUPPORT]: <Support />,
         [ROUTES_DASHBOARD.ABOUT]: <div>About</div>,
+        [ROUTES_DASHBOARD.DATAMANAGEMENT]: <DataManagement/>
 
     }
 

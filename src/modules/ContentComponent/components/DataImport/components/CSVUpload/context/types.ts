@@ -14,4 +14,5 @@ export interface ICSVContextProps {
     handleDragOver: any,
     fileDropped:boolean
     setFileDropped:React.Dispatch<React.SetStateAction<boolean>>
+    handleClickDrop: any
 }

@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useEffect, useState } from 'react'
+import React, { ChangeEventHandler, createContext, useCallback, useContext, useEffect, useState } from 'react'
 import { CSVData, ICSVContextProps } from './types';
 import { GenericContext } from '../../../../../../../context/GenericContext';
 import Papa, { ParseResult } from 'papaparse';
@@ -24,25 +24,39 @@ export const CSVContextProvider = ({children}: any) => {
       e.preventDefault();
     };
 
+    const handleClickDrop = useCallback(
+      (e: React.ChangeEvent<HTMLInputElement>) => {
+        setFileDropped(true)
+        e.preventDefault()
+        const file = e.target.files && e.target.files[0];
+        parseFile(file)
+      },
+      [handleFileDrop]
+    )
+
     const handleDrop = useCallback(
       (e: React.DragEvent) => {
         setFileDropped(true)
         e.preventDefault();
         const file = e.dataTransfer.files && e.dataTransfer.files[0];
-        if (file) {
-          Papa.parse(file, {
-          complete: (result: ParseResult<CSVData>) => {
-            setCsvHeaders(result.meta.fields)
-            setCsvData(result.data);
-          },
-          header: true,
-          dynamicTyping: true,
-        })
-          handleFileDrop(file);
-        }
+        parseFile(file)
       },
       [handleFileDrop]
-    );
+    )
+
+    const parseFile = (file: File | null) => {
+      if (file) {
+        Papa.parse(file, {
+        complete: (result: ParseResult<CSVData>) => {
+          setCsvHeaders(result.meta.fields)
+          setCsvData(result.data);
+        },
+        header: true,
+        dynamicTyping: true,
+      })
+        handleFileDrop(file);
+      }
+    }
     
       useEffect(()=>{
         if(name && name.trim() !== '')
@@ -89,7 +103,8 @@ export const CSVContextProvider = ({children}: any) => {
         setDescription,
         success,
         fileDropped, 
-        setFileDropped
+        setFileDropped,
+        handleClickDrop
       }
     
       return (
