@@ -3,30 +3,22 @@ import React, { useContext, useEffect, useState } from 'react'
 import { GenericContext } from '../../../../context/GenericContext'
 import Modal  from '@mui/material/Modal'
 import Box from '@mui/material/Box'
-import { CardInfo } from '../Collections/Card/CardInfo'
+import { CardInfo } from './components/CardInfo'
+import TableDataContextProvider from './context/TableDataContext'
 
 export const DataManagement = () => {
     const { webDataNetsRequest } = useContext(GenericContext)
     const [data, setData] = useState<any[]>([])
     const [open, setOpen] = useState<boolean>(false)
-    const [dataCollection, setDataCollection] = useState<any>(null)
-
+    const [dataId, setDataId] = useState<string>('')
     useEffect(() => {
         webDataNetsRequest('api/data_information').then(res => setData(res))
     }, [])
 
-    const callCollection = (id: string) => {
-        setDataCollection([])
-        webDataNetsRequest(`api/data/${id}`)
-            .then((response: any) => {
-                console.log(response,'response');   
-                setDataCollection(response) 
-            })
-    }
 
     const handleOpen = (data_id: string) => {
+        setDataId(data_id)
         setOpen(true)
-        callCollection(data_id)
     }
     const columns: GridColDef[] = [
         { field: 'id', headerName: 'ID', width: 150 },
@@ -58,7 +50,9 @@ export const DataManagement = () => {
                 aria-describedby="parent-modal-description"
                 style={{backgroundColor:'white'}}>
                     <Box>
-                        <CardInfo dataCollection={dataCollection}/>
+                        <TableDataContextProvider>
+                            <CardInfo dataId={dataId}/>
+                        </TableDataContextProvider>
                     </Box>
             </Modal>
         </>

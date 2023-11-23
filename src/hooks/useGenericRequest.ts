@@ -13,7 +13,7 @@ export const useGenericRequest = (token: string | null, setToken: React.Dispatch
                 ...authorization,
                 ...customHeaders
                 },
-                body,
+                body
             }).then(response => {
                 if(response.status === 200)
                     return response.json()
@@ -27,7 +27,8 @@ export const useGenericRequest = (token: string | null, setToken: React.Dispatch
                             }
                         })
                 })
-            .catch((error) =>
+            .catch((error) =>{
+                console.error(error)
                 refreshToken(url, authorization)
                     .then((res: any) => {
                         if(res?.token){
@@ -36,6 +37,7 @@ export const useGenericRequest = (token: string | null, setToken: React.Dispatch
                             return webDataNetsRequest(route, body, method, customHeaders, res.token)
                         }
                     })
+                }
             )
     }
 
