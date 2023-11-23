@@ -88,7 +88,7 @@ export const CardInfo = ({ dataId }: any) => {
           id_to_modify: newRow.id,
           data_to_modify: newRow
       }
-      webDataNetsRequest(`api/data/${dataId}/`, JSON.stringify(dataToSend), 'PUT')
+      webDataNetsRequest(`api/data/${dataId}`, JSON.stringify(dataToSend), 'PUT')
         .then(res => console.log(res))
         .catch(res => console.log(res))
         .finally(() => { setRowIdToSave(null); setPaginationModel({...paginationModel})} )
