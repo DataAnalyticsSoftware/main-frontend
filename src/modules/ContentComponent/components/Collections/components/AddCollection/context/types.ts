@@ -7,4 +7,8 @@ export interface IAddCollection {
     success: string | undefined
     dataSelected: any 
     setDataSelected: any
+    id: string | null
+    setId: React.Dispatch<React.SetStateAction<string | null>>
+    name: string
+    description: string
 }

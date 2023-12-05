@@ -8,4 +8,8 @@ export const initialValue: IAddCollection = {
     success: undefined,
     dataSelected: [],
     setDataSelected: () => {},
+    id: '',
+    setId: () => {},
+    description: '',
+    name: ''
 }

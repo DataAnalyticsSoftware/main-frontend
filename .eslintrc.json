@@ -1,10 +1,17 @@
 {
-  "overrides": [
+    "parser": "@babel/eslint-parser",
+    "overrides": [
     {
-        "files": ["*.tsx","ts"],
+        "files": ["*.tsx","ts", ".jsx"],
         "rules": {
             "no-undef": "off"
         }
     }
-]
+    ],
+    "parserOptions": {
+        "requireConfigFile": false,
+        "babelOptions": {
+            "presets": ["@babel/preset-react", "@babel/preset-typescript"]
+         }
+      }
 } 

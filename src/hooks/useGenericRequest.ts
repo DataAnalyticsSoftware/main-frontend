@@ -1,7 +1,7 @@
 
 export const useGenericRequest = (token: string | null, setToken: React.Dispatch<React.SetStateAction<string | null>>) => {
 
-    const webDataNetsRequest = (route: string, body?: BodyInit | null | undefined, method: 'POST' | 'GET' | 'PUT' = 'GET', customHeaders?: HeadersInit | undefined, newToken?: string | null): Promise<any> =>{
+    const webDataNetsRequest = (route: string, body?: BodyInit | null | undefined, method: 'POST' | 'GET' | 'PUT' | 'DELETE' = 'GET', customHeaders?: HeadersInit | undefined, newToken?: string | null): Promise<any> =>{
         
         const url = process.env.REACT_APP_BACKEND_ENPDOINT
         const authorization: HeadersInit | undefined = token && {'Authorization' : `Token ${newToken || token}`} || undefined

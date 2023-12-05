@@ -8,7 +8,7 @@ export interface GenericContextValue{
 }
 
 
-export interface IWebDataNets {(route: string, body?: BodyInit | null | undefined, method?: "POST" | "GET" | "PUT" | undefined, customHeaders?: HeadersInit | undefined): Promise<any>}
+export interface IWebDataNets {(route: string, body?: BodyInit | null | undefined, method?: "POST" | "GET" | "PUT" | "DELETE" | undefined, customHeaders?: HeadersInit | undefined): Promise<any>}
 
 export interface IUserData {
     username: string | undefined

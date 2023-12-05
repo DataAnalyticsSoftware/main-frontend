@@ -1,6 +1,5 @@
 // Importa las librerías y componentes necesarios
 import React, { useContext, useEffect, useState } from 'react';
-import Papa from 'papaparse';
 import { Box, IconButton, Paper, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import {
@@ -70,18 +69,7 @@ export const CardInfo = ({ dataId }: any) => {
     }
   }
 
-  const handleCancelClick = (id: GridRowId) => () => {
-    setRowModesModel({
-      ...rowModesModel,
-      [id]: { mode: GridRowModes.View, ignoreModifications: true },
-    });
-
-    const editedRow = dataCollection.find((dataCollection: any) => dataCollection.id === id);
-    if (editedRow!.isNew) {
-      setDataCollection((dataCollection: any) => dataCollection.filter((dataCollection: any) => dataCollection.id !== id));
-    }
-  }
-
+  
   const processRowUpdate = (newRow: GridRowModel) => {
     if(newRow.id === rowIdToSave){
       let dataToSend = {
@@ -142,7 +130,7 @@ export const CardInfo = ({ dataId }: any) => {
             rowModesModel={rowModesModel}
             columns={columns}
             checkboxSelection
-            isCellEditable={() => true} // Todas las celdas son editables
+            isCellEditable={() => true}
             processRowUpdate={processRowUpdate}
             slotProps={{
               toolbar: { setDataCollection, setRowModesModel },

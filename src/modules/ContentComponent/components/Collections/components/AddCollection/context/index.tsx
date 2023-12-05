@@ -1,20 +1,21 @@
-import React, { createContext, useCallback, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 import { IAddCollection } from './types';
 import { initialValue } from './initialValues';
-import { GenericContext } from '../../../../../context/GenericContext';
+import { GenericContext } from '../../../../../../../context/GenericContext';
+import { CollectionContext } from '../../../context/CollectionContext';
 
 export const AddCollectionContext = createContext<IAddCollection>(initialValue);
 
 
-export const AddCollectionProvider = ({children}: any) => {
-    const [name, setName] = useState<string>('')
-    const [error, setError] = useState<string | undefined>(undefined)
+export const AddCollectionProvider = ({ children }: any) => {
+    const [ name, setName ] = useState<string>('')
+    const [ id, setId ] = useState<string | null>(null)
+    const [ error, setError ] = useState<string | undefined>(undefined)
     const { webDataNetsRequest } = useContext(GenericContext)
-    const [description, setDescription] = useState<string>('')
-    const [success, setSuccess] = useState<string | undefined>(undefined)
-    const [dataId, setDataId] = useState<any>([])
-     const [ dataSelected, setDataSelected ] = useState<any[]>([])
-
+    const [ description, setDescription ] = useState<string>('')
+    const [ success, setSuccess ] = useState<string | undefined>(undefined)
+    const [ dataSelected, setDataSelected ] = useState<any[]>([])
+    const { setSearch } = useContext(CollectionContext)
     const handleFormSubmit = async (event: React.FormEvent) => {
         event.preventDefault()
         
@@ -23,34 +24,30 @@ export const AddCollectionProvider = ({children}: any) => {
           return
         }
           const dataToSend = {
+            id: !!id ? id : undefined,
             name: name,
-            description: description,
+            description: description
           }
-          
-          //PRIMERO SE CREA LA COLECCION
-
-          webDataNetsRequest('api/collection', JSON.stringify(dataToSend), 'POST')
+          const mehthod = !!id ? 'PUT' : 'POST'
+          webDataNetsRequest('api/collection', JSON.stringify(dataToSend), mehthod)
           .then((response: any) => {
             setName('')
-            setDataId(response)
-            console.log('response',dataId);
-            //UNA VEZ DENTRO SE LLAMA A LA OTRA LLAMADA, YA QUE SI NO SE REALIZAN DE FORMA SINCRONA Y NO ACTUALIZA LOS DATOS
             createDataRelation(response)
-          })
+          }).then(() => setSearch(true))
       }
 
       const createDataRelation = (collectionID: string) => {
-        
-        //AQUI NO DEBERIA SER DE 0 PERO EL BACK TODAVIA NO ESTA PREPARADO PARA ESTA CALL :D
+        if(dataSelected.length === 0 && !id) return
         let dataToSend = {
-          multiple_data_information_id: dataSelected,
+          multiple_data_information_id: dataSelected || [],
           collection_id: collectionID
         }
 
         webDataNetsRequest('api/relational_collection', JSON.stringify(dataToSend), 'POST')
-        .then((response: any) => {   
+        .then(() => {   
             setName('')
             setSuccess('Collection created succesfully!.')
+            setSearch(true)
         })
       }
 
@@ -59,10 +56,14 @@ export const AddCollectionProvider = ({children}: any) => {
         handleFormSubmit,
         error,
         setName,
+        name,
         setDescription,
+        description,
         success,
         dataSelected, 
-        setDataSelected
+        setDataSelected,
+        id,
+        setId
       }
 
       return (
