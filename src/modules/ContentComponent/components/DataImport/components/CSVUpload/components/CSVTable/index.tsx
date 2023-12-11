@@ -7,7 +7,8 @@ export const CSVTable = () : JSX.Element=> {
   if(csvData.length === 0) return <></>
    return (
         <div>
-          <table className="table table-striped table-responsive" style={{ height: '500px' }}>
+          
+          {/**<table className="table table-striped table-responsive" style={{ height: '500px' }}>
             <thead>
               <tr>
                 {Object.keys(csvData[0]).map((key) => (
@@ -24,7 +25,7 @@ export const CSVTable = () : JSX.Element=> {
                 </tr>
               ))}
             </tbody>
-          </table>
+                  </table>**/}
           <div className="d-flex justify-content-end float-right mt-2">
             <button type="submit" className="btn btn-primary">
               Enviar CSV al servidor

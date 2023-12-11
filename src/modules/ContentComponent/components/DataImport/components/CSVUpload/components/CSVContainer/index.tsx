@@ -10,6 +10,6 @@ export const CSVContainer = () => {
     return <form onSubmit={handleFormSubmit}>
                 <CSVForm />
                 <br />
-                <CSVTable />
+                 <CSVTable /> 
             </form>
 }

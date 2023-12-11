@@ -48,6 +48,7 @@ export const CSVContextProvider = ({children}: any) => {
       if (file) {
         Papa.parse(file, {
         complete: (result: ParseResult<CSVData>) => {
+          console.log(result.meta.fields)
           setCsvHeaders(result.meta.fields)
           setCsvData(result.data);
         },
