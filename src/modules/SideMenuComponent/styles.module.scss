@@ -1,11 +1,22 @@
 
+.list_item{
+    border-radius: 6px !important; 
+}
 
-.nav-link i{
-    transition:all 1s;
+.list_item:hover {
+    background-color: #4e46e537 !important;
 }
-.nav-link:hover i{
-    transform:rotate(360deg);
+
+.list_item_selected{
+    background-color: #4e46e537 !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
 }
-.nav-pills .nav-link:hover{
-    color:blue !important
+
+.list_text_selected {
+    color: #4F46E5 !important;
+}
+
+.list_text {
+    color: #D4D4D4 !important;
 }

@@ -11,7 +11,7 @@ export const DashboardContainer = (props:any) => {
                 <div className="container-fluid">
                     <div className="row">
                         <SideMenuComponent />
-                        <div className="col offset-3" style={{ backgroundColor: '#ededed', height: '100vh', width: '100vh' }} id="main">
+                        <div style={{ backgroundColor: '#ededed', height: '100vh', width: 'calc( 100% - 201px )', marginLeft: '201px' }} id="main">
                             <TopBarDashboardPage />
                             <ContentComponent />
                         </div>
