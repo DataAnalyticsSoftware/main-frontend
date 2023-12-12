@@ -3,3 +3,23 @@
     background-color: #D9D9D980;
     height: 68px;
 }
+
+.background_image_style{
+    width: 219%;
+    left: -660px;
+    top: -111px;
+    position: absolute;
+    height: 241%;
+}
+
+.card_login{
+    position: absolute;
+    z-index: 1;
+    width: 530px;
+    height: 530px;
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    flex-direction: column;
+}

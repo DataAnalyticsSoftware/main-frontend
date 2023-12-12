@@ -4,7 +4,7 @@ import ScrollToElementButton from '../../../../utils/index';
 
 export const TopBarComponent = (props:any) => {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light mr-auto align-middle">
+        <nav className="navbar navbar-expand-lg navbar-light mr-auto align-middle" style={{position: 'absolute'}}>
             <a className="navbar-brand " style={{ marginLeft: '64px' }} href="#">SOFTWARE DEV</a>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
