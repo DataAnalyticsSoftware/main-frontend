@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '../../../../components/Button'
 import ScrollToElementButton from '../../../../utils/index';
+import { RegistrationModal } from '../SignUpComponent';
 
 export const TopBarComponent = (props:any) => {
+    const [registrationModalOpen, setRegistrationModalOpen] = useState(false);
+
+    const handleRegistrationModalClose = () => {
+      setRegistrationModalOpen(false);
+    };
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light mr-auto align-middle">
             <a className="navbar-brand " style={{ marginLeft: '64px' }} href="#">SOFTWARE DEV</a>
@@ -21,11 +28,18 @@ export const TopBarComponent = (props:any) => {
                         <ScrollToElementButton targetId="pricingTable" label="Pricing" classNameName="custom-button" />
                     </li>
                     <li className="nav-item ml-4">
+                         <a className="nav-link" href="#">
+                            <Button onClick={() => setRegistrationModalOpen(true)} label={'Sign Up'} />
+                        </a>
+                    </li>
+                    <li className="nav-item ml-4">
                         <a className="nav-link" href="#">
                             <Button label={'Contact Us'} />
                         </a>
                     </li>
+
                 </ul>
+                <RegistrationModal open={registrationModalOpen} handleClose={handleRegistrationModalClose} />
             </div>
         </nav>
     )

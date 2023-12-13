@@ -7,9 +7,7 @@ import { principalPageService } from '../../../services/principalPageService'
 export const PrincipalPageContext = createContext<IPrincipalPageContext>(initialValue)
 
 export default function PrincipalPageContextProvider({ children }: any) {
-
     const [data, setData] = useState<IPrincipalPageData[]>([])
-
     const { webDataNetsRequest } = useContext(GenericContext)
     const { getInformation } = principalPageService(webDataNetsRequest)
 
