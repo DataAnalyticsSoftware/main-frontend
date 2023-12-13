@@ -10,4 +10,5 @@ export interface IPrincipalPageData {
     sectionTitle: string[]
     sectionDescription: string[]
     component:'LoginTextComponent' | 'CenterTextComponent' | 'GenericTextComponent'
+    photo: string
 }

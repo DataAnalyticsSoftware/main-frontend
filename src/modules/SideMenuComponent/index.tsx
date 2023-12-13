@@ -24,12 +24,12 @@ export const SideMenuComponent = () => {
       };
 
     return (
-            <div style={{backgroundColor: '#111827', height: '100%', width: '201px', padding: '16px'}} className="col-3 position-fixed " id="sticky-sidebar">
+            <div style={{backgroundColor: '#111827', height: '100%', width: '222px', padding: '16px'}} className="col-3 position-fixed " id="sticky-sidebar">
                 <h1 style={{color: 'white'}} className='mt-4 ml-2 mr-3 mb-5'>Logo</h1>
                 <hr style={{backgroundColor: '#F6F6F6', opacity:'10%'}}></hr>
                     <List sx={styles} component="nav" aria-label="mailbox folders">
-                        {menu?.map((value: IMenu) =>
-                            <ListItem button className={`${style.list_item} ${value === menuSelected ? style.list_item_selected : ''}`} onClick={() => setMenuSelected(value)}>
+                        {menu?.map((value: IMenu, index: number) =>
+                            <ListItem key={index} button className={`${style.list_item} ${value === menuSelected ? style.list_item_selected : ''}`} onClick={() => setMenuSelected(value)}>
                                 <i className={`bi bi-${value.icon}  ${value === menuSelected ? style.list_text_selected : style.list_text}`} style={{ marginRight: '8px'}} ></i>
                                 <ListItemText primary={value.name} className={value === menuSelected ? style.list_text_selected : style.list_text} />
                             </ListItem>)}

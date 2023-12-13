@@ -7,7 +7,7 @@ import { Button } from "../../../../../../components/Button";
 export const GenericTextComponent = ({dataInformation, index}: ITextProps) => {
     return (
         <div key={index} className="row mb-5" style={{ marginTop: '120px', marginBottom: '120px' }}  > 
-           {dataInformation.position === 'RGT' && <PhotoComponent/>}
+           {dataInformation.position === 'RGT' && <PhotoComponent url={dataInformation.photo}/>}
            <div className={`col text-left`}>
                {dataInformation.title && <h3>{dataInformation.title}</h3>}
                {
@@ -23,7 +23,7 @@ export const GenericTextComponent = ({dataInformation, index}: ITextProps) => {
                    <Button label={'Learn More'} />
                </div>
            </div>
-           {dataInformation.position === 'LFT' && <PhotoComponent/>}
+           {dataInformation.position === 'LFT' && <PhotoComponent url={dataInformation.photo}/>}
        </div>
    )
 }

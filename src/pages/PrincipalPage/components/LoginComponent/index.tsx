@@ -17,7 +17,7 @@ export const LoginComponent = () => {
     }
  
     return (<>
-        <div style={{width: '40vw', height: '100vh', float: 'left', paddingLeft: '100px'}}>
+        <div style={{width: 'calc( 40vw - 100px)', height: '100vh', float: 'left', paddingLeft: '100px'}}>
             <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center',alignItems:'center', position: 'relative', height: '100%', width: '100%'}}>
                 <div style={{width: '100%'}}>
                     <div style={{display: 'flex', gap: '9px', width: '290px', height: '54px', borderRadius: '100px', padding: '10px 20px 10px 10px', border:'1px solid #ECECEC', backgroundColor: '#FAFAFA'}}>
