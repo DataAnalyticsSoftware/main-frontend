@@ -134,3 +134,24 @@ export const BackgroundLogin = (): JSX.Element => {
         </defs>
         </svg>
 }
+
+
+export const ArrowRight = () => {
+    return <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#clip0_5_2395)">
+    <path d="M6.75 5L11.25 9.5L6.75 14" stroke="#0E0E0E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <defs>
+    <clipPath id="clip0_5_2395">
+    <rect width="18" height="18" fill="white" transform="matrix(-1 0 0 1 18 0.5)"/>
+    </clipPath>
+    </defs>
+    </svg>
+    
+}
+
+export const ArrowRightWithStick = () => <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.16663 10L15.8333 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.8334 5L15.8334 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10.8334 15L15.8334 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

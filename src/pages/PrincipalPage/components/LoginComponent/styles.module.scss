@@ -23,3 +23,15 @@
     padding: 30px;
     flex-direction: column;
 }
+
+.text_description{
+    display: flex;
+    justify-content: left;
+    text-align: left;
+    color: var(--dark-d-200, #6E6E6E);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; /* 150% */
+    letter-spacing: -0.32px;
+}

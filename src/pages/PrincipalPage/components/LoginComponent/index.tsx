@@ -1,9 +1,10 @@
 import React, { ChangeEventHandler, useContext, useState } from 'react'
 import style from './styles.module.scss'
 import { GenericContext } from '../../../../context/GenericContext'
-import  { BackgroundLogin } from './utils/GetSVGComponent';
+import  { ArrowRight, ArrowRightWithStick, BackgroundLogin } from './utils/GetSVGComponent';
 import Input from '@mui/joy/Input';
 import { Button } from '@mui/material';
+import { ButtonDas } from '../../../../components/ButtonDas';
 
 export const LoginComponent = () => {
 
@@ -15,7 +16,32 @@ export const LoginComponent = () => {
         setUserData({password:password, username: email})
     }
  
-    return (
+    return (<>
+        <div style={{width: '40vw', height: '100vh', float: 'left', paddingLeft: '100px'}}>
+            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center',alignItems:'center', position: 'relative', height: '100%', width: '100%'}}>
+                <div style={{width: '100%'}}>
+                    <div style={{display: 'flex', gap: '9px', width: '290px', height: '54px', borderRadius: '100px', padding: '10px 20px 10px 10px', border:'1px solid #ECECEC', backgroundColor: '#FAFAFA'}}>
+                        <div style={{backgroundColor: '#4F46E5', width: '85px', height: '34px', borderRadius: '100px',textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white'}}>
+                            <span style={{fontWeight:600, fontSize: '14px' }}>BEST #1</span>
+                        </div>
+                        <span style={{fontSize:'14px', fontWeight: 500, display: 'flex', textAlign: 'center', justifyContent: 'center', alignItems: 'center'}}>Boost YouTube Views</span>
+                        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                            <ArrowRight/>
+                        </div>
+                    </div>  
+                </div>
+                <div style={{width: '100%', marginTop: '10px'}}>
+                    <span style={{display: 'flex', justifyContent: 'left', textAlign: 'left',fontSize: '52px',fontStyle: 'normal', fontWeight: 800}}>Unleash The Power Of Our Website Today</span>
+                </div>
+                <div style={{width: '100%', marginTop: '10px'}}>
+                    <span className={style.text_description}>Are you looking to take your YouTube channel to the next level and reach a wider audience? Look no further! </span>
+                    <span className={style.text_description}>Our website offers a comprehensive YouTube Views service designed to boost your video's visibility and engagement.</span>
+                </div>
+                <div style={{marginTop: '20px', display: 'flex', justifyContent: 'left', width: '100%'}}>
+                    <ButtonDas text={'Learn More'} variant={'contained'} endIcon={<ArrowRightWithStick/>} />
+                </div>
+            </div>
+        </div>
         <div style={{width: '60vw', height: '100vh', float: 'right'}}>
             <div style={{display: 'flex', justifyContent: 'center',alignItems:'center', position: 'relative', height: '100%', width: '100%'}}>
                 <div className={style.card_login}>
@@ -37,6 +63,8 @@ export const LoginComponent = () => {
                 </div>
             </div>
         </div>
+    </>
+        
                 
 
     )
