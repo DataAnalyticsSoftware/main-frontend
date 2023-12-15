@@ -1,10 +1,10 @@
 import React from 'react'
 
-export const PhotoComponent = () => {
+interface IProps {
+    url: string
+}
 
-    return (<div className='col'>
-                <div className='text-left'>
-                foto jeje
-                </div>
-            </div>)
+export const PhotoComponent = ({url}: IProps) => {
+
+    return (<img src={`${process.env.REACT_APP_BACKEND_ENPDOINT}${url}`} />)
 }

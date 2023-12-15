@@ -1,0 +1,26 @@
+.text_contain{
+    color: var(--Dark-D200, #6E6E6E);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px; /* 162.5% */
+    letter-spacing: -0.32px;
+}
+
+.subtitle{
+    color: var(--Primary, #4F46E5);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 109.091% */
+    letter-spacing: -0.44px;
+}
+.title{
+    color: var(--black, #1F1E20);
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.84px;
+    text-transform: capitalize;
+}
