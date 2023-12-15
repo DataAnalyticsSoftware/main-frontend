@@ -3,7 +3,7 @@ import { Button } from '../../../../components/Button'
 import styles from './styles.module.scss'
 import { GenericContext } from '../../../../context/GenericContext'
 import { Stepper,Box, Typography, TextField, Grid, Paper,StepLabel,Step,IconButton } from '@mui/material';
-import { MiniPricingComponent } from '../MiniPricingComponent';
+import { MiniPricingComponent } from '../../../../modules/ContentComponent/components/MiniPricingComponent';
 import CloseIcon from '@mui/icons-material/Close';
 import { useNavigate } from "react-router-dom"
 
