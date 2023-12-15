@@ -4,9 +4,13 @@ import styles from './styles.module.scss'
 
 interface IButtonDas {
     text: string
+    onClick?: any
+    style?: any
 }
 
-export const ButtonDas = (props: ButtonOwnProps & IButtonDas): JSX.Element => {
+export const ButtonDas = (props: ButtonOwnProps & IButtonDas & {
+    component?: React.ElementType;
+  }): JSX.Element => {
 
     const STYLES_FROM_VARIANT = {
         outlined: styles.button_outlined,

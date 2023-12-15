@@ -1,9 +1,10 @@
 import React from 'react'
 import { ITextProps } from "../../types";
+import style from './style.module.scss'
 
 export const CenterTextComponent = ({dataInformation, index}: ITextProps) => {
-    return <div key={index} style={{ marginTop: '160px', marginBottom: '120px' }}>
-            <h1>{dataInformation.title}</h1>
-            {dataInformation.sectionDescription.map((title: string, indexTitle: number) => <p key={indexTitle}>{title}</p>) }
+    return <div key={index} style={{ width: '100vw', height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', paddingLeft: '100px', paddingRight: '100px' }}>
+            <span className={style.title}>{dataInformation.title}</span>
+            {dataInformation.sectionDescription.map((title: string, indexTitle: number) => <span className={style.text} key={indexTitle}>{title}</span>) }
         </div>
 }
