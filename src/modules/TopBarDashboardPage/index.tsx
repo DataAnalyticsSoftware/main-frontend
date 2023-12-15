@@ -39,7 +39,7 @@ export const TopBarDashboardPage = () => {
                             </span>
                         </button>
                     </div>
-                    <div className="" style={{ marginTop: ' 8px', marginLeft:'48px', marginRight:'48px' }}>
+                    <div style={{ marginTop: ' 8px', marginLeft:'48px', marginRight:'48px' }}>
                         <div className="dropdown">
                             <a className="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2" />

@@ -1,6 +1,5 @@
 import React, { createContext, useState } from 'react'
 import { useGenericRequest } from '../hooks/useGenericRequest';
-import { useNavigate } from "react-router-dom"
 import { initialValue } from './initialValues';
 import { GenericContextValue, IUserData,ISingUpUserData } from './type';
 import { useTokenStorage } from '../hooks/useTokenStorage';

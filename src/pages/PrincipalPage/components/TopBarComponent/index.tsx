@@ -1,15 +1,10 @@
 import React, { useState } from 'react'
 import { Button } from '../../../../components/Button'
 import ScrollToElementButton from '../../../../utils/index';
-import { RegistrationModal } from '../SignUpComponent';
+import { useNavigate } from "react-router-dom"
 
 export const TopBarComponent = (props:any) => {
-    const [registrationModalOpen, setRegistrationModalOpen] = useState(false);
-
-    const handleRegistrationModalClose = () => {
-      setRegistrationModalOpen(false);
-    };
-
+    const navigate = useNavigate()
     return (
         <nav className="navbar navbar-expand-lg navbar-light mr-auto align-middle">
             <a className="navbar-brand " style={{ marginLeft: '64px' }} href="#">SOFTWARE DEV</a>
@@ -29,7 +24,7 @@ export const TopBarComponent = (props:any) => {
                     </li>
                     <li className="nav-item ml-4">
                          <a className="nav-link" href="#">
-                            <Button onClick={() => setRegistrationModalOpen(true)} label={'Sign Up'} />
+                            <Button onClick={() => navigate('/SignUp', { replace: true })} label={'Sign Up'} />
                         </a>
                     </li>
                     <li className="nav-item ml-4">
@@ -39,7 +34,6 @@ export const TopBarComponent = (props:any) => {
                     </li>
 
                 </ul>
-                <RegistrationModal open={registrationModalOpen} handleClose={handleRegistrationModalClose} />
             </div>
         </nav>
     )
