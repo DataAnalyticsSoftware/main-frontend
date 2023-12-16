@@ -4,6 +4,7 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import { Channel } from './Channel';
 import { Button } from '../../../../components/Button';
+import { ButtonDas } from '../../../../components/ButtonDas';
 
 firebase.initializeApp({
   apiKey: "AIzaSyDcVvcqv2nvVUZGVpUHLWWKCX2u--5mDBk",
@@ -64,10 +65,10 @@ export const Support = (props:any) => {
         <div >
             {user ? (
                 <>
-                <Button label={'Sign Out'} onClick={signOut}>Sign Out</Button>
+                <ButtonDas text={'Sign Out'} onClick={signOut}>Sign Out</ButtonDas>
                     <Channel user={user} db={db} />
                 </>
-            ) : (<Button label={'Sign in'} onClick={signInWithGoogle} />)}
+            ) : (<ButtonDas text={'Sign in'} onClick={signInWithGoogle} />)}
             
         </div>
     )

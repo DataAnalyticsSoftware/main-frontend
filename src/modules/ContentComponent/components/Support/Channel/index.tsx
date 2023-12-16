@@ -1,6 +1,8 @@
 import firebase from 'firebase/compat/app';
 import React, { useContext,useEffect, useState } from 'react'
 import Message from '../Message';
+import './styles.css'
+import { ButtonDas } from '../../../../../components/ButtonDas';
 
 export const Channel = ({user=null, db}:any) => {
     const [messages, setMessages] = useState<any[]>([])
@@ -44,20 +46,54 @@ export const Channel = ({user=null, db}:any) => {
     
 
     return (
-        <>
-            <ul className='list-unstyled' style={{height:'550px', overflow:'scroll'}}>
-                {messages.map(message => (
-                    <div key={message.id} className="chat-message-right pb-4">
-                        <div key={message.id} className=''>
-                                    <li key={message.id}><Message {...message} /></li>
-                        </div>                    
-                    </div>                
+        <div style={{borderRadius:'14px'}} className="container-fluid">
+            <div className="row">         
+      <section style={{borderRadius:'14px'}} className="discussions">
+        <div  className="discussion search">
+          <div className="searchbar">
+            <i className="fa fa-search" aria-hidden="true"></i>
+            <input type="text" placeholder="Search..."></input>
+          </div>
+        </div>
+        <div  className="discussion message-active">
+          <div className="photo" >
+            <div className="online"></div>
+          </div>
+          <div className="desc-contact">
+            <p className="name">Megan Leib</p>
+            <p className="message">9 pm at the bar if possible 😳</p>
+          </div>
+          <div className="timer">12 sec</div>
+        </div>
+      </section>
+      <section  style={{height:'550px', overflowY:'scroll'}} className="chat chat-message-right pb-4">
+        <div className="header-chat">
+          <i className="icon fa fa-user-o" aria-hidden="true"></i>
+          <p className="name">Megan Leib</p>
+          <i className="icon clickable fa fa-ellipsis-h right" aria-hidden="true"></i>
+        </div>
+        <div className="messages-chat">
+
+          <div className="message text-only">
+            <p className="text"> What are you doing tonight ? Want to go take a drink ?</p>
+          </div>
+          <p className="time"> 14h58</p>
+
+         
+        {messages.map(message => (
+            <div key={message.id} className="message text-only">
+                <div key={message.id} className="response">
+                    <p className="text" key={message.id}> <Message {...message}/></p>
+                </div>
+            </div>               
             ))
-            }
-            </ul>
-            <div className='flex-grow-0 py-3 px-4 border-top'>
-                <form onSubmit={handleOnSubmit}>
+        }
+        </div>
+        <div className="footer-chat">
+          <i className="icon fa fa-smile-o clickable"  aria-hidden="true"></i>
+          <form onSubmit={handleOnSubmit}>
                     <input
+                        className="write-message"
                         type='text'
                         value={newMessage}
                         onChange={handleOnChange}
@@ -66,10 +102,10 @@ export const Channel = ({user=null, db}:any) => {
                     <button className='' type='submit' disabled={!newMessage}>
                         Send
                     </button>
-                </form>
+            </form>
+        </div>
+      </section>
             </div>
-            
-        </>
-        
+        </div>
     )
 }

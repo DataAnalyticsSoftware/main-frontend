@@ -3,9 +3,8 @@
     color:white;
     height: auto;
     .container{
-      padding-left: 40px;
-      padding-top: 100px;
-      padding-bottom: 60px;
+      padding-top: 52px;
+      padding-bottom: 48px;
       .infoBox{
         padding-right: 20px;
       }
@@ -14,6 +13,8 @@
     .links{
       list-style-type: none;
       display: flex;
+      text-align:left;
+      padding-bottom: 30px;
       ul {list-style-type: none;}
       li a{
         color: white;
