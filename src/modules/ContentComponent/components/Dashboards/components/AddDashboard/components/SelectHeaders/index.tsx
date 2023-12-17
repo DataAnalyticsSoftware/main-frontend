@@ -10,11 +10,12 @@ import FormControl from '@mui/material/FormControl'
 import Button from '@mui/material/Button'
 
 interface IProps {
-    dataInformation: IDataInformation
+    dataInformation: IDataInformation | null
     handleChange: Dispatch<any>
+    chartType: string | null
 }
 
-export const SelectHeaders = ({dataInformation, handleChange} : IProps): JSX.Element => {
+export const SelectHeaders = ({dataInformation, handleChange, chartType} : IProps): JSX.Element => {
 
     const { webDataNetsRequest } = useContext(GenericContext)
 
@@ -23,8 +24,10 @@ export const SelectHeaders = ({dataInformation, handleChange} : IProps): JSX.Ele
     const [ headerY, setHeaderY ] = useState<string>('')
     const [ headerFilter, setHeaderFilter ] = useState<string>('')
 
+    const CHART_WITH_FILTERS = ['BRM', 'LNM']
+
     useEffect(() => {
-        webDataNetsRequest(`api/data_headers/${dataInformation.id}`)
+        webDataNetsRequest(`api/data_headers/${dataInformation?.id}`)
         .then(res => setHeaders(res?.headers))
     }, [])
     
@@ -72,7 +75,7 @@ export const SelectHeaders = ({dataInformation, handleChange} : IProps): JSX.Ele
                     <FormHelperText>representa los valores</FormHelperText>
                 </FormControl>
             </Grid>
-            <Grid xs={12}>
+            {CHART_WITH_FILTERS.includes(chartType || '') && <Grid xs={12}>
                 <FormControl sx={{ m: 1, minWidth: 400 }}>
                     <InputLabel id="demo-simple-select-helper-label">Header Filters</InputLabel>
                     <Select
@@ -88,7 +91,7 @@ export const SelectHeaders = ({dataInformation, handleChange} : IProps): JSX.Ele
                     </Select>
                     <FormHelperText>Division de los valores por este campo</FormHelperText>
                 </FormControl>
-            </Grid>
+            </Grid>}
             <Grid xs={12}>
                 <div style={{float: 'right'}}>
                     <Button variant="contained" onClick={submitForm}>Finish</Button>

@@ -1,16 +1,15 @@
-import { IPrincipalPageData } from "../../../../context/type";
 import React from 'react'
-import { PhotoComponent } from "./components/PhotoComponent";
 import { ITextProps } from "../../types";
 import { Button } from "../../../../../../components/Button";
 import style from './style.module.scss'
 import { ButtonDas } from "../../../../../../components/ButtonDas";
 import { ArrowRightWithStick } from "../../../LoginComponent/utils/GetSVGComponent";
+import { PhotoDas } from '../../../../../../components/PhotoDas';
 
 export const GenericTextComponent = ({dataInformation, index}: ITextProps) => {
     return (
         <div key={index} className="row mb-5" style={{ paddingLeft: '100px', paddingRight: '100px', width: '100vw', height: '100vh', display: 'flex', flexDirection: 'row', gap: '100px' }}  > 
-           {dataInformation.position === 'RGT' && <div style={{width: 'calc( 50vw - 100px )', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}><PhotoComponent url={dataInformation.photo}/></div>}
+           {dataInformation.position === 'RGT' && <div style={{width: 'calc( 50vw - 100px )', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}><PhotoDas url={dataInformation.photo}/></div>}
            <div className={`col text-left`} style={{width: 'calc( 50vw - 100px )', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
                {dataInformation.title && <span className={style.title} style={{width: '100%'}}>{dataInformation.title}</span>}
                {
@@ -26,7 +25,7 @@ export const GenericTextComponent = ({dataInformation, index}: ITextProps) => {
                    <ButtonDas text={'Learn More'} variant='contained'  endIcon={<ArrowRightWithStick/>} />
                </div>
            </div>
-           {dataInformation.position === 'LFT' &&  <div style={{width: 'calc( 50vw - 100px )', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}><PhotoComponent url={dataInformation.photo}/></div>}
+           {dataInformation.position === 'LFT' &&  <div style={{width: 'calc( 50vw - 100px )', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}><PhotoDas url={dataInformation.photo}/></div>}
        </div>
    )
 }
