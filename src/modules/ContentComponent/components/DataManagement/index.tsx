@@ -1,4 +1,7 @@
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid'
+import { DataGrid, GridColDef, gridPageCountSelector,
+    GridPagination,
+    useGridApiContext,
+    useGridSelector, } from '@mui/x-data-grid'
 import React, { useContext, useEffect, useState } from 'react'
 import { GenericContext } from '../../../../context/GenericContext'
 import Modal  from '@mui/material/Modal'
@@ -6,6 +9,8 @@ import Box from '@mui/material/Box'
 import { CardInfo } from './components/CardInfo'
 import TableDataContextProvider from './context/TableDataContext'
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
+import MuiPagination from '@mui/material/Pagination';
+import { TablePaginationProps } from '@mui/material/TablePagination';
 
 export const DataManagement = () => {
     const { webDataNetsRequest } = useContext(GenericContext)
@@ -28,7 +33,30 @@ export const DataManagement = () => {
         { field: 'description', headerName: 'Description', flex: 1, minWidth: 160},
         { field: '', headerName: 'Actions', renderCell: (value) => <button  style={{backgroundColor:'rgba(79, 70, 229, 0.14)',borderRadius:'12px', color:'rgba(79, 70, 229, 1)'}} onClick={() => handleOpen(value.id as string)} type="button" className="btn" data-toggle="modal" data-target={`#exampleModal-${value.id}`} ><ModeEditOutlineOutlinedIcon /></button>}
       ]
-
+      function Pagination({
+        page,
+        onPageChange,
+        className,
+      }: Pick<TablePaginationProps, 'page' | 'onPageChange' | 'className'>) {
+        const apiRef = useGridApiContext();
+        const pageCount = useGridSelector(apiRef, gridPageCountSelector);
+          
+        return (
+          <MuiPagination
+            variant="outlined"
+            shape="rounded"
+            className={className}
+            count={pageCount}
+            page={page + 1}
+            onChange={(event, newPage) => {
+              onPageChange(event as any, newPage - 1);
+            }}
+          />
+        );
+      }
+      function CustomPagination(props: any) {
+        return <GridPagination ActionsComponent={Pagination} {...props} />;
+      }
 
     return  (
         <>
@@ -41,17 +69,19 @@ export const DataManagement = () => {
                         fontWeight:600,
                         fontSize:16,
                         lineHeight:24
-                    }
+                    },
                 }}>
                     <DataGrid
                     rows={data}
                     columns={columns}
                     initialState={{
                     pagination: {
-                        paginationModel: { page: 0, pageSize: 5 },
+                        paginationModel: { page: 0, pageSize: 10 },
                     },
                     }}
-                    pageSizeOptions={[5, 10]}
+                    slots={{
+                        pagination: CustomPagination,
+                      }}
                     checkboxSelection
                 />
                 </Box>
