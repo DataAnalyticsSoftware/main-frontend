@@ -1,0 +1,42 @@
+.footer{
+    background: #0E0E0E;
+    color:white;
+    height: auto;
+    .container{
+      padding-top: 52px;
+      padding-bottom: 48px;
+      .infoBox{
+        padding-right: 20px;
+      }
+    }
+    
+    .links{
+      list-style-type: none;
+      display: flex;
+      text-align:left;
+      padding-bottom: 30px;
+      ul {list-style-type: none;}
+      li a{
+        color: white;
+        transition: color .2s;
+        &:hover{
+          text-decoration:none;
+          color:#4180CB;
+          }
+      }
+    }  
+    .aboutCompany{
+      column
+      i{font-size: 25px;}
+      a{
+        color:white;
+        transition: color .2s;
+        &:hover{color:#4180CB}
+      }
+    } 
+    .location{
+      display: flex;
+      i{font-size: 18px;}
+    }
+    .copyright p{border-top:1px solid rgba(255,255,255,.1);} 
+  }

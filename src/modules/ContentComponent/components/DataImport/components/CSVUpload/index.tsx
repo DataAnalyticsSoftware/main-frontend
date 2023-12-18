@@ -10,7 +10,7 @@ export const CSVUpload: React.FC = () => {
 
   return (
     <CSVContextProvider >
-      <div className="container mt-4">
+      <div style={{height:'70vh', backgroundColor:'white', borderRadius:'11px'}} className="container-fluid mt-4">
         <CSVContainer/>
       </div>
     </CSVContextProvider>

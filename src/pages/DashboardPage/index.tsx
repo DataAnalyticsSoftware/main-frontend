@@ -7,7 +7,7 @@ import { ContentComponent } from '../../modules/ContentComponent'
 export const DashboardContainer = (props:any) => {
     return (
         <DashboardContextProvider>
-            <div >
+            <div className="dashboard-container" style={{width:'100%', backgroundColor:'#fefeff'}}>
                 <div className="container-fluid">
                     <div className="row">
                         <SideMenuComponent />

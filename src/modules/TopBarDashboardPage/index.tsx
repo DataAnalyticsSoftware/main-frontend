@@ -12,13 +12,10 @@ export const TopBarDashboardPage = () => {
 
     return (
         <>
-            <div className="container " style={{ backgroundColor: '##ededed !important' }}>
+            <div className="container-fluid" style={{ backgroundColor: '##ededed !important', boxSizing:'border-box',paddingLeft:'70px' }}>
                 <div className="row mt-4" >
-                    <div className="col-sm">
-                        <h1>{menuSelected.name}</h1>
-                    </div>
-                    <div className="col-sm" style={{ marginTop: ' 8px' }}>
-                        <div className="input-group mb-3">
+                    <div className="col-lg" style={{ marginTop: ' 8px' }}>
+                        <div className="input-group mb-3" style={{width:'40%'}}>
                             <input type="text" className="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2" />
                             <div className="input-group-append">
                                 <button type="button" className="btn btn-primary position-relative mr-4">
@@ -27,7 +24,7 @@ export const TopBarDashboardPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-sm" style={{ marginTop: ' 8px' }}>
+                    <div className="" style={{ marginTop: ' 8px' }}>
                         <button type="button" className="btn btn-primary position-relative mr-4 " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i className="bi bi-bell-fill"></i>
                             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -42,7 +39,7 @@ export const TopBarDashboardPage = () => {
                             </span>
                         </button>
                     </div>
-                    <div className="col-sm" style={{ marginTop: ' 8px' }}>
+                    <div style={{ marginTop: ' 8px', marginLeft:'48px', marginRight:'48px' }}>
                         <div className="dropdown">
                             <a className="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2" />
@@ -54,7 +51,8 @@ export const TopBarDashboardPage = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                    </div>
+
                 <hr className='mt-4' />
             </div>
 

@@ -14,7 +14,6 @@ export default function DashboardContextProvider({ children }: any) {
   const [displayCollection,setDisplayCollection] = useState<string>('collection 1')
   const [collectionData, setCollectionData] = useState<any[]>([])
   const [modalCreateCollection, setModalCreateCollection] = useState<boolean>(false)
-
   
   useEffect(() =>{
     setPricing(pricingTable);      

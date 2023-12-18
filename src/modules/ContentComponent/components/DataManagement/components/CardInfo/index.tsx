@@ -107,12 +107,9 @@ export const CardInfo = ({ dataId }: any) => {
   
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" style={{ width: 'auto !important',flex: 1 }} mt={4} >
-      <Typography mb={4} variant="h4">
-        CSV Renderer
-      </Typography>
+    <Box display="flex" flexDirection="column" alignItems="center" style={{position:'absolute',top:'17%', left:'43%', textAlign:'center',justifyContent:'center', borderRadius:'22px'}}  >
       {tableOpen && columns.length > 0 ? (
-        <Paper style={{ height: 'auto'}}>
+        <Paper style={{ height: 'auto', borderRadius:'22px'}}>
           <IconButton
             aria-label="close"
             color="inherit"
@@ -123,6 +120,17 @@ export const CardInfo = ({ dataId }: any) => {
             <CloseIcon />
           </IconButton>
           <DataGrid
+            sx={{
+              '& .css-1iyq7zh-MuiDataGrid-columnHeaders': {
+                backgroundColor: '#EEEEEE',
+            },
+            '& .css-t89xny-MuiDataGrid-columnHeaderTitle':{
+                fontWeight:600,
+                fontSize:16,
+                lineHeight:24
+            }
+            }}
+            style={{border:'none'}}
             editMode="row"
             onRowEditStop={handleRowEditStop}
             onRowModesModelChange={handleRowModesModelChange}
