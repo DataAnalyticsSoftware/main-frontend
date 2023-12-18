@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import { CSVContext } from '../../context/CSVContext'
+import { ButtonDas } from '../../../../../../../../components/ButtonDas'
 
 
 export const CSVTable = () : JSX.Element=> {
-  const { csvData, handleCancelImport } = useContext(CSVContext)
+  const { csvData, handleCancelImport,handleFormSubmit } = useContext(CSVContext)
   if(csvData.length === 0) return <></>
    return (
         <div>
@@ -26,13 +27,9 @@ export const CSVTable = () : JSX.Element=> {
               ))}
             </tbody>
                   </table>**/}
-          <div className="d-flex justify-content-end float-right mt-2">
-            <button type="submit" className="btn btn-primary">
-              Enviar CSV al servidor
-            </button>
-            <button type="button" className="btn btn-secondary ml-2" onClick={handleCancelImport}>
-              Cancelar Importación
-            </button>
+          <div className="d-flex justify-content-first mt-2">
+          <ButtonDas onClick={handleFormSubmit} pricing={false}  style={{width: '130px', height: '47px',borderRadius:'0px !Important', marginRight:'12px'}} text={'Push CSV'} />
+          <ButtonDas onClick={handleCancelImport} pricing={false} variant='outlined'  style={{width: '130px', height: '47px',borderRadius:'0px !Important'}} text={'Cancel Import'} />
           </div>
         </div>
       )

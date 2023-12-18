@@ -8,7 +8,7 @@ export const ContentComponent = () => {
     const { menuSelected } = useContext(DashboardContext)
     
     return (
-        <div style={{paddingLeft:'36px'}} className='container-fluid text-left'>
+        <div style={{paddingLeft:'80px'}} className='container-fluid text-left'>
                     <div key={menuSelected.name} className='row'>
                         <div key={menuSelected.name}  style={{ padding: '5px' }}>
                             <h2 style={{ marginLeft: 'auto', fontWeight:800,fontSize:'28px', lineHeight:'24px' }}>{menuSelected.name}</h2>

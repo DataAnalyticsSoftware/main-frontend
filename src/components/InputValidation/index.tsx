@@ -8,12 +8,13 @@ export const InputValidation = (props: any) => {
 
   return (
     <div className={styles}>
-      <label htmlFor="validationTooltip03" className="form-label">
+      <label htmlFor="validationTooltip03" className="form-label" style={{fontWeight:500, fontSize:'16px', lineHeight:'18px'}}>
         {title}
       </label>
       <input
         type={type}
         className={inputClasses}
+        style={{height:'56px', width:'380px', backgroundColor:'#ECECEC'}}
         id="validationTooltip03"
         required={required === 'yes'}
         value={value}

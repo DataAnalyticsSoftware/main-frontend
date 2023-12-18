@@ -12,7 +12,7 @@ export const TopBarDashboardPage = () => {
 
     return (
         <>
-            <div className="container-fluid" style={{ backgroundColor: '##ededed !important', boxSizing:'border-box',paddingLeft:'24px' }}>
+            <div className="container-fluid" style={{ backgroundColor: '##ededed !important', boxSizing:'border-box',paddingLeft:'70px' }}>
                 <div className="row mt-4" >
                     <div className="col-lg" style={{ marginTop: ' 8px' }}>
                         <div className="input-group mb-3" style={{width:'40%'}}>

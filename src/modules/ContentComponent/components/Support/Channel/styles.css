@@ -84,7 +84,7 @@
     height:38px;
     width:100%;
     border:none;
-    font-family: 'Montserrat', sans-serif;;
+    font-family: 'Inter';
   }
   
   .discussions .search .searchbar *::-webkit-input-placeholder {
@@ -141,21 +141,21 @@
   
   .discussions .discussion .name {
     margin: 0 0 0 20px;
-    font-family:'Montserrat', sans-serif;
+    font-family: 'Inter';
     font-size: 11pt;
     color:#515151;
   }
   
   .discussions .discussion .message {
     margin: 6px 0 0 20px;
-    font-family:'Montserrat', sans-serif;
+    font-family: 'Inter';
     font-size: 9pt;
     color:#515151;
   }
   
   .timer {
     margin-left: 15%;
-    font-family:'Open Sans', sans-serif;
+    font-family: 'Inter';
     font-size: 11px;
     padding: 3px 8px;
     color: #BBB;
@@ -185,7 +185,7 @@
   .chat .header-chat .name {
     margin: 0 0 0 20px;
     text-transform: uppercase;
-    font-family:'Montserrat', sans-serif;
+    font-family: 'Inter';
     font-size: 13pt;
     color:#515151;
   }
@@ -282,7 +282,7 @@
   .chat .footer-chat .name {
     margin: 0 0 0 20px;
     text-transform: uppercase;
-    font-family:'Montserrat', sans-serif;
+    font-family: 'Inter';
     font-size: 13pt;
     color:#515151;
   }

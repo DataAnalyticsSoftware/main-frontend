@@ -4,12 +4,9 @@ import { CSVTable } from '../CSVTable'
 import { CSVContext } from '../../context/CSVContext'
 
 export const CSVContainer = () => {
-
-    const { handleFormSubmit } = useContext(CSVContext)
-
-    return <form onSubmit={handleFormSubmit}>
+    return <div style={{marginLeft:'16px', marginRight:'16px'}}>
                 <CSVForm />
                 <br />
                  <CSVTable /> 
-            </form>
+            </div>
 }

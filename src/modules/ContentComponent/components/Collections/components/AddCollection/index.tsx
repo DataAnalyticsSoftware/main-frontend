@@ -5,17 +5,18 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import FormCollection from './FormAddCollection';
 import { CollectionContext } from '../../context/CollectionContext';
+import { ButtonDas } from '../../../../../../components/ButtonDas';
 
 const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 600,
     bgcolor: 'background.paper',
-    border: '2px solid #000',
     boxShadow: 24,
     p: 4,
+    height:671,
+    borderRadius:12
   }
 
 export const AddCollection = () => {
@@ -23,9 +24,7 @@ export const AddCollection = () => {
     const { setIsEdit, setDataEdit } = useContext(CollectionContext)
     return (
         <div className='container text-left '>
-            <Button variant="contained" endIcon={<AddCircleOutlineIcon />} onClick={() => setOpenModal(true)}>
-                Add Collection
-            </Button>
+            <ButtonDas  onClick={() => setOpenModal(true)} variant="contained" text={`Add Collection`}><AddCircleOutlineIcon /></ButtonDas>
             <Modal
                 open={openModal}
                 onClose={()=>{setDataEdit(null); setIsEdit(false); setOpenModal(false)}}
