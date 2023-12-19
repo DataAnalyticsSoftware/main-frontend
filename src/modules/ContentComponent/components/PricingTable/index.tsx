@@ -5,8 +5,7 @@ import styles from './styles.module.scss'
 import { Box, Grid } from "@mui/material"
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 
-export const PricingTableComponent = (props:any) => {
-    const { pricing } = useContext(DashboardContext)
+export const PricingTableComponent = ({ pricing }: any) => {
     
     return (
         <div className="container-fluid" style={{display:'flex', textAlign:'center'}}  >

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Button from '@mui/material/Button';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
 import Modal from '@mui/material/Modal';
@@ -6,6 +6,8 @@ import Box from '@mui/material/Box';
 import FormCollection from './FormAddCollection';
 import { CollectionContext } from '../../context/CollectionContext';
 import { ButtonDas } from '../../../../../../components/ButtonDas';
+import styles from './styles.module.scss'
+import { PlusIconDAS } from '../../../../../../components/SvgDas';
 
 const style = {
     position: 'absolute',
@@ -14,17 +16,26 @@ const style = {
     transform: 'translate(-50%, -50%)',
     bgcolor: 'background.paper',
     boxShadow: 24,
-    p: 4,
     height:671,
-    borderRadius:12
+    width: 405,
+    padding: '30px 24px',
+    borderRadius: '20px'
   }
 
 export const AddCollection = () => {
     const { openModal, setOpenModal } = useContext(CollectionContext)
     const { setIsEdit, setDataEdit } = useContext(CollectionContext)
+
+    useEffect(() => {
+        if(!openModal){
+            setDataEdit(null)
+            setIsEdit(false)
+        }
+    }, [openModal])
+
     return (
-        <div className='container text-left '>
-            <ButtonDas  onClick={() => setOpenModal(true)} variant="contained" text={`Add Collection`}><AddCircleOutlineIcon /></ButtonDas>
+        <div>
+            <ButtonDas customClass={styles.button}  onClick={() => setOpenModal(true)} variant="contained" text={`Add Collection`} endIcon={<PlusIconDAS/>} />
             <Modal
                 open={openModal}
                 onClose={()=>{setDataEdit(null); setIsEdit(false); setOpenModal(false)}}

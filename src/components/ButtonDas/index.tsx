@@ -6,6 +6,7 @@ interface IButtonDas {
     text: string
     onClick?: any
     style?: any
+    customClass?: any
     pricing?:boolean
 }
 
@@ -16,5 +17,5 @@ export const ButtonDas = (props: ButtonOwnProps & IButtonDas & { component?: Rea
         contained: styles.button_contained
     }
 
-    return <Button className={`${STYLES_FROM_VARIANT[props.variant || 'contained'] } ${styles.button} ${props.disabled ? styles.button_disabled : ''} `} {...props} variant={props.variant}>{props.text}</Button>
+    return <Button className={`${STYLES_FROM_VARIANT[props.variant || 'contained'] } ${styles.button} ${props.disabled ? styles.button_disabled : ''} ${props.customClass}`} {...props} variant={props.variant}>{props.text}</Button>
 }

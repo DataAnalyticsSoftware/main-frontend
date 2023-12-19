@@ -11,7 +11,7 @@ export const AddCollectionProvider = ({ children }: any) => {
     const [ name, setName ] = useState<string>('')
     const [ id, setId ] = useState<string | null>(null)
     const [ error, setError ] = useState<string | undefined>(undefined)
-    const { webDataNetsRequest } = useContext(GenericContext)
+    const { webDataNetsRequest, handleToast } = useContext(GenericContext)
     const [ description, setDescription ] = useState<string>('')
     const [ success, setSuccess ] = useState<string | undefined>(undefined)
     const [ dataSelected, setDataSelected ] = useState<any[]>([])
@@ -32,7 +32,9 @@ export const AddCollectionProvider = ({ children }: any) => {
           webDataNetsRequest('api/collection', JSON.stringify(dataToSend), mehthod)
           .then((response: any) => {
             setName('')
+            setDescription('')
             createDataRelation(response)
+            handleToast('Collection created succesfully.')
           }).then(() => setSearch(true))
       }
 

@@ -8,7 +8,7 @@ import { PhotoDas } from '../../../../../../components/PhotoDas';
 
 export const GenericTextComponent = ({dataInformation, index}: ITextProps) => {
     return (
-        <div key={index} className="row mb-5" style={{ paddingLeft: '100px', paddingRight: '100px', width: '100%', height: '100vh', display: 'flex', flexDirection: 'row', gap: '100px' }}  > 
+        <div key={index} className="row mb-5" style={{ paddingLeft: '100px', paddingRight: '100px', width: '100%', height: '600px', display: 'flex', flexDirection: 'row', gap: '100px' }}  > 
            {dataInformation.position === 'RGT' && <div style={{width: 'calc( 50% - 100px )', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}><PhotoDas url={dataInformation.photo}/></div>}
            <div className={`col text-left`} style={{width: 'calc( 50% - 100px )', display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
                {dataInformation.title && <span className={style.title} style={{width: '100%'}}>{dataInformation.title}</span>}

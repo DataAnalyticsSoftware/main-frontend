@@ -5,4 +5,5 @@ export interface IMenu{
     icon: string
     route: string
     cardinality: number
+    show_title: boolean
 }
