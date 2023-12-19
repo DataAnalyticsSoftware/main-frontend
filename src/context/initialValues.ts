@@ -5,4 +5,11 @@ export const initialValue = {
     setUserData:() => { },
     setLogin: () => { },
     webDataNetsRequest: () => { return fetch('') },
+    setSignUp: () => { },
+    userSignUpData: () => { },
+    setUserSignUpData:() => { },
+    openToast: false,
+    messageToast: '',
+    handleToast: () => {},
+    setOpenToast: () => {}
 }

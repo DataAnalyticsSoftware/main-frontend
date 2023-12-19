@@ -5,6 +5,8 @@ import CancelIcon from '@mui/icons-material/Close';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/DeleteOutlined';
 import { TableDataContext } from '../../context/TableDataContext';
+import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
+import { Box } from '@mui/material';
 
 export const ButtonTable = ({id}: any) => {
     const { rowsEdited, setRowsEdited, setRowIdToSave } = useContext(TableDataContext)
@@ -19,6 +21,7 @@ export const ButtonTable = ({id}: any) => {
     return (
             <>
             {save && <>
+            <Box style={{backgroundColor:'rgba(79, 70, 229, 0.14)', marginRight:'4px', borderRadius:'12px'}}>
              <GridActionsCellItem
                 key={`save_${id}`}
                 icon={<SaveIcon />}
@@ -28,6 +31,8 @@ export const ButtonTable = ({id}: any) => {
                 }}
                 onClick={() => {setSave(false);setRowsEdited(rowsEdited.filter(x=> x !== Number(id))); setRowIdToSave(id)}}
                 />
+            </Box>
+            <Box style={{backgroundColor:'rgba(236,98,66,0.14)', borderRadius:'12px'}}>
                 <GridActionsCellItem
                     key={`cancel_${id}`}
                     icon={<CancelIcon />}
@@ -36,23 +41,31 @@ export const ButtonTable = ({id}: any) => {
                     onClick={() =>  {setSave(false); setRowsEdited(rowsEdited.filter(x=> x !== Number(id)))}}
                     color="inherit"
                 /> 
+            </Box>
             </>}
             {!save && <>
+            <Box style={{backgroundColor:'rgba(79, 70, 229, 0.14)', marginRight:'4px', borderRadius:'12px'}}>
                 <GridActionsCellItem
-                    key={`edit_${id}`}
-                    icon={<EditIcon />}
-                    label="Edit"
-                    className="textPrimary"
-                    onClick={() => {setSave(true); setRowsEdited([...rowsEdited, Number(id)])}}
-                    color="inherit"
-                />,
+                        key={`edit_${id}`}
+                        icon={<ModeEditOutlineOutlinedIcon />}
+                        label="Edit"
+                        className="textPrimary"
+                        style={{padding:'8px', color:'rgba(79, 70, 229, 1)'}}
+                        onClick={() => {setSave(true); setRowsEdited([...rowsEdited, Number(id)])}}
+                        color="inherit"
+                    />
+            </Box>
+            <Box style={{backgroundColor:'rgba(236,98,66,0.14)', borderRadius:'12px'}}>
                 <GridActionsCellItem
                     key={`delete_${id}`}
                     icon={<DeleteIcon />}
                     label="Delete"
+                    style={{padding:'8px', color:'#EC6242'}}
                     onClick={() => console.log('delete')}
                     color="inherit"
                 />
+            </Box>
+
             </>
             }
             </>)

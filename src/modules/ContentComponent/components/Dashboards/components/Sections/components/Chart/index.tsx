@@ -63,7 +63,7 @@ export const Chart = ({optionData}: any): JSX.Element => {
                 </Select>
                 <FormHelperText>With label + helper text</FormHelperText>
             </FormControl>
-            <FormControl sx={{ m: 1, width: 200 }}>
+            {optionData.filter_types && <FormControl sx={{ m: 1, width: 200 }}>
                 <InputLabel id="demo-simple-select-helper-label">Filters</InputLabel>
                 <Select
                     labelId="demo-simple-select-helper-label"
@@ -80,7 +80,7 @@ export const Chart = ({optionData}: any): JSX.Element => {
                             </MenuItem>)}
                 </Select>
                 <FormHelperText>With label + helper text</FormHelperText>
-            </FormControl>
+            </FormControl>}
             <IconButton style={{float: 'right'}} aria-label="delete" onClick={() => deleteChart()}>
                 <DeleteIcon />
             </IconButton>

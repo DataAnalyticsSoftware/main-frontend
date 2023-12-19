@@ -1,5 +1,5 @@
 import { NavigateFunction } from "react-router-dom"
-import { IUserData } from "../context/type"
+import { ISingUpUserData, IUserData } from "../context/type"
 
 export interface ITokenStorageProps {
     setToken:React.Dispatch<React.SetStateAction<string | null>>
@@ -14,4 +14,11 @@ export interface ILoginProps {
     login: boolean
     setToken: React.Dispatch<React.SetStateAction<string | null>>
     setLogin: React.Dispatch<React.SetStateAction<boolean>>
+    
+}
+export interface ISignUpProps {
+    webDataNetsRequest: (route: string, body?: BodyInit | null | undefined, method?: "POST" | "GET" | "PUT", customHeaders?: HeadersInit | undefined) => Promise<any>
+    userSignUpData: ISingUpUserData
+    signUp: boolean
+    setSignUp: React.Dispatch<React.SetStateAction<boolean>>    
 }

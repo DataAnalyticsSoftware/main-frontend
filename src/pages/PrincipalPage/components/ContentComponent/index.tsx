@@ -116,7 +116,7 @@ export const ContentComponent = (props:any) => {
                 {/*FOOTER AQUI ABAJO---------->*/}
             </div >
 
-            <div style={{ backgroundColor: '#0179FE', paddingRight: '80px', paddingLeft: '80px', color: 'white', paddingTop: '10px', paddingBottom: '40px' }}>
+            <div >
                 <BottomBarComponent />
             </div>
         </>

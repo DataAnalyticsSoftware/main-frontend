@@ -1,12 +1,14 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import { InputValidation } from '../../../../../../../components/InputValidation';
 import { AddCollectionContext } from '../context';
 import { useContext } from 'react'
 import { useEffect } from 'react';
 import { GenericContext } from '../../../../../../../context/GenericContext';
 import { useState } from 'react';
 import { CollectionContext } from '../../../context/CollectionContext';
+import { ButtonDas } from '../../../../../../../components/ButtonDas';
+import { Grid } from '@mui/material';
+import { InputTextDas } from '../../../../../../../components/InputTextDas';
 
 export default function FormCollection() {
   const { setName, setDescription, handleFormSubmit, dataSelected, setDataSelected, setId, name, description } = useContext(AddCollectionContext)
@@ -34,14 +36,15 @@ export default function FormCollection() {
 
   
   return (
-    <div> 
-        <form onSubmit={(value)=>{ handleFormSubmit(value); setName(''); setId(null); setOpenModal(false);} }>
-          <h2>Collection Title</h2>
-          <InputValidation onChange={setName} value={name} title={'Title'} text={'Please provide a Title.'} styles={"col-md-4 position-relative"} type={"text"} required={'yes'} tooltip={"invalid-tooltip"} isValid={"invalid-feedback"} submit={false} />
-          <h3 className='mt-5'>Collection Description</h3>
-          <InputValidation onChange={setDescription} value={description} title={'Description'} text={''} styles={"col-md-6 position-relative mt-2"} type={"text"} required={'no'} tooltip={"valid-tooltip"} isValid={"valid-feedback"} submit={true}  />
-          <div style={{marginTop: '10px'}}>
-          LISTA DE DATA PARA RELACIONAR CON LA COLECCION:
+    <div > 
+      <Grid>
+      <p style={{fontWeight:600,fontSize:'20px',lineHeight:'24.2px'}}>Collection Title</p>
+          <InputTextDas handlerOnChange={setName} value={name} label={'Title'} type={"text"} />
+          <InputTextDas handlerOnChange={setDescription} value={description} label={'Description'}  />
+          
+      </Grid>
+      <Grid style={{marginTop: '10px'}}>
+          <p style={{fontSize:'16px', fontWeight:700, lineHeight:'18px', marginTop:'42px'}}>List of data to relate to the collection</p>
           {
             dataList.map(value => 
               <div className="form-check">
@@ -52,9 +55,11 @@ export default function FormCollection() {
               </div>
               )
           }
-          </div>
-          <Button variant="contained" type='submit' className='container text-rigth mt-3' >Create</Button>
-        </form>
+          </Grid>
+          <Grid style={{display:'flex', marginTop:'32px'}}>
+            <ButtonDas style={{width:'50%', height:'47px', marginRight:'8px'}} variant="contained" text='Create' onClick={(value)=>{ handleFormSubmit(value); setName(''); setId(null); setOpenModal(false);} }>Create</ButtonDas>
+            <ButtonDas style={{width:'50%', height:'47px'}} text='Cancel' variant="outlined" >Cancel</ButtonDas>
+          </Grid>
     </div>
     
   )}

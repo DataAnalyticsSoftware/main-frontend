@@ -12,5 +12,8 @@ export const initialValue: ICSVContextProps = {
     success: undefined,
     fileDropped:false, 
     setFileDropped:() => {},
-    handleClickDrop: () => {}
+    handleClickDrop: () => {},
+    fileName: '',
+    name: '',
+    description: ''
 }

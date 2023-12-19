@@ -1,23 +1,32 @@
 import React, { createContext, useState } from 'react'
 import { useGenericRequest } from '../hooks/useGenericRequest';
-import { useNavigate } from "react-router-dom"
 import { initialValue } from './initialValues';
-import { GenericContextValue, IUserData } from './type';
+import { GenericContextValue, IUserData,ISingUpUserData } from './type';
 import { useTokenStorage } from '../hooks/useTokenStorage';
 import { useLogin } from '../hooks/useLogin';
+import { useSignUp } from '../hooks/useSignUp';
 
 export const GenericContext = createContext<GenericContextValue>(initialValue)
 
 export default function GenericContextProvider({ children }: any) {
     const [login, setLogin] = useState<boolean>(false)
+    const [signUp, setSignUp] = useState<boolean>(false)
     const [token, setToken] = useState(localStorage.getItem('access_token')) 
     const [deleteToken, setDeleteToken] = useState(false)
     const [userData, setUserData] = useState<IUserData>({password: undefined, username: undefined})
+    const [userSignUpData, setUserSignUpData] = useState<ISingUpUserData>({name:undefined,email: undefined,password: undefined})
+    const [ openToast, setOpenToast ] = useState<boolean>(false)
+    const [ messageToast, setMessageToast ] = useState<string>('')
     const { webDataNetsRequest } = useGenericRequest(token, setToken)
 
     useLogin({webDataNetsRequest, userData, login, setToken, setLogin})
-    
+    useSignUp({webDataNetsRequest, userSignUpData, signUp, setSignUp})
     useTokenStorage({setToken, token, deleteToken, setDeleteToken})
+
+    const handleToast = (message: string) => {
+        setOpenToast(true)
+        setMessageToast(message)
+    }
 
     const contextValue: GenericContextValue = {
         token,
@@ -25,7 +34,13 @@ export default function GenericContextProvider({ children }: any) {
         setDeleteToken,
         setUserData,
         setLogin,
-        webDataNetsRequest
+        webDataNetsRequest,
+        setSignUp,        
+        setUserSignUpData,
+        openToast,
+        messageToast,
+        handleToast,
+        setOpenToast
     }
     
     return (

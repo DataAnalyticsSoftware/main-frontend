@@ -1,11 +1,12 @@
 import React from 'react'
-import { Button } from '../../../../components/Button'
 import ScrollToElementButton from '../../../../utils/index';
 import { ButtonDas } from '../../../../components/ButtonDas/index';
+import { useNavigate } from "react-router-dom"
 
 export const TopBarComponent = (props:any) => {
+    const navigate = useNavigate()
     return (
-        <nav className="navbar navbar-expand-lg navbar-light mr-auto align-middle" style={{position: 'fixed', zIndex: '5', width:'100vw', paddingLeft: '100px', paddingRight: '100px', backdropFilter: 'blur(6px)'}}>
+        <nav className="navbar navbar-expand-lg navbar-light mr-auto align-middle" style={{position: 'fixed', zIndex: '5', width:'100vw', paddingLeft: '100px', paddingRight: '100px', paddingTop: '30px', backdropFilter: 'blur(6px)'}}>
             <div style={{display: 'flex', width: '100%', flexDirection: 'row', justifyContent: 'space-between'}}>
                 <a className="navbar-brand " href="#">SOFTWARE DEV</a>
                 <div style={{display: 'flex', flexDirection: 'row'}}>
@@ -14,8 +15,9 @@ export const TopBarComponent = (props:any) => {
                     <ScrollToElementButton targetId="pricingTable" label="Pricing" classNameName="custom-button" />
                     <ScrollToElementButton targetId="pricingTable" label="Enter" classNameName="custom-button" />
                 </div>
-                <div>
+                <div style={{display: 'flex', flexDirection: 'row', gap: '10px'}}>
                     <ButtonDas text='Contact Us' variant='outlined' />
+                    <ButtonDas text={'Sign Up'} variant='contained' onClick={() => {console.log('entro'); navigate('/SignUp', { replace: true })}} />
                 </div>
             </div>
         </nav>

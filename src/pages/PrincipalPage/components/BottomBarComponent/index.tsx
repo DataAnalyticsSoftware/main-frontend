@@ -1,34 +1,56 @@
-import React from 'react'
+import React from 'react';
+import { Box, Container, Grid, Link, Typography } from '@mui/material';
+import styles from './styles.module.scss';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-export const BottomBarComponent = (props:any) => {
-    return (
-        <div>
-            <footer className="pt-4 my-md-5 pt-md-5 border-bottom" style={{ paddingBottom: '70px', color: 'white' }}>
-                <div className="row">
-                    <div className="col col-lg-6 text-left">
-                        <h5>LOGO HERE</h5>
-                        <text>objectives to ensure the website is tailored to your needs. Our team of experienced professionals has the skills and knowledge to create stunning, functional, and user-friendly websites that will bring your business to the next level. With our high-quality designs and personalized service.</text>
+export const BottomBarComponent = (props: any) => {
+  return (
+    <Box>
+      <footer className={`${styles.footer}`} style={{ color: 'white' }}>
+        <Container className={styles.container} maxWidth="xl">
+          <Grid container spacing={3} style={{ display: 'flex', flexDirection: 'column' }}>
+            {/* Primer Grid */}
+            <Grid item xs={12} lg={12} style={{ display: 'flex', flexDirection: 'row' }}>
+              <Box>
+                <Box className={`${styles.links}`}>
+                  <li style={{ marginRight: '20px' }}><Link href="#">Functions</Link></li>
+                  <li style={{ marginRight: '20px' }}><Link href="#">About Us</Link></li>
+                  <li style={{ marginRight: '20px' }}><Link href="#">Prices</Link></li>
+                  <li style={{ marginRight: '20px' }}><Link href="#">Enter</Link></li>
+                  <li style={{ marginRight: '20px' }}><Link href="#">Sign Up</Link></li>
+                </Box>
+                <hr style={{ color: 'white', border: '1px solid grey', width: '100vh' }}></hr>
+                <Box style={{ display: 'flex', flexDirection: 'row', textAlign:'left',paddingTop:'32px' }}>
+                    <div style={{marginRight:'42px'}}>
+                        <Typography style={{fontWeight:600, fontSize:'16px', lineHeight:'19.2px'}} >Location</Typography>
+                        <Typography style={{fontWeight:300,fontSize:'15px',lineHeight:'15px', paddingTop:'8px'}}>New York, US</Typography>
                     </div>
-                    <div className="col col-lg-3">
-                        <h5>Quick Links</h5>
-                        <ul className="list-unstyled text-small">
-                            <li><a style={{ color: 'white' }} href="#">Functions</a></li>
-                            <li><a style={{ color: 'white' }} href="#">About Us</a></li>
-                            <li><a style={{ color: 'white' }} href="#">Prices</a></li>
-                            <li><a style={{ color: 'white' }} href="#">Enter</a></li>
-                        </ul>
+                    <div style={{marginRight:'30px'}}>
+                        <Typography style={{fontWeight:600, fontSize:'16px', lineHeight:'19.2px'}}>Phone</Typography>
+                        <Typography style={{fontWeight:300,fontSize:'15px',lineHeight:'15px', paddingTop:'8px'}}>New York, US</Typography>
                     </div>
-                    <div className="col col-lg-3">
-                        <h5>Social Media</h5>
-                        <ul className="list-unstyled text-small">
-                            <li><a style={{ color: 'white' }} href="#">Team</a></li>
-                            <li><a style={{ color: 'white' }} href="#">Locations</a></li>
-                            <li><a style={{ color: 'white' }} href="#">Privacy</a></li>
-                            <li><a style={{ color: 'white' }} href="#">Terms</a></li>
-                        </ul>
+                    <div>
+                        <Typography style={{fontWeight:600, fontSize:'16px', lineHeight:'19.2px'}}>Email</Typography>
+                        <Typography style={{fontWeight:300,fontSize:'15px',lineHeight:'15px', paddingTop:'8px'}}>New York, US</Typography>
                     </div>
-                </div>
-            </footer>
-        </div>
-    )
-}
+                </Box>          
+              </Box>
+              <Grid item xs={12} lg={12} style={{ display: 'flex', flexDirection: 'row', justifyContent:'right',width:'400px'}}>
+                    <Box style={{ width: '250px', paddingBottom: '40px' }} mt={5}>
+                        <div style={{ backgroundColor: 'white', color: 'black', display: 'flex', justifyContent: 'center', borderRadius: '86px', height: '54px', alignItems: 'center'}}>
+                            <div style={{ marginRight: '32px' }}><FacebookIcon fontSize='large' /></div>
+                            <div style={{ marginRight: '32px' }}><TwitterIcon fontSize='large' /> </div>
+                            <div><LinkedInIcon fontSize='large' /></div>
+                        </div>
+                        <Typography style={{paddingTop:'32px' }} variant="body2">Copyrights © 2023. All Rights Reserved</Typography>
+                    </Box>
+                </Grid>
+            </Grid>
+          </Grid>
+        </Container>
+      </footer>
+    </Box>
+  );
+};
