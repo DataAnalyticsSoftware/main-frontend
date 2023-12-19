@@ -16,6 +16,9 @@ export const CSVContextProvider = ({children}: any) => {
     const [success, setSuccess] = useState<string | undefined>(undefined)
     const [fileDropped, setFileDropped] = useState<boolean>(false)
     const { webDataNetsRequest } = useContext(GenericContext)
+    const [fileName, setFileName] = useState<string>('')
+
+    const {handleToast} = useContext(GenericContext)
 
     const handleFileDrop = useCallback((file: File) => {
     }, []);
@@ -46,9 +49,9 @@ export const CSVContextProvider = ({children}: any) => {
 
     const parseFile = (file: File | null) => {
       if (file) {
+        setFileName(file.name)
         Papa.parse(file, {
         complete: (result: ParseResult<CSVData>) => {
-          console.log(result.meta.fields)
           setCsvHeaders(result.meta.fields)
           setCsvData(result.data);
         },
@@ -83,7 +86,8 @@ export const CSVContextProvider = ({children}: any) => {
                 setCsvData([])
                 setCsvHeaders([])
                 setName('')
-                setSuccess('File created succesfully!.')
+                setDescription('')
+                handleToast('CSV upload succesfully!')
             })
       }
     
@@ -105,7 +109,10 @@ export const CSVContextProvider = ({children}: any) => {
         success,
         fileDropped, 
         setFileDropped,
-        handleClickDrop
+        handleClickDrop,
+        fileName,
+        description,
+        name
       }
     
       return (

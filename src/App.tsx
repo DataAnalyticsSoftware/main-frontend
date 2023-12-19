@@ -21,7 +21,6 @@ function App() {
               <Route path='/' element={<PrincipalPage/>} />
               <Route path='/dashboards' element={<DashboardContainer />} />
               <Route path='/myAccount' element={<UserProfile/>} />
-              
               <Route path='/SignUp' element={<RegistrationComponent/>} />
             </Routes>
           </GenericContextProvider>

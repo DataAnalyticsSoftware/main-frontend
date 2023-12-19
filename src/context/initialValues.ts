@@ -8,5 +8,8 @@ export const initialValue = {
     setSignUp: () => { },
     userSignUpData: () => { },
     setUserSignUpData:() => { },
-    
+    openToast: false,
+    messageToast: '',
+    handleToast: () => {},
+    setOpenToast: () => {}
 }

@@ -7,6 +7,10 @@ export interface GenericContextValue{
     setSignUp: React.Dispatch<React.SetStateAction<boolean>>
     setUserSignUpData: React.Dispatch<React.SetStateAction<ISingUpUserData>>
     webDataNetsRequest: IWebDataNets
+    openToast: boolean
+    messageToast: string
+    handleToast: (message: string) => void
+    setOpenToast: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 

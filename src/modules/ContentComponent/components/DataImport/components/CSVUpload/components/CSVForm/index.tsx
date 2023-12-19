@@ -1,29 +1,30 @@
 import React, { useContext } from 'react'
 import { CSVContext } from '../../context/CSVContext'
-import { InputValidation } from '../../../../../../../../components/InputValidation'
+import { InputTextDas } from '../../../../../../../../components/InputTextDas'
+import { CSVSvg, CSVSvgCheck } from '../CSVSvg'
 export const CSVForm = () => {
-    const { handleDragOver,handleDrop, setName,setDescription,  success, setFileDropped,fileDropped, handleClickDrop } = useContext(CSVContext)
-    
+    const { handleDragOver, handleDrop, setName, setDescription,  fileDropped, handleClickDrop, fileName, description, name } = useContext(CSVContext)
+
+
     return (
         <>
-            <div style={{marginBottom: '50px', display:'flex', justifyContent:'left', paddingTop:'32px'}}>
-                <InputValidation onChange={setName} title={'Title'} text={'Please provide a Title.'} styles={"col-md-3 position-relative pl-0"} type={"text"} required={'yes'} tooltip={"invalid-tooltip"} isValid={"invalid-feedback"} submit={false} />
-                <InputValidation onChange={setDescription} title={'Description'} text={''} styles={"col-md-6 position-relative"} type={"text"} required={'no'} tooltip={"valid-tooltip"} isValid={"valid-feedback"} submit={true}  />
+            <div style={{marginBottom: '50px', width: '780px', display:'flex', justifyContent:'left', flexDirection: 'row', paddingTop:'32px', gap:'20px'}}>
+                <div style={{width: '100%'}}>
+                    <InputTextDas value={name} handlerOnChange={setName} label={'Title'} type={"text"} required />
+                </div>
+                <div style={{width: '100%'}}>
+                    <InputTextDas value={description} handlerOnChange={setDescription} label={'Description'} type={"text"} />
+                </div>
             </div>
             <div className="form-group">
             <input type="file" onChange={handleClickDrop} id="selectedFile" style={{display: 'none'}} />
-            {fileDropped?'':
-            <div
-            onDrop={handleDrop}
-            onDragOver={handleDragOver}
-            onClick={() => document?.getElementById('selectedFile')?.click()}
-            style={{ width: '100%', height: '200px', border: '2px dashed #ccc', display: 'flex', alignItems: 'center', justifyContent: 'center',  cursor: 'pointer' }}
-          >
-            <p>Drop .CSV file</p>
-        </div>}
+            <div onDrop={handleDrop} onDragOver={handleDragOver} onClick={() => document?.getElementById('selectedFile')?.click()} 
+                style={{ width: '100%', height: '242px', border: '2px dashed #D7D7D7', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center',  cursor: 'pointer', flexDirection: 'column' }} >
+                <p>{fileDropped ? <CSVSvgCheck/>: <CSVSvg/>}</p>
+                {fileDropped && <p>{`${fileName } was upload succesfully.`}</p>}
+            </div>
          
-        </div>
-            {success && <span style={{color: 'green'}}>{success}</span>}
+            </div>
         </>
   )
 }

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
-import { InputValidation } from '../../../../../../../components/InputValidation';
 import { AddCollectionContext } from '../context';
 import { useContext } from 'react'
 import { useEffect } from 'react';
@@ -9,6 +8,7 @@ import { useState } from 'react';
 import { CollectionContext } from '../../../context/CollectionContext';
 import { ButtonDas } from '../../../../../../../components/ButtonDas';
 import { Grid } from '@mui/material';
+import { InputTextDas } from '../../../../../../../components/InputTextDas';
 
 export default function FormCollection() {
   const { setName, setDescription, handleFormSubmit, dataSelected, setDataSelected, setId, name, description } = useContext(AddCollectionContext)
@@ -39,8 +39,8 @@ export default function FormCollection() {
     <div > 
       <Grid>
       <p style={{fontWeight:600,fontSize:'20px',lineHeight:'24.2px'}}>Collection Title</p>
-          <InputValidation onChange={setName} value={name} title={'Title'} text={'Please provide a Title.'} styles={ "position-relative"} type={"text"} required={'yes'} tooltip={"invalid-tooltip"} isValid={"invalid-feedback"} submit={false} />
-          <InputValidation onChange={setDescription} value={description} title={'Description'} text={''} styles={" position-relative mt-5"} type={"text"} required={'no'} tooltip={"valid-tooltip"} isValid={"valid-feedback"} submit={true}  />
+          <InputTextDas handlerOnChange={setName} value={name} label={'Title'} type={"text"} />
+          <InputTextDas handlerOnChange={setDescription} value={description} label={'Description'}  />
           
       </Grid>
       <Grid style={{marginTop: '10px'}}>
