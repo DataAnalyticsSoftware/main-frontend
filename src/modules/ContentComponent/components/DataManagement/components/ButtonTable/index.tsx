@@ -7,6 +7,7 @@ import DeleteIcon from '@mui/icons-material/DeleteOutlined';
 import { TableDataContext } from '../../context/TableDataContext';
 import ModeEditOutlineOutlinedIcon from '@mui/icons-material/ModeEditOutlineOutlined';
 import { Box } from '@mui/material';
+import { DeleteIcoDas, EditIconDas } from '../../../../../../components/SvgDas';
 
 export const ButtonTable = ({id}: any) => {
     const { rowsEdited, setRowsEdited, setRowIdToSave } = useContext(TableDataContext)
@@ -26,6 +27,7 @@ export const ButtonTable = ({id}: any) => {
                 key={`save_${id}`}
                 icon={<SaveIcon />}
                 label="Save"
+                style={{padding:'8px', color:'rgba(79, 70, 229, 1)'}}
                 sx={{
                     color: 'primary.main',
                 }}
@@ -38,6 +40,7 @@ export const ButtonTable = ({id}: any) => {
                     icon={<CancelIcon />}
                     label="Cancel"
                     className="textPrimary"
+                    style={{padding:'8px', color:'#EC6242'}}
                     onClick={() =>  {setSave(false); setRowsEdited(rowsEdited.filter(x=> x !== Number(id)))}}
                     color="inherit"
                 /> 
@@ -47,7 +50,7 @@ export const ButtonTable = ({id}: any) => {
             <Box style={{backgroundColor:'rgba(79, 70, 229, 0.14)', marginRight:'4px', borderRadius:'12px'}}>
                 <GridActionsCellItem
                         key={`edit_${id}`}
-                        icon={<ModeEditOutlineOutlinedIcon />}
+                        icon={<EditIconDas />}
                         label="Edit"
                         className="textPrimary"
                         style={{padding:'8px', color:'rgba(79, 70, 229, 1)'}}
@@ -58,7 +61,7 @@ export const ButtonTable = ({id}: any) => {
             <Box style={{backgroundColor:'rgba(236,98,66,0.14)', borderRadius:'12px'}}>
                 <GridActionsCellItem
                     key={`delete_${id}`}
-                    icon={<DeleteIcon />}
+                    icon={<DeleteIcoDas />}
                     label="Delete"
                     style={{padding:'8px', color:'#EC6242'}}
                     onClick={() => console.log('delete')}

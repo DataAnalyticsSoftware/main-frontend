@@ -61,7 +61,7 @@ export const RegistrationComponent = () => {
     const handleReset = () => {
       setActiveStep(0);
     };
-    console.log(activeStep);
+    
     
  return (
   <div className={styles.bg} >  
@@ -174,7 +174,7 @@ export const RegistrationComponent = () => {
                   label={'Back'}/>
                 <Box sx={{ flex: '1 1 auto' }} />
                 <Button label={activeStep === steps.length - 1 ? 'Finish' : 'Next'}  
-                onClick={steps.length - 1 ? handleNext:handleSubmit }/>
+                onClick={activeStep === steps.length - 1 ? handleSubmit : handleNext }/>
               </Box>
             </React.Fragment>
             )}

@@ -9,12 +9,8 @@ export const DashboardContext = createContext<DashboardContextValue>(initialValu
 export default function DashboardContextProvider({ children }: any) {
   const [menuSelected, setMenuSelected] = useState<IMenu>(initialValues.menuSelected)
   const [pricing, setPricing] = useState<any[]>([])
-  const [displaySelected, setDisplaySelected] = useState<string>('Display 1')
-  const [displayGraphic, setDisplayGraphic] = useState<string>('Vertical Bars')
-  const [displayCollection,setDisplayCollection] = useState<string>('collection 1')
-  const [collectionData, setCollectionData] = useState<any[]>([])
-  const [modalCreateCollection, setModalCreateCollection] = useState<boolean>(false)
   
+
   useEffect(() =>{
     setPricing(pricingTable);      
   }, [])
@@ -23,17 +19,7 @@ export default function DashboardContextProvider({ children }: any) {
     menuSelected,
     setMenuSelected,
     pricing,
-    setPricing,
-    displaySelected,
-    setDisplaySelected,
-    displayGraphic,
-    setDisplayGraphic,
-    displayCollection,
-    setDisplayCollection,
-    collectionData,
-    setCollectionData,
-    modalCreateCollection,
-    setModalCreateCollection
+    setPricing
   }
 
   return (

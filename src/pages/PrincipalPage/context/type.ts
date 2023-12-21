@@ -1,5 +1,8 @@
 export interface IPrincipalPageContext{
     data: IPrincipalPageData[],
+    loading: boolean
+    loadingIcon: boolean
+    setLoadingIcon: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 

@@ -1,14 +1,14 @@
 import React from 'react'
-import { TopBarComponent } from './components/TopBarComponent';
 import PrincipalPageContextProvider from './context/PrincipalPageContext';
-import { ContentTextComponent } from './components/ContentTextComponent';
+import { RenderLanding } from './components/RenderLanding';
+import { LoadingPageComponent } from './components/LoadingPageComponent';
 
 export const PrincipalPage = () => {
     return (
         <PrincipalPageContextProvider>
             <div>
-                <TopBarComponent />
-                <ContentTextComponent />
+                <RenderLanding/>
+                <LoadingPageComponent/>
             </div>
         </PrincipalPageContextProvider>
     )

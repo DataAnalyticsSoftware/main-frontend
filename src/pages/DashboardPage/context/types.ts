@@ -9,16 +9,6 @@ export interface MenuItem {
 export interface DashboardContextValue {
     menuSelected: IMenu;
     setMenuSelected: React.Dispatch<React.SetStateAction<IMenu>>;
-    pricing: any[]; // Reemplaza "any[]" con el tipo correcto de tu "pricing" si es posible
-    setPricing: React.Dispatch<React.SetStateAction<any[]>>; // Reemplaza "any[]" si es posible
-    displaySelected:string;
-    setDisplaySelected: React.Dispatch<React.SetStateAction<string>>;
-    displayGraphic:string,
-    setDisplayGraphic: React.Dispatch<React.SetStateAction<string>>,
-    displayCollection:string,
-    setDisplayCollection: React.Dispatch<React.SetStateAction<string>>,
-    collectionData:any[],
-    setCollectionData:React.Dispatch<React.SetStateAction<any[]>>,
-    modalCreateCollection:boolean,
-    setModalCreateCollection:React.Dispatch<React.SetStateAction<boolean>>
+    pricing: any[];  
+    setPricing: React.Dispatch<React.SetStateAction<any[]>>;
   };

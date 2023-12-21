@@ -1,1 +1,1 @@
-export const initialValue = { data: [] }
+export const initialValue = { data: [], loading: true, loadingIcon: true, setLoadingIcon: () => {} }

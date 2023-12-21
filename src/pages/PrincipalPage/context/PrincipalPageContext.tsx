@@ -8,6 +8,8 @@ export const PrincipalPageContext = createContext<IPrincipalPageContext>(initial
 
 export default function PrincipalPageContextProvider({ children }: any) {
     const [data, setData] = useState<IPrincipalPageData[]>([])
+    const [loading, setLoading] = useState<boolean>(true)
+    const [loadingIcon, setLoadingIcon] = useState<boolean>(true);
     const { webDataNetsRequest } = useContext(GenericContext)
     const { getInformation } = principalPageService(webDataNetsRequest)
 
@@ -15,11 +17,15 @@ export default function PrincipalPageContextProvider({ children }: any) {
         getInformation()
          .then( response =>{
             setData(response)
+            setLoading(false)
         })
     }, [])
 
     const contextValue: IPrincipalPageContext = {
-        data
+        data,
+        loading,
+        setLoadingIcon,
+        loadingIcon
     }
     
     return (

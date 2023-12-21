@@ -14,9 +14,12 @@ export const SideMenuComponent = () => {
 
     useEffect(() => {
         webDataNetsRequest('api/menu')
-            .then((response: IMenu[]) => setMenu(response))
+            .then((response: IMenu[]) => {
+                setMenu(response)
+                setMenuSelected(response[0])
+            })
     }, [])
-
+    
     const styles = {
         width: '100%',
         maxWidth: 360,
@@ -29,9 +32,9 @@ export const SideMenuComponent = () => {
                 <hr style={{backgroundColor: '#F6F6F6', opacity:'10%'}}></hr>
                     <List sx={styles} component="nav" aria-label="mailbox folders">
                         {menu?.map((value: IMenu, index: number) =>
-                            <ListItem key={index} button className={`${style.list_item} ${value === menuSelected ? style.list_item_selected : ''}`} onClick={() => setMenuSelected(value)}>
-                                <i className={`bi bi-${value.icon}  ${value === menuSelected ? style.list_text_selected : style.list_text}`} style={{ marginRight: '8px'}} ></i>
-                                <ListItemText primary={value.name} className={value === menuSelected ? style.list_text_selected : style.list_text} />
+                            <ListItem key={index} button className={`${style.list_item} ${value.route === menuSelected.route ? style.list_item_selected : ''}`} onClick={() => setMenuSelected(value)}>
+                                <i className={`bi bi-${value.icon}  ${value.route === menuSelected.route ? style.list_text_selected : style.list_text}`} style={{ marginRight: '8px'}} ></i>
+                                <ListItemText primary={value.name} className={value.route === menuSelected.route ? style.list_text_selected : style.list_text} />
                             </ListItem>)}
                     </List>                
             </div>

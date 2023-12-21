@@ -5,9 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import {
   DataGrid,
   GridRowEditStopReasons,
-  GridRowId,
   GridRowModel,
-  GridRowModes,
   GridRowModesModel,
   GridEventListener,
   GridPaginationModel,
@@ -16,19 +14,22 @@ import { GenericContext } from '../../../../../../context/GenericContext';
 import { getData } from '../../../../../../services/DataManagementService';
 import { ButtonTable } from '../ButtonTable';
 import { TableDataContext } from '../../context/TableDataContext';
+import { CustomPaginationDas } from '../../../../../../components/PaginationDas';
 
 // Componente principal
-export const CardInfo = ({ dataId }: any) => {
+export const CardInfo = ({ dataId, closeModal }: any) => {
 
   const { webDataNetsRequest } = useContext(GenericContext)
   const { rowsEdited, setRowsEdited, rowIdToSave, setRowIdToSave } = useContext(TableDataContext)
-  const [dataCollection, setDataCollection] = useState<any>(null)
-  const [rowModesModel, setRowModesModel] = useState<GridRowModesModel>({})
-  const [tableOpen, setTableOpen] = useState(true)
-  const [paginationModel, setPaginationModel] = useState<GridPaginationModel>({ pageSize: 10, page: 0 })
+  const [ dataCollection, setDataCollection ] = useState<any>(null)
+  const [ rowModesModel, setRowModesModel ] = useState<GridRowModesModel>({})
+  const [ tableOpen, setTableOpen ] = useState(true)
+  const [ paginationModel, setPaginationModel]  = useState<GridPaginationModel>({ pageSize: 10, page: 0 })
   const [ IsLoading, setIsLoading ] = useState<boolean>(true)
   const [ rowCountState, setRowCountState ] = useState<number>(0)
   const [ columns, setColumns ] = useState<any[]>([])
+
+  //TODO: WTF too much logic, pass all this code to a custom hook and do a simply refactor
 
   useEffect(() => {
     setDataCollection([])
@@ -43,7 +44,7 @@ export const CardInfo = ({ dataId }: any) => {
     getData(webDataNetsRequest, dataId, dataToSend).then((response: any) => {
       setDataCollection(response?.data)
       setRowCountState(response?.total_pages || 0)
-      lastColumns(response?.headers?.map((key: string) => ({ field: key, editable: true })))
+      lastColumns(response?.headers?.map((key: string) => ({ field: key, editable: true, height: '94px'  })))
     }).finally(() => setIsLoading(false))
   },[paginationModel])
 
@@ -68,7 +69,6 @@ export const CardInfo = ({ dataId }: any) => {
       event.defaultMuiPrevented = true;
     }
   }
-
   
   const processRowUpdate = (newRow: GridRowModel) => {
     if(newRow.id === rowIdToSave){
@@ -98,38 +98,33 @@ export const CardInfo = ({ dataId }: any) => {
       type: 'actions',
       headerName: 'Actions',
       width: 150,
+      height: '94px',
       cellClassName: 'actions',
       renderCell: (params: any) => <ButtonTable id={params.id}/> 
     }
     setColumns([...dataColumns, lastColumnsToAdd])
   }
 
-  
+  //TODO: Pasar el sx a constantes y styles a un scss
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" style={{position:'absolute',top:'17%', left:'43%', textAlign:'center',justifyContent:'center', borderRadius:'22px'}}  >
+    <div style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
       {tableOpen && columns.length > 0 ? (
-        <Paper style={{ height: 'auto', borderRadius:'22px'}}>
-          <IconButton
-            aria-label="close"
-            color="inherit"
-            size="small"
-            onClick={handleToggleTable}
-            style={{ position: 'absolute', right: '8px', top: '8px' }}
-          >
-            <CloseIcon />
-          </IconButton>
+        <Paper sx={{borderRadius: '12px !important'}}>
           <DataGrid
             sx={{
-              '& .css-1iyq7zh-MuiDataGrid-columnHeaders': {
-                backgroundColor: '#EEEEEE',
-            },
-            '& .css-t89xny-MuiDataGrid-columnHeaderTitle':{
-                fontWeight:600,
-                fontSize:16,
-                lineHeight:24
-            }
+                '& .css-1iyq7zh-MuiDataGrid-columnHeaders': {
+                  backgroundColor: '#F5F5F5',
+                  borderRadius: '12px 12px 0px 0px'
+                },
+                '& .css-t89xny-MuiDataGrid-columnHeaderTitle':{
+                    fontWeight:600,
+                    fontSize:16
+                },
+                maxHeight: 'calc( 100dvh - 40px )',
+                maxWidth: 'calc( 100dvw - 400px )'
             }}
+            rowHeight={70}
             style={{border:'none'}}
             editMode="row"
             onRowEditStop={handleRowEditStop}
@@ -140,20 +135,19 @@ export const CardInfo = ({ dataId }: any) => {
             checkboxSelection
             isCellEditable={() => true}
             processRowUpdate={processRowUpdate}
-            slotProps={{
-              toolbar: { setDataCollection, setRowModesModel },
-            }}
+            slotProps={{ toolbar: { setDataCollection, setRowModesModel } }}
             rowCount={rowCountState}
             loading={IsLoading}
             paginationMode="server"
             pageSizeOptions={[5]}
             paginationModel={paginationModel}
             onPaginationModelChange={setPaginationModel}
+            slots={{ pagination: (props) => <CustomPaginationDas {...props} cancelButton closeModal={closeModal} /> }}
           />
         </Paper>
       ) : (
         <Typography variant="body1">No hay datos para mostrar.</Typography>
       )}
-    </Box>
+    </div>
   );
 };

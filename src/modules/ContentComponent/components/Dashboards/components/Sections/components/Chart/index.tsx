@@ -63,7 +63,7 @@ export const Chart = ({optionData}: any): JSX.Element => {
                 </Select>
                 <FormHelperText>With label + helper text</FormHelperText>
             </FormControl>
-            {optionData.filter_types && <FormControl sx={{ m: 1, width: 200 }}>
+            {optionData?.filter_types && <FormControl sx={{ m: 1, width: 200 }}>
                 <InputLabel id="demo-simple-select-helper-label">Filters</InputLabel>
                 <Select
                     labelId="demo-simple-select-helper-label"
@@ -72,9 +72,9 @@ export const Chart = ({optionData}: any): JSX.Element => {
                     value={filterType}
                     label="Filters"
                     renderValue={(selected: string[]) => selected?.join(', ')}
-                    onChange={(event: SelectChangeEvent<typeof filterType>) => { setOptionChart(null); setFilterType(typeof event.target.value === 'string' ? event.target.value?.split(',') : event.target.value )}}
+                    onChange={(event: SelectChangeEvent<typeof filterType>) => { setOptionChart(null); setFilterType(typeof event?.target?.value === 'string' ? event?.target?.value?.split(',') : event?.target?.value )}}
                     >
-                        {filterTypes.map((value, index) => <MenuItem  key={index} value={value}>
+                        {filterTypes?.map((value, index) => <MenuItem  key={index} value={value}>
                                 <Checkbox checked={filterType?.indexOf(value) > -1} />
                                 <ListItemText primary={value} />
                             </MenuItem>)}
