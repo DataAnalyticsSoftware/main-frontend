@@ -16,9 +16,11 @@ export const DashboardContainer = (props:any) => {
                 <div className="container-fluid">
                     <div className="row">
                         <SideMenuComponent />
-                        <div style={{ backgroundColor: '#ededed', height: '100vh', width: 'calc( 100% - 221px )', marginLeft: '221px' }} id="main">
+                        <div style={{ backgroundColor: 'rgba(255, 255, 255, 1)',height:'11vh', width: 'calc( 100% - 221px )', marginLeft: '221px' }} id="main">
                             <TopBarDashboardPage />
-                            <ContentComponent />
+                        </div>
+                        <div style={{ backgroundColor: '#f4f5f4', height: '89vh', width: 'calc( 100% - 221px )', marginLeft: '221px' }} id="main">
+                        <ContentComponent />
                         </div>
                     </div>
                 </div>

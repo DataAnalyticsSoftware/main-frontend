@@ -7,7 +7,7 @@ interface IButtonDas {
     onClick?: any
     style?: any
     customClass?: any
-    pricing?:boolean
+    pricing?:boolean,
 }
 
 export const ButtonDas = (props: ButtonOwnProps & IButtonDas & { component?: React.ElementType;}): JSX.Element => {

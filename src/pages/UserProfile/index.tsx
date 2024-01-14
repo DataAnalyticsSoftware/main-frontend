@@ -1,131 +1,193 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../UserProfile/styles.module.scss'
 import { useNavigate } from "react-router-dom"
+import { ButtonDas } from '../../components/ButtonDas'
+import styles from './styles.module.scss'
+
+const itemsData = [{
+    "profile": {
+      "title": "My Profile",
+      "buttons": [
+        {
+          "text": "Go Back",
+          "color": "danger",
+          "size": "lg",
+          "onClick": "/dashboards"
+        },
+        {
+          "text": "Update",
+          "color": "primary",
+          "size": "lg"
+        }
+      ]
+    },
+    "fileUpload": {
+      "inputLabel": "Upload",
+      "ProfileImageTxt": "Profile Image",
+      "imgUploaded": "Change",
+      "removeButton": "Remove",
+      "note": "Min size 300px x 300px",
+      "fileInputId": "customFile",
+      "hidden": true
+    },
+    "firstColumn": {
+      "width": "60%",
+      "textAlign": "center",
+      "marginRight": "12px",
+      "bgColor": "bg-secondary-soft",
+      "padding": "px-4 py-5 rounded"
+    },
+    "secondColumn": {
+      "bgColor": "bg-secondary-soft",
+      "padding": "px-4 py-5 rounded",
+      "fields": [
+        {
+          "label": "Company Name",
+          "type": "text",
+          "placeholder": "",
+          "ariaLabel": "Phone number",
+          "value": "(333) 000 555"
+        },
+        {
+          "label": "First Name *",
+          "type": "text",
+          "placeholder": "",
+          "ariaLabel": "First name",
+          "value": "Scaralet"
+        },
+        {
+          "label": "Last Name *",
+          "type": "text",
+          "placeholder": "",
+          "ariaLabel": "Last name",
+          "value": "Doe"
+        },
+        {
+          "label": "Phone number *",
+          "type": "text",
+          "placeholder": "",
+          "ariaLabel": "Phone number",
+          "value": "(333) 000 555"
+        },
+        {
+          "label": "Mobile number *",
+          "type": "text",
+          "placeholder": "",
+          "ariaLabel": "Phone number",
+          "value": "+91 9852 8855 252"
+        },
+        {
+          "label": "Email *",
+          "type": "email",
+          "placeholder": "",
+          "ariaLabel": "Email",
+          "value": "example@homerealty.com"
+        }
+      ]
+    },
+    "socialMedia": {
+      "bgColor": "bg-secondary-soft",
+      "padding": "px-4 py-5 rounded",
+      "title": "Social media detail",
+      "fields": [
+        {
+          "label": "Facebook *",
+          "type": "text",
+          "placeholder": "",
+          "ariaLabel": "Facebook",
+          "value": "http://www.facebook.com",
+          "icon": "fab fa-fw fa-facebook",
+          "iconColor": "text-facebook"
+        },
+        {
+          "label": "Twitter *",
+          "type": "text",
+          "placeholder": "",
+          "ariaLabel": "Twitter",
+          "value": "http://www.twitter.com",
+          "icon": "fab fa-fw fa-twitter",
+          "iconColor": "text-twitter"
+        },
+        {
+          "label": "Instagram *",
+          "type": "text",
+          "placeholder": "",
+          "ariaLabel": "Instragram",
+          "value": "http://www.instragram.com",
+          "icon": "fab fa-fw fa-instagram",
+          "iconColor": "text-instagram"
+        }
+      ]
+    },
+    "changePassword": {
+      "bgColor": "bg-secondary-soft",
+      "padding": "px-4 py-5 rounded",
+      "title": "Change Password"
+    }}
+]
 export const UserProfile = (props:any) => {
+  const [imgWasUploaded, setImgWasUploaded] = useState(true)
     const navigate = useNavigate()
+    const handleSubmit=()=>{
+    }
+
     return (
-        <div className="container">
-            <div className="row">
-                <div className="col-12">
-                    <div className="my-5">
-                        <h3>My Profile</h3>
-                        <hr />
+        <div className="container-fluid" style={{backgroundColor:'rgb(246, 246, 246)',paddingLeft:'0 !Important', paddingRight:'0px !important'}}>
+            <div className="col-12" style={{backgroundColor:'rgb(246, 246, 246)',paddingLeft:'0 !Important', paddingRight:'0px !important'}}>
+                <div className="container-fluid" style={{backgroundColor:'rgb(246, 246, 246)',paddingLeft:'0 !Important', paddingRight:'0px !important'}}>
+                {itemsData.map((item, index) => (
+                <div  key={index} className="container">
+                    <div className="row">
+                        <div style={{ display: 'flex' }} className={`col-xxl-6 mb-2 mb-xxl-0 ${item.firstColumn.bgColor} ${item.firstColumn.padding}`}>
+                            <div className={`bg-secondary-soft py-5 rounded`} style={{ width: '60%', textAlign: 'center', marginRight: '12px' }}>
+                                <input type="file" id="customFile" name="file" hidden />
+                                <label className={`btn btn-success-soft btn-block ${styles.title}`} htmlFor="customFile">{item.fileUpload.ProfileImageTxt} </label>
+                                <div>  {imgWasUploaded ? <img style={{height:'200px', width:'200px', marginBottom:'16px', borderRadius:'25px'}}></img> :''}</div>
+                              
+                                {<ButtonDas variant='outlined' text={imgWasUploaded ?item.fileUpload.imgUploaded:item.fileUpload.inputLabel}/>}
+                                <p className="text-muted mt-3 mb-0"><span className="me-1">{item.fileUpload.note}</span></p>
+                            </div>
+                            <div className={`bg-secondary-soft px-3 rounded row ${item.secondColumn.bgColor}`}>
+                                {item.secondColumn.fields.map((field, fieldIndex) => (
+                                <div key={fieldIndex} className="col-md-6 py-2">
+                                    <label className={`form-label ${styles.title}`} >{field.label}</label>
+                                    <input type={field.type} className={`form-control ${styles.input}`} placeholder={field.placeholder} aria-label={field.ariaLabel} value={field.value} />
+                                </div>
+                                ))}
+                            </div>
+                        </div>
+                        <hr style={{border:'0.5px solid black', width:'100%'}}></hr>
                     </div>
-
-                    <form className="file-upload">
-                        <div className="col">
-                            <div className="bg-secondary-soft px-4 py-5 rounded">
-                                <h4 className="mb-4 mt-0">Upload your profile photo</h4>
-                                <div className="">
-                                    <div className="text-center">
-                                        <div className="square position-relative display-2 mb-3">
-                                            <i className="fas fa-fw fa-user position-absolute top-50 start-50 translate-middle text-secondary"></i>
-                                        </div>
-                                        <input type="file" id="customFile" name="file" hidden />
-                                        <label className="btn btn-success-soft btn-block" htmlFor="customFile">Upload</label>
-                                        <button type="button" className="btn btn-danger-soft">Remove</button>
-                                        <p className="text-muted mt-3 mb-0"><span className="me-1">Note:</span>Minimum size 300px x 300px</p>
-                                    </div>
+                    <div style={{ justifyContent: 'center' }}>
+                        <div className={`col-xxl-6 mb-5 mb-xxl-0 ${item.socialMedia.bgColor} ${item.socialMedia.padding}`}>
+                            <div className="row g-3">
+                                {item.socialMedia.fields.map((socialField, socialIndex) => (
+                                <div key={socialIndex} className="col-md-4">
+                                    <label className={`form-label ${styles.title}`}><i className={`${socialField.icon} me-2 ${socialField.iconColor}`}></i>{socialField.label}</label>
+                                    <input type={socialField.type} className={`form-control ${styles.input}`} placeholder={socialField.placeholder} aria-label={socialField.ariaLabel} value={socialField.value}/>
+                                </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                    </div>))}
+                    <div className="col">
+                        <div className="bg-secondary-soft rounded">
+                            <h4 className="my-4">Change Password send email</h4>
+                        </div>
+                    </div>
+                    {itemsData.map((item, index) => (
+                    <div key={index} className="container">
+                        <div className="row">
+                            <div className="col-12" style={{fontSize:'24px'}}>
+                                <div className="mt-5">
+                                    {item.profile.buttons.map((button, buttonIndex) => (
+                                    <ButtonDas style={{height:'70px', width:'150px', borderRadius:'12 !important', fontSize:'18px', marginRight:'12px'}} variant={button.text!=='Go Back' ? "contained":"outlined"} key={buttonIndex} text={button.text} onClick={() => button.onClick && button.text!=='Upgrade' ? navigate(button.onClick, { replace: true }) : handleSubmit()}/>))}
                                 </div>
                             </div>
                         </div>
-                        <div className="row mb-5 gx-5">
-                            <div className="col-xxl-8 mb-5 mb-xxl-0">
-                                <h4 className="mb-4 mt-0">Contact detail</h4>
-                                <div className="bg-secondary-soft px-4 py-5 rounded">
-                                    <div className="row">
-                                        <div className="col-md-6">
-                                            <label className="form-label">First Name *</label>
-                                            <input type="text" className="form-control" placeholder="" aria-label="First name" value="Scaralet" />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label className="form-label">Last Name *</label>
-                                            <input type="text" className="form-control" placeholder="" aria-label="Last name" value="Doe" />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label className="form-label">Phone number *</label>
-                                            <input type="text" className="form-control" placeholder="" aria-label="Phone number" value="(333) 000 555" />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label className="form-label">Mobile number *</label>
-                                            <input type="text" className="form-control" placeholder="" aria-label="Phone number" value="+91 9852 8855 252" />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label htmlFor="inputEmail4" className="form-label">Email *</label>
-                                            <input type="email" className="form-control" id="inputEmail4" value="example@homerealty.com" />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label className="form-label">Skype *</label>
-                                            <input type="text" className="form-control" placeholder="" aria-label="Phone number" value="Scaralet D" />
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <div className="row mb-5 gx-5">
-                            <div className="col-xxl-6 mb-5 mb-xxl-0">
-                                <div className="bg-secondary-soft px-4 py-5 rounded">
-                                    <h4 className="mb-4 mt-0">Social media detail</h4>
-                                    <div className="row g-3">
-
-                                        <div className="col-md-6">
-                                            <label className="form-label"><i className="fab fa-fw fa-facebook me-2 text-facebook"></i>Facebook *</label>
-                                            <input type="text" className="form-control" placeholder="" aria-label="Facebook" value="http://www.facebook.com" />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label className="form-label"><i className="fab fa-fw fa-twitter text-twitter me-2"></i>Twitter *</label>
-                                            <input type="text" className="form-control" placeholder="" aria-label="Twitter" value="http://www.twitter.com" />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label className="form-label"><i className="fab fa-fw fa-linkedin-in text-linkedin me-2"></i>Linkedin *</label>
-                                            <input type="text" className="form-control" placeholder="" aria-label="Linkedin" value="http://www.linkedin.com" />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label className="form-label"><i className="fab fa-fw fa-instagram text-instagram me-2"></i>Instagram *</label>
-                                            <input type="text" className="form-control" placeholder="" aria-label="Instragram" value="http://www.instragram.com" />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label className="form-label"><i className="fas fa-fw fa-basketball-ball text-dribbble me-2"></i>Dribble *</label>
-                                            <input type="text" className="form-control" placeholder="" aria-label="Dribble" value="http://www.dribble.com" />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label className="form-label"><i className="fab fa-fw fa-pinterest text-pinterest"></i>Pinterest *</label>
-                                            <input type="text" className="form-control" placeholder="" aria-label="Pinterest" value="http://www.pinterest.com" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col">
-                                <div className="bg-secondary-soft px-4 py-5 rounded">
-                                    <h4 className="my-4">Change Password</h4>
-                                    <div className="row g-3">
-                                        <div className="col-md-6">
-                                            <label htmlFor="exampleInputPassword1" className="form-label">Old password *</label>
-                                            <input type="password" className="form-control" id="exampleInputPassword1" />
-                                        </div>
-                                        <div className="col-md-6">
-                                            <label htmlFor="exampleInputPassword2" className="form-label">New password *</label>
-                                            <input type="password" className="form-control" id="exampleInputPassword2" />
-                                        </div>
-                                        <div className="col-md-12 mt-2">
-                                            <label htmlFor="exampleInputPassword3" className="form-label">Confirm Password *</label>
-                                            <input type="password" className="form-control" id="exampleInputPassword3" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="gap-3 d-md-flex justify-content-md-end text-center">
-                            <button type="button" className="btn btn-danger btn-lg" onClick={() => navigate('/dashboards', { replace: true })}>Go Back</button>
-                            <button type="button" className="btn btn-primary btn-lg">Update profile</button>
-                        </div>
-                    </form>
-
+                    </div>
+                ))}
                 </div>
             </div>
         </div>

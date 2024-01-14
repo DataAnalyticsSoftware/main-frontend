@@ -9,7 +9,7 @@ export const Collections = () => {
     return (
         <CollectionContextProvider>
             <AddCollectionProvider>
-                <div style={{display: 'flex', flexDirection: 'row', width: '100%', marginBottom: '24px'}}>
+                <div style={{display: 'flex', flexDirection: 'row', width: '100%', marginBottom: '24px', paddingTop:'26px'}}>
                     <div style={{display: 'flex', flexDirection: 'column', gap: '12px', width: '100%'}}>
                         <span className={styles.title}> Saved Collection </span>
                         <span className={styles.sub_title}> You can contact with us at this hours.  </span>
