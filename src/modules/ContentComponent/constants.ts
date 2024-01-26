@@ -6,5 +6,6 @@ export const ROUTES_DASHBOARD = {
     COLLECTIONS: "/collections",
     UPGRADE: "/upgrade",
     SUPPORT: "/support",
-    ABOUT: "/about"
+    ABOUT: "/about",
+    CAMPAIGNS: "/campaigns"
 }

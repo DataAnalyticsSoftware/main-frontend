@@ -7,6 +7,7 @@ import { Support } from './components/Support'
 import { DataManagement } from './components/DataManagement'
 import { Dashboards } from './components/Dashboards'
 import { DashboardContext } from '../../pages/DashboardPage/context/DashboardContext'
+import { Campaigns } from './components/Campaigns'
 
 export const renderPage = (route: string): JSX.Element => {
     
@@ -20,7 +21,8 @@ export const renderPage = (route: string): JSX.Element => {
         [ROUTES_DASHBOARD.UPGRADE]: <PricingTableComponent pricing={pricing}/>,
         [ROUTES_DASHBOARD.SUPPORT]: <Support />,
         [ROUTES_DASHBOARD.ABOUT]: <div>About</div>,
-        [ROUTES_DASHBOARD.DATAMANAGEMENT]: <DataManagement/>
+        [ROUTES_DASHBOARD.DATAMANAGEMENT]: <DataManagement/>,
+        [ROUTES_DASHBOARD.CAMPAIGNS]: <Campaigns/>
 
     }
     
