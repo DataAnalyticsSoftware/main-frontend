@@ -10,6 +10,7 @@ import { PrincipalPage } from './pages/PrincipalPage'
 import GenericContextProvider from './context/GenericContext'
 import { UserProfile } from './pages/UserProfile'
 import { RegistrationComponent } from './pages/PrincipalPage/components/SignUpComponent'
+import { LandinPage } from './pages/LandingPage'
 
 
 function App() {
@@ -18,10 +19,11 @@ function App() {
         <div className="App">
           <GenericContextProvider>
             <Routes>
-              <Route path='/' element={<PrincipalPage/>} />
+              <Route path='/a' element={<PrincipalPage/>} />
               <Route path='/dashboards' element={<DashboardContainer />} />
               <Route path='/myAccount' element={<UserProfile/>} />
               <Route path='/SignUp' element={<RegistrationComponent/>} />
+              <Route path='/' element={<LandinPage/>} />
             </Routes>
           </GenericContextProvider>
         </div>
