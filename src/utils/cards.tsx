@@ -6,11 +6,17 @@ export const Cards=({icon,title,text,button, index})=> {
   return (
     <>
     {button ?
-    <Box>
-        <i className={icon}></i>
-        <Typography>{title}</Typography>
-        <Typography>{text}</Typography>
-        <Button>Read More</Button>
+    <Box >
+      <Box sx={{mb:4,height:'50px', color:`${'#FF5A05'}`, position:'relative', left:'36%', top:'25px', bacgrkoundColor:'#D7EFDB'}}>
+        <i style={{fontSize:70, backgroundColor:'#D7EFDB', borderRadius:'50%', padding:5}} className={icon}></i>
+      </Box>
+      <Box sx={{pb:2, backgroundColor:`${'white'}`,color:`${'black'}`, p:2, borderRadius:5,mb:8, textAlign:'center', justifyContent:'center'}}>
+        <Typography variant='h6' sx={{pb:2,mt:4}}>{title}</Typography>
+          <Typography sx={{lineHeight:1.3,pb:2}}>{text}</Typography>
+          <Box sx={{ textAlign: 'center' }}>
+            <Button sx={{backgroundColor:'#fe5b05', color:'#FFFFFF', padding:2}} variant="text">Learn More</Button>
+          </Box>
+      </Box>
     </Box>
     : 
     <Box sx={{pb:2, backgroundColor:`${index===0?'#4252CF':'white'}`,color:`${index===0?'white':'black'}`, p:2, borderRadius:5,mb:4}}>
@@ -18,7 +24,7 @@ export const Cards=({icon,title,text,button, index})=> {
             <i style={{fontSize:50}} className={icon}></i>
         </Box>
         <Typography variant='h5' sx={{pb:2}}>{title}</Typography>
-        <Typography sx={{lineHeight:1.7}}>{text}</Typography>
+        <Typography sx={{lineHeight:1.5}}>{text}</Typography>
     </Box> 
     }
     </>
