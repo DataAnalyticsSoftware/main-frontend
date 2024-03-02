@@ -11,5 +11,7 @@ export const initialValue = {
     openToast: false,
     messageToast: '',
     handleToast: () => {},
-    setOpenToast: () => {}
+    setOpenToast: () => {},
+    t: () => '',
+    i18n: null
 }

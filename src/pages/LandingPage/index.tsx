@@ -11,7 +11,7 @@ export const LandinPage=()=> {
         <NavBar/>
         <Box sx={{ px: 4, pt: 2, color: '#FFFFFF', textAlign:'left' }}>
             <Header/>
-            <ContentLandingComponent/>      
+            <ContentLandingComponent/>
         </Box>
 
     </div>

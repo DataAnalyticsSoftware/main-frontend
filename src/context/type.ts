@@ -1,3 +1,5 @@
+import { TFunction, i18n } from "i18next"
+
 export interface GenericContextValue{
     setToken:React.Dispatch<React.SetStateAction<string | null>>
     token: string | null
@@ -11,6 +13,8 @@ export interface GenericContextValue{
     messageToast: string
     handleToast: (message: string) => void
     setOpenToast: React.Dispatch<React.SetStateAction<boolean>>
+    t:TFunction<"global", undefined> |( () => string) ,
+    i18n:i18n | null
 }
 
 

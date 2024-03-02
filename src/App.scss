@@ -1,7 +1,6 @@
-
 .App {
   text-align: center;
-  font-family: 'Inter';
+  font-family: "Poppins" !important;
 }
 .App-header {
   background-color: #282c34;
@@ -19,12 +18,12 @@
 }
 
 .MuiPagination-root {
-  .css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected{
+  .css-19xm0h7-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
     background-color: rgba(79, 70, 229, 1) !important;
     color: white !important;
   }
   button {
     color: black !important;
     background-color: white !important;
- }
+  }
 }

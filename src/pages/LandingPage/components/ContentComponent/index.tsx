@@ -4,18 +4,21 @@ import { AboutUs } from './components/AboutUs';
 import { OurServices } from './components/OurServices';
 import { WhyChooseUs } from './components/WhyChooseUs';
 import { CompareTable } from './components/CompareTable';
-import { FAQ } from '../FAQ';
-import { Form } from '../Form';
+import { FAQ } from './components/FAQ';
+import { Form } from './components/Form';
+import { ContentLandingContextProvider } from './context/ContentLandingContext'
 
 export const ContentLandingComponent=()=> {
   return (
-    <Box> 
-      <AboutUs/>
-      <OurServices/>
-      <CompareTable/>
-      <WhyChooseUs/>
-      <FAQ/>
-      <Form/>
-    </Box>
+    <ContentLandingContextProvider>
+      <Box>
+        <AboutUs/>
+        <OurServices/>
+        <CompareTable/>
+        <WhyChooseUs/>
+        <FAQ/>
+        <Form/>
+      </Box>
+    </ContentLandingContextProvider>
   )
 }
