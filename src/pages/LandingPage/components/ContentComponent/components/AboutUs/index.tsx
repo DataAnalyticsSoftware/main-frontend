@@ -1,5 +1,6 @@
 import { Box, Button, Typography } from '@mui/material';
 import React from 'react';
+import { PrincipalIconDas } from '../../../../../../components/SvgDas';
 
 export const AboutUs=()=> {
   return (

@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppBar, Box, Toolbar, Typography, IconButton, Menu, MenuItem } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { PrincipalIconDas } from '../../../../components/SvgDas';
 
 export const NavBar = () => {
   // State para manejar el menú desplegable
@@ -20,9 +21,10 @@ export const NavBar = () => {
     <Box sx={{ flexGrow: 1 }} style={{ backgroundColor: 'transparent' }}>
         <AppBar position="sticky" sx={{ top: 0, zIndex: 100, boxShadow:'none',background: 'transparent'}}>
             <Toolbar>
-                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    Photos
-                </Typography>
+              <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', width: '100%'}}>
+                <div style={{width: '33px', height: '43px'}}>
+                  <PrincipalIconDas/>
+                </div>
                 <IconButton
                     size="large"
                     edge="start"
@@ -45,6 +47,7 @@ export const NavBar = () => {
                     <MenuItem onClick={handleClose}>Opción 2</MenuItem>
                     <MenuItem onClick={handleClose}>Opción 3</MenuItem>
                 </Menu>
+              </div>
             </Toolbar>
         </AppBar>
     </Box>
