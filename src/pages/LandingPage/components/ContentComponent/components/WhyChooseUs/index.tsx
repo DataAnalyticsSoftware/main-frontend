@@ -9,7 +9,7 @@ export const WhyChooseUs=()=> {
 
   return (
     <Box sx={{paddingTop:8}}>
-      <Typography variant="h4" sx={{paddingBottom:2, color:'black'}}>Why Choose<Typography sx={{color:'#fe5b05', pl:1}} variant="h4"> Us?</Typography></Typography>
+      <Typography variant="h4" sx={{paddingBottom:2, color:'black'}}>Why Choose<span style={{color:'#fe5b05'}}> Us?</span></Typography>
       <Typography variant="subtitle1" paragraph>
       Experience the future of data management engage with Webdatanets and elevate your business to new heights! Your data, your rules, your success.</Typography>
       <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '25px', justifyContent: 'center'}}>

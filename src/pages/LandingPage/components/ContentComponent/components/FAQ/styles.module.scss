@@ -1,0 +1,13 @@
+.customAccordion > div {
+  padding-right: 0 !important;
+  min-height: auto !important;
+}
+.customAccordion {
+  border-radius: 10px !important;
+  margin-bottom: 30px;
+}
+
+.customAccordion > div > div {
+  margin: 0 !important;
+  background-color: transparent;
+}
