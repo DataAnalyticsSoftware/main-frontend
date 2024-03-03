@@ -4,6 +4,7 @@ import { Header } from './components/Header'
 import './styles.module.scss'
 import { ContentLandingComponent } from './components/ContentComponent'
 import { Box } from '@mui/material'
+import { Footer } from './components/Footer'
 
 export const LandinPage=()=> {
   return (
@@ -11,9 +12,9 @@ export const LandinPage=()=> {
         <NavBar/>
         <Box sx={{ px: 4, pt: 2, color: '#FFFFFF', textAlign:'left' }}>
             <Header/>
-            <ContentLandingComponent/>
-        </Box>
-
+            <ContentLandingComponent/>      
+        </Box>  
+        <Footer/>
     </div>
   )
 }
