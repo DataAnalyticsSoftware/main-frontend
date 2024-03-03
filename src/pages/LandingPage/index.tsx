@@ -10,14 +10,14 @@ export const LandinPage=()=> {
   return (
     <div  className='landing-page'>
       <Box style={{background:'linear-gradient(264.47deg, #2E43F0 29.39%, #6677FF 93.49%)'}}>
-      <NavBar/>
-      <Box sx={{ px: 4, pt: 2, color: '#FFFFFF', textAlign:'left', pb:6 }}>
-        <Header/>
-      </Box> 
+        <NavBar/>
+        <Box sx={{ px: 4, pt: 2, color: '#FFFFFF', textAlign:'left', pb:6, maxWidth: '1440px', m:'auto' }}>
+          <Header/>
+        </Box>
       </Box>
-        <Box sx={{ px: 4, pt: 2, color: 'black', textAlign:'left' }}>
-          <ContentLandingComponent/>      
-        </Box>  
+        <Box sx={{ px: 4, pt: 2, color: 'black', textAlign:'center', maxWidth: '1440px', m:'auto' }}>
+          <ContentLandingComponent/>
+        </Box>
         <Footer/>
     </div>
   )
