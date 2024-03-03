@@ -1,38 +1,40 @@
 table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: white;
-    border-radius: 8px;
-    margin-top: 20px;
-  }
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 20px;
+}
 
-  th,
-  td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-    padding: 18px;
-  }
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  padding: 18px;
+}
 
-  th {
-    background-color: #f2f2f2;
-    min-width: 180px;
-  }
+th {
+  background-color: #f2f2f2;
+  min-width: 180px;
+}
 
-  .text-success {
-    color: green;
-  }
+.text-success {
+  color: green;
+}
 
-  .fw-bold {
-    font-weight: bold;
-  }
+.fw-bold {
+  font-weight: bold;
+}
 
-  .table-container {
-    margin: 20px 0;
-    overflow-x: auto;
-  }
+.table-container {
+  margin: 20px 0;
+  overflow-x: auto;
+  position: relative;
+  width: calc(100vw - 64px);
+}
 
-  .styled-icon {
-    font-size: 18px; /* Tamaño ajustable según necesidades */
-    margin-right: 5px; /* Espacio entre el icono y el texto, ajustable según necesidades */
-  }
+.styled-icon {
+  font-size: 18px; /* Tamaño ajustable según necesidades */
+  margin-right: 5px; /* Espacio entre el icono y el texto, ajustable según necesidades */
+}

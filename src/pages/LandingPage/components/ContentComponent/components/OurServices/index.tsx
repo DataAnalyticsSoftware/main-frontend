@@ -14,11 +14,11 @@ export const OurServices=()=> {
       <p style={{paddingTop:2}}>
         We offer a verity of interesting features that you can help increase your productivity at work and manage your Business easily.
       </p>
-      <Box sx={{justifyContent: 'space-evenly'}}>
+      <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', alignItems: 'center'}}>
         {landings.filter((landing) => !landing.button).map((landing, index) =>
           <Cards key={index} index={index} icon={landing.icon} title={landing.title} text={landing.description} button={landing.button} />
         )}
-      </Box>
+      </div>
     </Box>
   )
 }

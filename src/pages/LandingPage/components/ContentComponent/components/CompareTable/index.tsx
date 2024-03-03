@@ -10,7 +10,7 @@ export const CompareTable = () => {
   return (
     <>
       <h1 style={{paddingBottom:12}}>Why are we <span style={{color:'#fe5b05', paddingBottom:2, paddingLeft:2}}>the best</span> on the market?</h1>
-      <div className="table-container">
+      <div className="table-container" style={{ overflowX: 'auto',position: 'relative', width: 'calc(100vw - 64px)'}}>
     <table aria-label="compare table">
       <thead>
         <tr>
