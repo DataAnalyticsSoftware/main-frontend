@@ -7,16 +7,15 @@ export const Cards=({icon,title,text,button, index})=> {
     <>
     {button ?
     < >
-      <Box sx={{mb:1,height:'50px', color:`${'#FF5A05'}`,textAlign:'center', bacgrkoundColor:'#D7EFDB'}}>
-        <i style={{fontSize:70, backgroundColor:'#D7EFDB', borderRadius:'50%', padding:5}} className={icon}></i>
-      </Box>
-      <Box sx={{pb:2, backgroundColor:`${'white'}`,color:`${'black'}`, p:2, borderRadius:5,mb:8, textAlign:'center', justifyContent:'center'}}>
-        <Typography variant='h6' sx={{pb:2,mt:4}}>{title}</Typography>
-          <Typography sx={{lineHeight:1.3,pb:2}}>{text}</Typography>
-          <Box sx={{ textAlign: 'center' }}>
-            <Button sx={{backgroundColor:'#fe5b05', color:'#FFFFFF', padding:2}} variant="text">Learn More</Button>
-          </Box>
-      </Box>
+    <div style={{minWidth: '342px', maxWidth: '450px', position: 'relative', marginTop: 60}}>
+      <div style={{width: '106px', height: '106px', backgroundColor: '#DAE8FF', borderRadius: '50%', display: 'flex', alignContent: 'center', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: 'calc(-53px)', left: 'calc(50% - 53px)'}}>
+        <i style={{fontSize: '48px', color: '#FF5A05'}} className={icon}></i>
+      </div>
+      <div style={{backgroundColor: 'white', border: '1px solid grey', padding: '63px 15px', paddingBottom: '20px', color: 'black', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '230px'}}>
+        <p style={{paddingBottom:2,marginTop:4}}>{title}</p>
+        <Typography sx={{lineHeight:1.3,pb:2}}>{text}</Typography>
+      </div>
+    </div>
     </>
     : 
     <Box className='border' sx={{pb:2, backgroundColor:`${index===0?'#4252CF':'white'}`,color:`${index===0?'white':'black'}`, p:2, borderRadius:5,mb:4, }}>
