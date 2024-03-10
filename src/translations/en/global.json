@@ -3,5 +3,27 @@
         "title-1": "We're Here to Increase Your",
         "title-2": "Productivity",
         "description": "Transform the way you manage data with Webdatanets, an innovative service dedicated to optimizing, assisting, and revolutionizing your company's databases."
+    },
+    "faq":{
+        "question-1":"How do I start using the software?",
+        "answer-1":"Start by registering on our platform. Then choose the plan that best suits your needs. Log in, and you can import data from files or connect your CRM. It's that easy!",
+        "question-2":"How does your SaaS work?",
+        "answer-2":"The process is simple. Import your data, create collections to organise it and apply filters according to your needs. In the charting section, choose collections and customise your charts for visual insights.",
+        "question-3":"What types of data can I manage and analyse with your software?",
+        "answer-3":"You can manage a variety of data, from customer information to sales data. The key to effective visualisation is to establish meaningful relationships between them.",
+        "question-4":"How can you simplify the data management process for my company?",
+        "answer-4":"We simplify with automatic importing, rapid collection building and intuitive tools that save time and improve efficiency in data management.",
+        "question-5":"Do you offer integrations with other tools or platforms?",
+        "answer-5":"Yes, our platform integrates with several popular tools such as Shopify, PrestaShop, Mailchimp, ActiveCampaign, WordPress, Klaviyo, and more, making it easy to synchronise data.",
+        "question-6":"What are the advantages of integrating from a CRM?",
+        "answer-6":"Integrating from a CRM simplifies the automatic import and update of data, improving operational efficiency and ensuring accuracy of information.",
+        "question-7":"Can I access and manage my database from any location and device?",
+        "answer-7":"Absolutely, our platform is accessible from any location and device, giving you the flexibility to manage your data remotely.",
+        "question-8":"How does your software help improve the effectiveness of marketing campaigns and strategies?",
+        "answer-8":"We facilitate data analysis and targeting, providing tools to optimise your advertising campaigns and marketing strategies effectively.",
+        "question-9":"What technical support options are available?",
+        "answer-9":"We offer dedicated technical support and training resources to ensure you get the most out of all the features of our software, ensuring a smooth experience.",
+        "question-10":"What is the pricing model and what does it include?",
+        "answer-10":"We have flexible plans that detail the specific features included in each plan. For more information, please see our pricing section."
     }
 }

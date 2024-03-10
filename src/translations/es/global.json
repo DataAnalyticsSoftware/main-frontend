@@ -4,5 +4,27 @@
         "title-2": "Productividad",
         "description": "Transforme la forma en que administra los datos con Webdatanets, un servicio innovador dedicado a optimizar, ayudar y revolucionar las bases de datos de su empresa."
 
+    },
+    "faq":{
+        "question-1":"¿Cómo puedo empezar a usar el software?",
+        "answer-1":"Comienza registrándote en nuestra plataforma. Luego, elige el plan que mejor se adapte a tus necesidades. Inicia sesión, y ya puedes importar datos desde archivos o conectar tu CRM. ¡Así de fácil!",
+        "question-2":"¿Cómo funciona vuestro SaaS?",
+        "answer-2":"El proceso es sencillo. Importa tus datos, crea colecciones para organizarlos y aplicar filtros según tus necesidades. En el apartado de gráficas, elige colecciones y personaliza tus gráficos para obtener insights visuales.",
+        "question-3":"¿Qué tipos de datos puedo gestionar y analizar con vuestro software?",
+        "answer-3":"Puedes gestionar una variedad de datos, desde información de clientes hasta datos de ventas. La clave para una visualización efectiva es establecer relaciones significativas entre ellos.",
+        "question-4":"¿Cómo podéis simplificar el proceso de gestión de datos para mi empresa?",
+        "answer-4":"Simplificamos con importación automática, creación rápida de colecciones y herramientas intuitivas que ahorran tiempo y mejoran la eficiencia en la gestión de datos.",
+        "question-5":"¿Ofrecen integraciones con otras herramientas o plataformas?",
+        "answer-5":"Sí, nuestra plataforma se integra con varias herramientas populares como Shopify, PrestaShop, Mailchimp, ActiveCampaign, WordPress, Klaviyo, y más, facilitando la sincronización de datos.",
+        "question-6":"¿Cuáles son las ventajas de integrar desde un CRM?",
+        "answer-6":"Integrar desde un CRM simplifica la importación y actualización automática de datos, mejorando la eficiencia operativa y garantizando la precisión de la información.",
+        "question-7":"¿Puedo acceder y gestionar mi base de datos desde cualquier lugar y dispositivo?",
+        "answer-7":"Absolutamente, nuestra plataforma es accesible desde cualquier lugar y dispositivo, brindándote flexibilidad para gestionar tus datos de forma remota.",
+        "question-8":"¿Cómo ayuda su software a mejorar la eficacia de campañas y estrategias de marketing?",
+        "answer-8":"Facilitamos el análisis y la segmentación de datos, proporcionando herramientas para optimizar tus campañas publicitarias y estrategias de marketing de manera efectiva.",
+        "question-9":"¿Cuáles son las opciones de soporte técnico disponibles?",
+        "answer-9":"Ofrecemos soporte técnico dedicado y recursos de formación para garantizar que aproveches al máximo todas las funcionalidades de nuestro software, asegurando una experiencia sin problemas.",
+        "question-10":"¿Cuál es el modelo de precios y qué incluye?",
+        "answer-10":"Contamos con planes flexibles que detallan las funciones específicas incluidas en cada uno. Para obtener más información, consulta nuestra sección de precios."
     }
 }

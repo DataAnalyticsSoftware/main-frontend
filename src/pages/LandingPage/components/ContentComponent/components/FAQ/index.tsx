@@ -22,7 +22,7 @@ interface IQuestions {
 export const FAQ = () => {
   const [questions, setQuestions] = useState<IQuestions[]>([])
   const [expand, setExpand] = useState<boolean[]>([])
-  const { webDataNetsRequest } = useContext(GenericContext)
+  const { webDataNetsRequest, t } = useContext(GenericContext)
 
   useEffect(() => {
     webDataNetsRequest('api/questions/1').then(res =>{
@@ -71,11 +71,11 @@ export const FAQ = () => {
             expandIcon={iconExpanded(index)}
             aria-controls={`panel${index+1}d-content`}
             id={`panel${index+1}d-header`}>
-            <Typography>{questions.question}</Typography>
+            <Typography>{t(`faq.${questions.question}`)}</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
-              {questions.answer}
+              {t(`faq.${questions.answer}`)}
             </Typography>
           </AccordionDetails>
         </Accordion>
