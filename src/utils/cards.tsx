@@ -1,8 +1,9 @@
 import { Box, Button, Typography } from '@mui/material';
-import React from 'react';
+import React, { useContext } from 'react';
+import { GenericContext } from '../context/GenericContext';
 
 export const Cards=({icon,title,text,button, index, colorIcon = '', colorBackground = ''})=> {
-
+  const { t } = useContext(GenericContext)
   return (
     <>
     {button ?
@@ -22,8 +23,8 @@ export const Cards=({icon,title,text,button, index, colorIcon = '', colorBackgro
         <Box sx={{mb:4,pl:1, width:'50px', height:'50px', color:`${index===0?'white':'#1F37FF'}`}}>
             <i style={{fontSize:50}} className={icon}></i>
         </Box>
-        <h4 style={{paddingBottom:2}}>{title}</h4>
-        <p style={{lineHeight:1.5}}>{text}</p>
+        <h4 style={{paddingBottom:2}}>{t(`ourServices.${title}`)}</h4>
+        <p style={{lineHeight:1.5}}>{t(`ourServices.${text}`)}</p>
     </div>
     }
     </>

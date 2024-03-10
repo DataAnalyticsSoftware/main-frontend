@@ -25,5 +25,30 @@
         "answer-9":"We offer dedicated technical support and training resources to ensure you get the most out of all the features of our software, ensuring a smooth experience.",
         "question-10":"What is the pricing model and what does it include?",
         "answer-10":"We have flexible plans that detail the specific features included in each plan. For more information, please see our pricing section."
+    },
+    "aboutUs":{
+        "title": "About Us",
+        "title-description": "Simple Solution to Complex ",
+        "title-description-color": "Connections",
+        "description": "Is a Service that specializes in optimize helping, filtering and organization all your company's database.",
+        "icon-1":"High Analysis",
+        "icon-2": "Certified Platform"
+    },
+    "ourServices":{
+        "main-card":{
+            "main-title":"OUR SERVICES",
+            "title": "The Best Platform For Your Business",
+            "description": "We offer a verity of interesting features that you can help increase your productivity at work and manage your Business easily."
+        },
+        "card-0-title": "Effortless Data Control",
+        "card-0-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+        "card-1-title": "Graphics",
+        "card-1-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+        "card-2-title": "Import data in .CSV",
+        "card-2-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+        "card-3-title": "Connection with CRM",
+        "card-3-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+        "card-4-title": "Email Marketing",
+        "card-4-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
     }
 }
