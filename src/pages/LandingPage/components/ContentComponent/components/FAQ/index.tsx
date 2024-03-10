@@ -40,6 +40,7 @@ export const FAQ = () => {
     flexDirection: 'row',
     '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
       transform: 'rotate(0)',
+      margin:0,
     }
   }));
 
@@ -71,12 +72,12 @@ export const FAQ = () => {
             expandIcon={iconExpanded(index)}
             aria-controls={`panel${index+1}d-content`}
             id={`panel${index+1}d-header`}>
-            <Typography>{t(`faq.${questions.question}`)}</Typography>
+            <p>{t(`faq.${questions.question}`)}</p>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <p>
               {t(`faq.${questions.answer}`)}
-            </Typography>
+            </p>
           </AccordionDetails>
         </Accordion>
       )}

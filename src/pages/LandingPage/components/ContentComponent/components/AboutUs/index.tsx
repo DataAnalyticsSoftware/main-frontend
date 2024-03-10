@@ -2,7 +2,7 @@ import React from 'react'
 
 export const AboutUs=()=> {
   return (
-    <div style={{display: 'flex', flexDirection: 'row', gap: '20px', padding: '200px 0', flexWrap: 'wrap'}}>
+    <div style={{display: 'flex', flexDirection: 'row', gap: '20px', padding: '40px 0', flexWrap: 'wrap',justifyContent: 'space-evenly'}}>
       <div style={{textAlign: 'left', maxWidth: '550px'}}>
         <h4 style={{color:'#fe5b05', paddingBottom:2, fontWeight:400}}>About Us</h4>
         <h1 style={{fontWeight:600}}>Simple Solution to Complex<span style={{color:'#fe5b05', paddingBottom:2, paddingLeft:2}}>Connections</span></h1>

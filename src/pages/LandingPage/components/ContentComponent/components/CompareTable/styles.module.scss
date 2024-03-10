@@ -14,10 +14,7 @@ td {
   padding: 18px;
 
 }
-i{
-  font-size: 30px;
-  color: rgb(8, 221, 8);
-}
+
 th {
   background-color: #f2f2f2;
   min-width: 180px;
@@ -25,6 +22,10 @@ th {
 }
 td{
   font-weight: 450;
+  & i{
+    font-size: 30px;
+    color: rgb(8, 221, 8);
+}
 }
 .text-success {
   color: green;
@@ -39,6 +40,7 @@ td{
   overflow-x: auto;
   position: relative;
   width: calc(100vw - 64px);
+
 }
 
 .styled-icon {

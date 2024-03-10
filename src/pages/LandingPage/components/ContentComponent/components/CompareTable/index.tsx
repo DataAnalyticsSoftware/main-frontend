@@ -64,7 +64,7 @@ export const CompareTable = () => {
           <td>Advantage Segmentation</td>
           <td>-</td>
           <td>-</td>
-          <td><i className="bi bi-check"></i></td>
+          <td><i className="bi bi-check icono"></i></td>
           <td><i className="bi bi-check"></i></td>
         </tr>
         <tr>
