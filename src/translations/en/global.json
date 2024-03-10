@@ -50,5 +50,15 @@
         "card-3-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
         "card-4-title": "Email Marketing",
         "card-4-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+    },
+    "whyChooseUs":{
+        "card-0-title": "Effortless Data Control",
+        "card-0-description": "Seamlessly add, sort, filter, delete, and update your entire database with a few clicks. Tailor your data by Dates, Countries, Languages, Age, Sex, Purchases, and more.",
+        "card-1-title": "Visualize Insights in Real Time",
+        "card-1-description": "Immerse yourself in interactive graphs and real-time insights for each collection. Customize data displays to make complex comparisons, providing a profound of your business dynamics.",
+        "card-2-title": "Streamlined Comparison Tools",
+        "card-2-description": "Effortlessly compare collections to uncover trends, patterns, and variations. Gain a competitive edge with a comprehensive analysis of your data sets.",
+        "card-3-title": "Strategic Advertising Solutions",
+        "card-3-description": "Harness the power of data collection and visualization for targeted advertising campaigns. Save on testing costs and ensure precision in your advertising strategies."
     }
 }

@@ -51,5 +51,15 @@
         "card-3-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
         "card-4-title": "Correo de Marketing",
         "card-4-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+    },
+    "whyChooseUs":{
+        "card-0-title": "Control de datos sin esfuerzo",
+        "card-0-description": "Agregue, clasifique, filtre, elimine y actualice sin problemas toda su base de datos con unos pocos clics. Adapte sus datos por fechas, países, idiomas, edad, sexo, compras y más.",
+        "card-1-title": "Visualice conocimientos en tiempo real",
+        "card-1-description": "Sumérgete en gráficos interactivos e información en tiempo real para cada colección. Personalice la visualización de datos para realizar comparaciones complejas, proporcionando una visión profunda de la dinámica de su negocio.",
+        "card-2-title": "Herramientas de comparación optimizadas",
+        "card-2-description": "Compare colecciones sin esfuerzo para descubrir tendencias, patrones y variaciones. Obtenga una ventaja competitiva con un análisis integral de sus conjuntos de datos.",
+        "card-3-title": "Soluciones publicitarias estratégicas",
+        "card-3-description": "Aproveche el poder de la recopilación y visualización de datos para campañas publicitarias dirigidas. Ahorre en costos de pruebas y asegure la precisión en sus estrategias publicitarias."
     }
 }
