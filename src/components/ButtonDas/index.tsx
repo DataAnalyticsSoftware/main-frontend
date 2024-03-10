@@ -11,7 +11,7 @@ interface IButtonDas {
 }
 
 export const ButtonDas = (props: ButtonOwnProps & IButtonDas & { component?: React.ElementType;}): JSX.Element => {
-    
+
     const STYLES_FROM_VARIANT = {
         outlined: props.pricing?styles.button_pricing:styles.button_outlined,
         contained: styles.button_contained
