@@ -21,33 +21,54 @@ export const CompareTable = () => {
           <th>Basic</th>
           <th>Standard</th>
           <th>Premium</th>
-          <th>Managed</th>
+          <th>Business</th>
         </tr>
       </thead>
       <tbody>
+      <tr>
+          <td>Contacts Imported</td>
+          <td>300</td>
+          <td>4.500</td>
+          <td>20.000</td>
+          <td>Contact Us</td>
+        </tr>  
         <tr>
-          <td>HDD Storage</td>
-          <td>700 MB</td>
-          <td>1.5 GB</td>
-          <td>50 GB</td>
-          <td>up to 5T</td>
+          <td>Users</td>
+          <td>1</td>
+          <td>2</td>
+          <td>5</td>
+          <td>10-30</td>
+        </tr>     
+        <tr>
+          <td>Nº Collections</td>
+          <td>1 Collection</td>
+          <td>2 Collections</td>
+          <td>5 Collections</td>
+          <td>Unlimited Collections</td>
         </tr>
         <tr>
-          <td>Web Server</td>
-          <td><i className="bi bi-check"></i></td>
-          <td><i className="bi bi-check"></i></td>
-          <td><i className="bi bi-check"></i></td>
-          <td><i className="bi bi-check"></i></td>
+          <td>Support</td>
+          <td>Email support for 30 days</td>
+          <td>Email & Live Chat</td>
+          <td>24/7</td>
+          <td>24/7</td>
         </tr>
         <tr>
-          <td>Database</td>
+          <td>Data & Analytics</td>
           <td>-</td>
-          <td>Optional</td>
+          <td><i className="bi bi-check"></i></td>
           <td><i className="bi bi-check"></i></td>
           <td><i className="bi bi-check"></i></td>
         </tr>
         <tr>
-          <td>DNS</td>
+          <td>Advantage Segmentation</td>
+          <td>-</td>
+          <td>-</td>
+          <td><i className="bi bi-check"></i></td>
+          <td><i className="bi bi-check"></i></td>
+        </tr>
+        <tr>
+          <td>CRM Links</td>
           <td>-</td>
           <td>-</td>
           <td><i className="bi bi-check"></i></td>
@@ -61,18 +82,25 @@ export const CompareTable = () => {
           <td><i className="bi bi-check"></i></td>
         </tr>
         <tr>
-          <td>Tech Support</td>
-          <td>None</td>
-          <td>$35/incident</td>
-          <td>$15/incident</td>
-          <td>24/7 included</td>
+          <td>Unique Database</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td><i className="bi bi-check"></i></td>
         </tr>
         <tr>
-          <td></td>
-          <td className="fw-bold">Free</td>
-          <td className="fw-bold">$99/mo</td>
-          <td className="fw-bold">$179/mo</td>
-          <td className="fw-bold"><a href="#">Contact us</a></td>
+          <td>Tech Support</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>Contact Us</td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td>Free</td>
+          <td>39,99€</td>
+          <td>69,99€</td>
+          <td>Contact Us</td>
         </tr>
       </tbody>
     </table>
