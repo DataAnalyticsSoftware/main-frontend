@@ -33,8 +33,10 @@ export const Form=()=> {
   }
 
   return (
-    <div style={{ backgroundColor: '#F3F3F3', padding: '60px 10px', textAlign: 'left'}}>
-      <div style={{textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '10px'}}>
+    <>
+      <h1 style={{fontWeight:700, paddingTop:20}}>GET <span style={{color:'#fe5b05'}}> THE DEMO</span></h1>
+      <div style={{ backgroundColor: '#F3F3F3', padding: '60px 10px', textAlign: 'left'}}>
+        <div style={{textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '10px'}}>
         <div>
           <TextField
               label="Email"
@@ -63,5 +65,7 @@ export const Form=()=> {
       </div>
         <Button className={styles.buttonResponse} variant='contained' onClick={handleSubmit}>Send Response</Button>
     </div>
+    </>
+    
   )
 }

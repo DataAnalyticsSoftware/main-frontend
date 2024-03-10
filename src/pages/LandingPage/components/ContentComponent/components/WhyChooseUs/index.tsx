@@ -8,9 +8,9 @@ export const WhyChooseUs=()=> {
   const { landings } = useContext(ContentLandingContext)
 
   return (
-    <Box sx={{paddingTop:8}}>
-      <Box sx={{textAlign:{xs:'left',sm:'center',md:'center', lg:'center'}}}>
-        <h1 style={{ paddingTop:24, fontWeight:700}}>Why Choose<span style={{color:'#fe5b05'}}> Us?</span></h1>
+    <Box sx={{paddingTop:8, paddingBottom:12}}>
+      <Box sx={{textAlign:{xs:'left',sm:'center',md:'center', lg:'center'}, paddingTop:12}}>
+        <h1 style={{ paddingTop:24, fontWeight:700}}>WHY CHOOSE <span style={{color:'#fe5b05'}}> US?</span></h1>
         <div style={{display:'flex', justifyContent:'center',paddingBottom:12}}>
           <hr style={{border:' 3px solid #fe5b05',width:'10%', opacity:1}}></hr>
         </div>
