@@ -9,12 +9,18 @@ export const WhyChooseUs=()=> {
 
   return (
     <Box sx={{paddingTop:8}}>
-      <Typography variant="h4" sx={{paddingBottom:2, color:'black'}}>Why Choose<span style={{color:'#fe5b05'}}> Us?</span></Typography>
-      <Typography variant="subtitle1" paragraph>
-      Experience the future of data management engage with Webdatanets and elevate your business to new heights! Your data, your rules, your success.</Typography>
+      <Box sx={{textAlign:{xs:'left',sm:'center',md:'center', lg:'center'}}}>
+        <h1 style={{ paddingTop:24, fontWeight:700}}>Why Choose<span style={{color:'#fe5b05'}}> Us?</span></h1>
+        <div style={{display:'flex', justifyContent:'center',paddingBottom:12}}>
+          <hr style={{border:' 3px solid #fe5b05',width:'10%', opacity:1}}></hr>
+        </div>
+      <p>
+        Experience the future of data management engage with Webdatanets and elevate your business to new heights! Your data, your rules, your success.
+      </p>
+      </Box>
       <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '25px', justifyContent: 'center'}}>
         {landings.filter(landing => landing.button).map((landing, index) =>
-          <Cards index={index} icon={landing.icon} title={landing.title} text={landing.description} button={landing.button} />
+          <Cards index={index} icon={landing.icon} title={landing.title} text={landing.description} button={landing.button} key={index} />
         )}
       </div>
     </Box>

@@ -57,8 +57,8 @@ export const FAQ = () => {
 
 
   return (
-    <div style={{ borderRadius: '5px', overflow: 'hidden' }}>
-      <Typography variant='h5'>FREQUENTLY ASK<span style={{color:'#fe5b05'}}> QUESTIONS</span></Typography>
+    <div style={{ borderRadius: '5px', overflow: 'hidden', paddingTop:36 }}>
+      <h2 style={{fontWeight:700}}>FREQUENTLY ASK<span style={{color:'#fe5b05'}}> QUESTIONS</span></h2>
       {questions.map((questions:IQuestions, index: number) =>
         <Accordion
         key={index}

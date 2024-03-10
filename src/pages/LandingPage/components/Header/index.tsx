@@ -27,7 +27,7 @@ export const Header = () => {
         </Box>
 
         <Box sx={{ flex: '1',display: { xs: 'none', sm: 'none', md: 'none', lg: 'block' }, [theme.breakpoints.up('md')]: { display: 'flex' } }}>
-          <Box>
+          <Box >
             <img height={590} width={800} src={`${process.env.REACT_APP_BACKEND_ENPDOINT}${"/media-files/imagenes/landing-banner.png"}`} alt="Landing Banner" />
           </Box>
         </Box>
@@ -36,8 +36,9 @@ export const Header = () => {
       <Box sx={{
         my: 4,
         display: { xs: 'block', sm: 'block', md: 'none', lg: 'none' },
+        textAlign:{xs:'center'}
       }}>
-        <img height={200} width={256} src={`${process.env.REACT_APP_BACKEND_ENPDOINT}${"/media-files/imagenes/landing-banner.png"}`} alt="Landing Banner" />
+        <img height={270} width={300} src={`${process.env.REACT_APP_BACKEND_ENPDOINT}${"/media-files/imagenes/landing-banner.png"}`} alt="Landing Banner" />
       </Box>
 
       <Box sx={{
