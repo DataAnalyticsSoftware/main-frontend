@@ -76,9 +76,10 @@ export const NavBar = () => {
                     onClose={handleClose}
                 >
                     {/* Opciones del menú */}
-                    <MenuItem onClick={handleClose}>Opción 1</MenuItem>
-                    <MenuItem onClick={handleClose}>Opción 2</MenuItem>
-                    <MenuItem onClick={handleClose}>Opción 3</MenuItem>
+                    <MenuItem onClick={handleClose}>Home</MenuItem>
+                    <MenuItem onClick={handleClose}>About Us</MenuItem>
+                    <MenuItem onClick={handleClose}>Our Services</MenuItem>
+                    <MenuItem onClick={handleClose}>Contact</MenuItem>
                 </Menu>
               </div>
             </Toolbar>

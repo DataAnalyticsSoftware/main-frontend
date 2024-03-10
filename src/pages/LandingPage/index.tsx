@@ -18,7 +18,7 @@ export const LandinPage=()=> {
         <Box sx={{ px: 4, pt: 2, color: 'black', textAlign:'center', maxWidth: '1440px', m:'auto' }}>
           <ContentLandingComponent/>
         </Box>
-        <Footer/>
+       {/*<Footer/>*/ }
     </div>
   )
 }

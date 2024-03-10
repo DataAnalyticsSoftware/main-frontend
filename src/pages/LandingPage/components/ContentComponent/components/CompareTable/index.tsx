@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.module.scss'
 import { styled } from '@mui/system';
+import { Box } from '@mui/material';
 
 const StyledIcon = styled('i')({
   fontSize: '50px',
@@ -9,7 +10,9 @@ const StyledIcon = styled('i')({
 export const CompareTable = () => {
   return (
     <>
-      <h1 style={{paddingBottom:12}}>Why are we <span style={{color:'#fe5b05', paddingBottom:2, paddingLeft:2}}>the best</span> on the market?</h1>
+    <Box sx={{textAlign:{xs:'left', sm:'left', md:'center', lg:'center'}}}>
+      <h1 style={{paddingBottom:12, paddingTop:24, fontWeight:700}}>Why are we <span style={{color:'#fe5b05', paddingBottom:2, paddingLeft:2}}>the best</span> on the market?</h1>
+    </Box>
       <div className="table-container" style={{ overflowX: 'auto',position: 'relative', width: 'calc(100%)'}}>
     <table aria-label="compare table">
       <thead>
