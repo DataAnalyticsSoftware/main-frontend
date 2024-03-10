@@ -1,15 +1,15 @@
 import { Box, Button, Typography } from '@mui/material';
 import React from 'react';
 
-export const Cards=({icon,title,text,button, index})=> {
+export const Cards=({icon,title,text,button, index, colorIcon = '', colorBackground = ''})=> {
 
   return (
     <>
     {button ?
     < >
     <div style={{minWidth: '342px', maxWidth: '450px', position: 'relative', marginTop: 60}}>
-      <div style={{width: '106px', height: '106px', backgroundColor: '#DAE8FF', borderRadius: '50%', display: 'flex', alignContent: 'center', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: 'calc(-53px)', left: 'calc(50% - 53px)'}}>
-        <i style={{fontSize: '48px', color: '#FF5A05'}} className={icon}></i>
+      <div style={{width: '106px', height: '106px', backgroundColor: colorBackground, borderRadius: '50%', display: 'flex', alignContent: 'center', justifyContent: 'center', alignItems: 'center', position: 'absolute', top: 'calc(-53px)', left: 'calc(50% - 53px)'}}>
+        <i style={{fontSize: '48px', color: colorIcon}} className={icon}></i>
       </div>
       <div style={{backgroundColor: 'white', border: '1px solid grey', padding: '63px 15px', paddingBottom: '20px', color: 'black', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '230px', borderRadius:'10px'}}>
         <p style={{paddingBottom:2,marginTop:4}}>{title}</p>

@@ -10,6 +10,8 @@ interface ILanding {
     description:string,
     button: boolean,
     cardinality: number
+    colorBackground: string
+    colorIcon: string
 }
 
 interface IContentLandingContext{

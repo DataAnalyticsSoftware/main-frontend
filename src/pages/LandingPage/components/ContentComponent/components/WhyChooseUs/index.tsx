@@ -14,7 +14,7 @@ export const WhyChooseUs=()=> {
       Experience the future of data management engage with Webdatanets and elevate your business to new heights! Your data, your rules, your success.</Typography>
       <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '25px', justifyContent: 'center'}}>
         {landings.filter(landing => landing.button).map((landing, index) =>
-          <Cards index={index} icon={landing.icon} title={landing.title} text={landing.description} button={landing.button} />
+          <Cards index={index} icon={landing.icon} title={landing.title} text={landing.description} button={landing.button} colorBackground={landing.colorBackground} colorIcon={landing.colorIcon} />
         )}
       </div>
     </Box>
