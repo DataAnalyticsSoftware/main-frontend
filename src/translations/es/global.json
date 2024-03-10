@@ -26,5 +26,40 @@
         "answer-9":"Ofrecemos soporte técnico dedicado y recursos de formación para garantizar que aproveches al máximo todas las funcionalidades de nuestro software, asegurando una experiencia sin problemas.",
         "question-10":"¿Cuál es el modelo de precios y qué incluye?",
         "answer-10":"Contamos con planes flexibles que detallan las funciones específicas incluidas en cada uno. Para obtener más información, consulta nuestra sección de precios."
+    },
+    "aboutUs":{
+        "title": "Acerca de Nosotros",
+        "title-description": "Solución sencilla para Conexiones ",
+        "title-description-color": "Complejas",
+        "description": "Es un Servicio que se especializa en optimizar, ayudar, filtrar y organizar toda la base de datos de su empresa.",
+        "icon-1":"Análisis de calidad",
+        "icon-2": "Plataforma certificada"
+    },
+    "ourServices":{
+        "main-card":{
+            "main-title":"NUESTROS SERVICIOS",
+            "title": "La mejor plataforma para tu negocio",
+            "description": "Ofrecemos una variedad de características interesantes que pueden ayudarlo a aumentar su productividad en el trabajo y administrar su negocio fácilmente."
+        },
+        "card-0-title": "Control de datos sin esfuerzo",
+        "card-0-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+        "card-1-title": "Gráficas",
+        "card-1-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+        "card-2-title": "Importar datos en .CSV",
+        "card-2-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+        "card-3-title": "Conexión con CRM",
+        "card-3-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+        "card-4-title": "Correo de Marketing",
+        "card-4-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+    },
+    "whyChooseUs":{
+        "card-0-title": "Control de datos sin esfuerzo",
+        "card-0-description": "Agregue, clasifique, filtre, elimine y actualice sin problemas toda su base de datos con unos pocos clics. Adapte sus datos por fechas, países, idiomas, edad, sexo, compras y más.",
+        "card-1-title": "Visualice conocimientos en tiempo real",
+        "card-1-description": "Sumérgete en gráficos interactivos e información en tiempo real para cada colección. Personalice la visualización de datos para realizar comparaciones complejas, proporcionando una visión profunda de la dinámica de su negocio.",
+        "card-2-title": "Herramientas de comparación optimizadas",
+        "card-2-description": "Compare colecciones sin esfuerzo para descubrir tendencias, patrones y variaciones. Obtenga una ventaja competitiva con un análisis integral de sus conjuntos de datos.",
+        "card-3-title": "Soluciones publicitarias estratégicas",
+        "card-3-description": "Aproveche el poder de la recopilación y visualización de datos para campañas publicitarias dirigidas. Ahorre en costos de pruebas y asegure la precisión en sus estrategias publicitarias."
     }
 }

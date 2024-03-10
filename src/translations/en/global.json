@@ -25,5 +25,40 @@
         "answer-9":"We offer dedicated technical support and training resources to ensure you get the most out of all the features of our software, ensuring a smooth experience.",
         "question-10":"What is the pricing model and what does it include?",
         "answer-10":"We have flexible plans that detail the specific features included in each plan. For more information, please see our pricing section."
+    },
+    "aboutUs":{
+        "title": "About Us",
+        "title-description": "Simple Solution to Complex ",
+        "title-description-color": "Connections",
+        "description": "Is a Service that specializes in optimize helping, filtering and organization all your company's database.",
+        "icon-1":"High Analysis",
+        "icon-2": "Certified Platform"
+    },
+    "ourServices":{
+        "main-card":{
+            "main-title":"OUR SERVICES",
+            "title": "The Best Platform For Your Business",
+            "description": "We offer a verity of interesting features that you can help increase your productivity at work and manage your Business easily."
+        },
+        "card-0-title": "Effortless Data Control",
+        "card-0-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+        "card-1-title": "Graphics",
+        "card-1-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+        "card-2-title": "Import data in .CSV",
+        "card-2-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+        "card-3-title": "Connection with CRM",
+        "card-3-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.",
+        "card-4-title": "Email Marketing",
+        "card-4-description": "Borem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis."
+    },
+    "whyChooseUs":{
+        "card-0-title": "Effortless Data Control",
+        "card-0-description": "Seamlessly add, sort, filter, delete, and update your entire database with a few clicks. Tailor your data by Dates, Countries, Languages, Age, Sex, Purchases, and more.",
+        "card-1-title": "Visualize Insights in Real Time",
+        "card-1-description": "Immerse yourself in interactive graphs and real-time insights for each collection. Customize data displays to make complex comparisons, providing a profound of your business dynamics.",
+        "card-2-title": "Streamlined Comparison Tools",
+        "card-2-description": "Effortlessly compare collections to uncover trends, patterns, and variations. Gain a competitive edge with a comprehensive analysis of your data sets.",
+        "card-3-title": "Strategic Advertising Solutions",
+        "card-3-description": "Harness the power of data collection and visualization for targeted advertising campaigns. Save on testing costs and ensure precision in your advertising strategies."
     }
 }
