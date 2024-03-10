@@ -33,7 +33,7 @@ export const Form=()=> {
   }
 
   return (
-    <div style={{ backgroundColor: '#F3F3F3', padding: '60px 100px', textAlign: 'left'}}>
+    <div style={{ backgroundColor: '#F3F3F3', padding: '60px 10px', textAlign: 'left'}}>
       <div style={{textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '10px'}}>
         <div>
           <TextField
