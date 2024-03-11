@@ -22,8 +22,7 @@ export const Form=()=> {
       comment: comment,
       responses: responses
     }
-
-    //webDataNetsRequest('api/submit_form',JSON.stringify(data), 'POST')
+    webDataNetsRequest('api/submit_form',JSON.stringify(data), 'POST')
   }
 
   const handleResponse = (index: number, value: React.ChangeEvent<HTMLInputElement>) => {
