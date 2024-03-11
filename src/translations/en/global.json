@@ -60,5 +60,33 @@
         "card-2-description": "Effortlessly compare collections to uncover trends, patterns, and variations. Gain a competitive edge with a comprehensive analysis of your data sets.",
         "card-3-title": "Strategic Advertising Solutions",
         "card-3-description": "Harness the power of data collection and visualization for targeted advertising campaigns. Save on testing costs and ensure precision in your advertising strategies."
+    },
+    "compareTable": {
+        "title-1": "WHY ARE WE ",
+        "title-2":"THE BEST",
+        "title-3":" ON THE MARKET?",
+        "table-title-1":"Compare Software's Table",
+        "table-title-2":"Basic",
+        "table-title-3":"Standard",
+        "table-title-4":"Premium",
+        "table-title-5":"Business",
+        "table-td-1-1":"Contacts Imported",
+        "table-td-1-2":"Users",
+        "table-td-1-3":"Nº Collections",
+        "table-td-1-4":"Support",
+        "table-td-1-5":"Data & Analytics",
+        "table-td-1-6":"Advantage Segmentation",
+        "table-td-1-7":"CRM Links",
+        "table-td-1-8":"Backups",
+        "table-td-1-9":"Unique Database",
+        "table-td-1-10":"Tech Support",
+        "table-td-1-11":"Price",
+        "contactUs": "Contact Us",
+        "collection": "collection",
+        "collections": "collections",
+        "unlimited-collections": "Unlimiated Collections",
+        "support-1":"Email support for 30 days",
+        "support-2":"Email & Live Chat",
+        "free":"Free"
     }
 }

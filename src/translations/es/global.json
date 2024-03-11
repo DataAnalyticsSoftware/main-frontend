@@ -61,5 +61,33 @@
         "card-2-description": "Compare colecciones sin esfuerzo para descubrir tendencias, patrones y variaciones. Obtenga una ventaja competitiva con un análisis integral de sus conjuntos de datos.",
         "card-3-title": "Soluciones publicitarias estratégicas",
         "card-3-description": "Aproveche el poder de la recopilación y visualización de datos para campañas publicitarias dirigidas. Ahorre en costos de pruebas y asegure la precisión en sus estrategias publicitarias."
+    },
+    "compareTable": {
+        "title-1": "PORQUE SOMOS NOSOTROS ",
+        "title-2":"LO MEJOR",
+        "title-3":" EN EL MERCADO?",
+        "table-title-1":"Comparar tabla de software",
+        "table-title-2":"Básico",
+        "table-title-3":"Estándar",
+        "table-title-4":"Premium",
+        "table-title-5":"Negocio",
+        "table-td-1-1":"Contactos importados",
+        "table-td-1-2":"Usuarios",
+        "table-td-1-3":"Nº de Colecciones",
+        "table-td-1-4":"Soporte",
+        "table-td-1-5":"Datos & Analítica",
+        "table-td-1-6":"Segmentación de ventajas",
+        "table-td-1-7":"CRM Links",
+        "table-td-1-8":"Copias de seguridad",
+        "table-td-1-9":"Base de datos única",
+        "table-td-1-10":"Apoyo técnico",
+        "table-td-1-11":"Precio",
+        "contactUs": "Contactanos",
+        "collection": "Coleccion",
+        "collections": "Colecciones",
+        "unlimited-collections": "Colecciones ilimitadas",
+        "support-1":"Soporte por correo electrónico durante 30 días",
+        "support-2":"Correo electrónico y chat en vivo",
+        "free":"Gratis"
     }
 }

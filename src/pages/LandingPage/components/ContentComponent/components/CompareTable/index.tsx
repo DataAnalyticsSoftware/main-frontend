@@ -1,106 +1,110 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './styles.module.scss'
 import { styled } from '@mui/system';
 import { Box } from '@mui/material';
+import { GenericContext } from '../../../../../../context/GenericContext';
 
 const StyledIcon = styled('i')({
   fontSize: '50px',
 });
 
 export const CompareTable = () => {
+
+  const { t } = useContext(GenericContext)
+
   return (
     <>
     <Box sx={{textAlign:{xs:'left', sm:'left', md:'center', lg:'center'}, paddingTop:12}}>
-      <h1 style={{paddingBottom:12, paddingTop:24, fontWeight:700}}>WHY ARE WE <span style={{color:'#fe5b05', paddingBottom:2, paddingLeft:2}}>THE BEST</span> ON THE MARKET?</h1>
+      <h1 style={{paddingBottom:12, paddingTop:24, fontWeight:700}}>{t('compareTable.title-1')}<span style={{color:'#fe5b05', paddingBottom:2, paddingLeft:2}}>{t('compareTable.title-2')}</span>{t('compareTable.title-3')}</h1>
     </Box>
       <div className="table-container" style={{ overflowX: 'auto',position: 'relative', width: 'calc(100%)'}}>
     <table aria-label="compare table">
       <thead>
         <tr>
-          <th>Compare Software's Table</th>
-          <th>Basic</th>
-          <th>Standard</th>
-          <th>Premium</th>
-          <th>Business</th>
+          <th>{t('compareTable.table-title-1')}</th>
+          <th>{t('compareTable.table-title-2')}</th>
+          <th>{t('compareTable.table-title-3')}</th>
+          <th>{t('compareTable.table-title-4')}</th>
+          <th>{t('compareTable.table-title-5')}</th>
         </tr>
       </thead>
       <tbody>
       <tr>
-          <td>Contacts Imported</td>
+          <td>{t('compareTable.table-td-1-1')}</td>
           <td>300</td>
           <td>4.500</td>
           <td>20.000</td>
-          <td>Contact Us</td>
+          <td>{t('compareTable.contactUs')}</td>
         </tr>  
         <tr>
-          <td>Users</td>
+          <td>{t('compareTable.table-td-1-2')}</td>
           <td>1</td>
           <td>2</td>
           <td>5</td>
           <td>10-30</td>
         </tr>     
         <tr>
-          <td>Nº Collections</td>
-          <td>1 Collection</td>
-          <td>2 Collections</td>
-          <td>5 Collections</td>
-          <td>Unlimited Collections</td>
+          <td>{t('compareTable.table-td-1-3')}</td>
+          <td>1 {t('compareTable.collection')}</td>
+          <td>2 {t('compareTable.collections')}</td>
+          <td>5 {t('compareTable.collections')}</td>
+          <td>{t('compareTable.unlimited-collections')}</td>
         </tr>
         <tr>
-          <td>Support</td>
-          <td>Email support for 30 days</td>
-          <td>Email & Live Chat</td>
+          <td>{t('compareTable.table-td-1-4')}</td>
+          <td>{t('compareTable.support-1')}</td>
+          <td>{t('compareTable.support-2')}</td>
           <td>24/7</td>
           <td>24/7</td>
         </tr>
         <tr>
-          <td>Data & Analytics</td>
+          <td>{t('compareTable.table-td-1-5')}</td>
           <td>-</td>
           <td><i className="bi bi-check"></i></td>
           <td><i className="bi bi-check"></i></td>
           <td><i className="bi bi-check"></i></td>
         </tr>
         <tr>
-          <td>Advantage Segmentation</td>
+          <td>{t('compareTable.table-td-1-6')}</td>
           <td>-</td>
           <td>-</td>
           <td><i className="bi bi-check icono"></i></td>
           <td><i className="bi bi-check"></i></td>
         </tr>
         <tr>
-          <td>CRM Links</td>
+          <td>{t('compareTable.table-td-1-7')}</td>
           <td>-</td>
           <td>-</td>
           <td><i className="bi bi-check"></i></td>
           <td><i className="bi bi-check"></i></td>
         </tr>
         <tr>
-          <td>Backups</td>
+          <td>{t('compareTable.table-td-1-8')}</td>
           <td>-</td>
           <td>-</td>
           <td><i className="bi bi-check"></i></td>
           <td><i className="bi bi-check"></i></td>
         </tr>
         <tr>
-          <td>Unique Database</td>
+          <td>{t('compareTable.table-td-1-9')}</td>
           <td>-</td>
           <td>-</td>
           <td>-</td>
           <td><i className="bi bi-check"></i></td>
         </tr>
         <tr>
-          <td>Tech Support</td>
+          <td>{t('compareTable.table-td-1-10')}</td>
           <td>-</td>
           <td>-</td>
           <td>-</td>
-          <td>Contact Us</td>
+          <td>{t('compareTable.contactUs')}</td>
         </tr>
         <tr>
-          <td>Price</td>
-          <td>Free</td>
+          <td>{t('compareTable.table-td-1-11')}</td>
+          <td>{t('compareTable.free')}</td>
           <td>39,99€</td>
           <td>69,99€</td>
-          <td>Contact Us</td>
+          <td>{t('compareTable.contactUs')}</td>
         </tr>
       </tbody>
     </table>
