@@ -4,6 +4,16 @@
         "title-2": "Productivity",
         "description": "Transform the way you manage data with Webdatanets, an innovative service dedicated to optimizing, assisting, and revolutionizing your company's databases."
     },
+    "navbar":{
+        "title-1":"Home",
+        "title-2":"About Us",
+        "title-3":"Our Services",
+        "title-4":"Pricing",
+        "title-5":"Why Us",
+        "title-6":"FAQ",
+        "title-7":"Get DEMO"
+
+    },
     "faq":{
         "question-1":"How do I start using the software?",
         "answer-1":"Start by registering on our platform. Then choose the plan that best suits your needs. Log in, and you can import data from files or connect your CRM. It's that easy!",
@@ -39,6 +49,11 @@
             "main-title":"OUR SERVICES",
             "title": "The Best Platform For Your Business",
             "description": "We offer a verity of interesting features that you can help increase your productivity at work and manage your Business easily."
+        },
+        "second-card":{
+            "main-title":"¿WHY CHOOSE",
+            "second-title":"US?",
+            "text": "Experience the future of data management engage with Webdatanets and elevate your business to new heights! Your data, your rules, your success."
         },
         "card-0-title": "Effortless Data Control",
         "card-0-description": "Optimize your data management with our SaaS: effortless control. From automatic import to quick creation of custom collections and charts, we simplify every step so you can focus on effective strategies without the hassle.",

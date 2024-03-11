@@ -5,6 +5,15 @@
         "description": "Transforme la forma en que administra los datos con Webdatanets, un servicio innovador dedicado a optimizar, ayudar y revolucionar las bases de datos de su empresa."
 
     },
+    "navbar":{
+        "title-1":"Home",
+        "title-2":"Sobre Nosotros",
+        "title-3":"Servicios",
+        "title-4":"Precios",
+        "title-5":"¿Por qué nosotros?",
+        "title-6":"FAQ",
+        "title-7":"Consigue tu DEMO"
+    },
     "faq":{
         "question-1":"¿Cómo puedo empezar a usar el software?",
         "answer-1":"Comienza registrándote en nuestra plataforma. Luego, elige el plan que mejor se adapte a tus necesidades. Inicia sesión, y ya puedes importar datos desde archivos o conectar tu CRM. ¡Así de fácil!",
@@ -40,6 +49,11 @@
             "main-title":"NUESTROS SERVICIOS",
             "title": "La mejor plataforma para tu negocio",
             "description": "Ofrecemos una variedad de características interesantes que pueden ayudarlo a aumentar su productividad en el trabajo y administrar su negocio fácilmente."
+        },
+        "second-card":{
+            "main-title":"¿POR QUÉ",
+            "second-title":"ELEGIRNOS?",
+            "text": "Experimenta el futuro de la gestión de datos comprométete con Webdatanets y eleva tu negocio a nuevas objetivos y metas. Tus datos, Tus reglas, Tú éxito."
         },
         "card-0-title": "Control de datos sin esfuerzo",
         "card-0-description": "Optimiza tu gestión de datos con nuestro SaaS: control sin esfuerzo. Desde la importación automática hasta la creación rápida de colecciones y gráficas personalizadas, simplificamos cada paso para que puedas enfocarte en estrategias efectivas sin complicaciones.",

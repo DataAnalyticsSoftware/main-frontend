@@ -9,7 +9,7 @@ export const OurServices=()=> {
   const { landings } = useContext(ContentLandingContext)
   const { t } = useContext(GenericContext)
   return (
-    <Box sx={{paddingTop:8}}>
+    <Box sx={{paddingTop:8}} id='services'>
       <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '10px', justifyContent: 'center', alignItems: 'center'}}>
         <div style={{paddingBottom:'2px', textAlign: 'left', backgroundColor:'white',color:'black',marginBottom:'4px', width: '400px'}}>
           <h4 style={{color:'#fe5b05', paddingBottom:2}}>{t('ourServices.main-card.main-title')}</h4>

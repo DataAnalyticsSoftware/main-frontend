@@ -33,7 +33,7 @@ export const Form=()=> {
 
   return (
     <>
-      <h1 style={{fontWeight:700, paddingTop:20}}>GET <span style={{color:'#fe5b05'}}> THE DEMO</span></h1>
+      <h1 style={{fontWeight:700, paddingTop:20}} id='demo'>GET <span style={{color:'#fe5b05'}}> THE DEMO</span></h1>
       <div style={{ backgroundColor: '#F3F3F3', padding: '60px 10px', textAlign: 'left'}}>
         <div style={{textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '10px'}}>
         <div>

@@ -15,9 +15,9 @@ export const CompareTable = () => {
   return (
     <>
     <Box sx={{textAlign:{xs:'left', sm:'left', md:'center', lg:'center'}, paddingTop:12}}>
-      <h1 style={{paddingBottom:12, paddingTop:24, fontWeight:700}}>{t('compareTable.title-1')}<span style={{color:'#fe5b05', paddingBottom:2, paddingLeft:2}}>{t('compareTable.title-2')}</span>{t('compareTable.title-3')}</h1>
+      <h1 style={{paddingBottom:12, paddingTop:24, fontWeight:700}} id='pricing'>{t('compareTable.title-1')}<span style={{color:'#fe5b05', paddingBottom:2, paddingLeft:2}}>{t('compareTable.title-2')}</span>{t('compareTable.title-3')}</h1>
     </Box>
-      <div className="table-container" style={{ overflowX: 'auto',position: 'relative', width: 'calc(100%)'}}>
+      <div className="table-container" style={{ overflowX: 'auto',position: 'relative', width: 'calc(100%)'}} >
     <table aria-label="compare table">
       <thead>
         <tr>

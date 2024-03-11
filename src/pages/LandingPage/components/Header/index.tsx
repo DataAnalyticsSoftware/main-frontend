@@ -7,7 +7,7 @@ export const Header = () => {
   const theme = useTheme();
 
   return (
-    <Box>
+    <Box id='home'>
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',

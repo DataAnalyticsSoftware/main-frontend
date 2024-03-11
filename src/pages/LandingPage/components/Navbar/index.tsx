@@ -35,11 +35,17 @@ export const NavBar = () => {
               </Box>
 
               {/* Sección Centro - Botones */}
-              <Box sx={{ flexGrow:1, textAlign: 'center' }}>
-                <Button color="inherit">Home</Button>
-                <Button color="inherit">About Us</Button>
-                <Button color="inherit">Our Services</Button>
-                <Button color="inherit">Contact</Button>
+              <Box sx={{ flexGrow:1, textAlign: 'center', display:'flex' }}>
+                <ul style={{display:'flex', listStyle:'none'}}>
+                  <li style={{marginRight:32}}><a href='#home' style={{textDecoration:'none', color:'white'}}>{t('navbar.title-1')}</a><span></span></li>
+                  <li style={{marginRight:32}}><a href='#about' style={{textDecoration:'none', color:'white'}}>{t('navbar.title-2')}</a><span></span></li>
+                  <li style={{marginRight:32}}><a href='#services' style={{textDecoration:'none', color:'white'}}>{t('navbar.title-3')}</a><span></span></li>
+                  <li style={{marginRight:32}}><a href='#pricing' style={{textDecoration:'none', color:'white'}}>{t('navbar.title-4')}</a><span></span></li>
+                  <li style={{marginRight:32}}><a href='#thebest' style={{textDecoration:'none', color:'white'}}>{t('navbar.title-5')}</a><span></span></li>
+                  <li style={{marginRight:32}}><a href='#faq' style={{textDecoration:'none', color:'white'}}>{t('navbar.title-6')}</a><span></span></li>
+                  <li style={{marginRight:32}}><a href='#demo' style={{textDecoration:'none', color:'white'}}>{t('navbar.title-7')}</a><span></span></li>
+
+                </ul>
               </Box>
 
 
@@ -75,11 +81,17 @@ export const NavBar = () => {
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                 >
-                    {/* Opciones del menú */}
-                    <MenuItem onClick={handleClose}>Home</MenuItem>
-                    <MenuItem onClick={handleClose}>About Us</MenuItem>
-                    <MenuItem onClick={handleClose}>Our Services</MenuItem>
-                    <MenuItem onClick={handleClose}>Contact</MenuItem>
+                  {/* Opciones del menú */}
+                  <ul style={{display:'block', listStyle:'none'}}>
+                  <li style={{marginRight:32, padding:12}}><a href='#home' style={{textDecoration:'none', color:'black'}}>Home</a><span></span></li>
+                  <li style={{marginRight:32, padding:12}}><a href='#about' style={{textDecoration:'none', color:'black'}}>About Us</a><span></span></li>
+                  <li style={{marginRight:32, padding:12}}><a href='#services' style={{textDecoration:'none', color:'black'}}>Our Services</a><span></span></li>
+                  <li style={{marginRight:32, padding:12}}><a href='#pricing' style={{textDecoration:'none', color:'black'}}>Pricing</a><span></span></li>
+                  <li style={{marginRight:32, padding:12}}><a href='#thebest' style={{textDecoration:'none', color:'black'}}>Why Us</a><span></span></li>
+                  <li style={{marginRight:32, padding:12}}><a href='#faq' style={{textDecoration:'none', color:'black'}}>FAQ</a><span></span></li>
+                  <li style={{marginRight:32, padding:12}}><a href='#demo' style={{textDecoration:'none', color:'black'}}>Get Demo</a><span></span></li>
+
+                </ul>
                 </Menu>
               </div>
             </Toolbar>
