@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { PrincipalIconDas } from '../../../../components/SvgDas';
 import { ButtonDas } from '../../../../components/ButtonDas';
 import { GenericContext } from '../../../../context/GenericContext';
+import { CountryToggle } from './CountryToggle';
 
 export const NavBar = () => {
   const theme = useTheme();
@@ -47,12 +48,8 @@ export const NavBar = () => {
 
                 </ul>
               </Box>
-
-
               <Box>
-                              
-      <ButtonDas text='EN' onClick={() => i18n?.changeLanguage('en')}/>
-      <ButtonDas text='ES' onClick={() => i18n?.changeLanguage('es')}/>
+                <CountryToggle />
               </Box>
             </Toolbar>
         </AppBar>
@@ -64,6 +61,7 @@ export const NavBar = () => {
                 <div style={{width: '33px', height: '43px'}}>
                   <PrincipalIconDas/>
                 </div>
+                <CountryToggle />
                 <IconButton
                     size="large"
                     edge="start"

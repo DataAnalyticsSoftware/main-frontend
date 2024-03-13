@@ -51,7 +51,7 @@ export const FAQ = () => {
   }
 
   const iconExpanded = (index: number) => {
-    return <div style={{backgroundColor: `${!expand[index] ? '#0000001A' : '#FF5A05' }`, width: '50px', height: '50px', borderTopRightRadius: '10px', borderBottomRightRadius: `${!expand[index]?'10px': '0'}`, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+    return <div style={{backgroundColor: `${!expand[index] ? '#0000001A' : '#FF5A05' }`, width: '50px', height: '72px', borderTopRightRadius: '10px', borderBottomRightRadius: `${!expand[index]?'10px': '0'}`, display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
               {!expand[index] ? <AddIcon/> : <RemoveIcon style={{color: 'white'}}/>}
             </div>
   }

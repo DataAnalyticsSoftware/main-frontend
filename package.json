@@ -17,6 +17,7 @@
     "@visx/visx": "^3.3.0",
     "bootstrap": "^5.3.1",
     "bootstrap-icons": "^1.10.5",
+    "country-flag-icons": "^1.5.9",
     "d3": "^7.8.5",
     "das-design-system": "^0.1.5",
     "date-fns": "^2.30.0",

@@ -69,7 +69,7 @@ export const CardInfo = ({ dataId, closeModal }: any) => {
       event.defaultMuiPrevented = true;
     }
   }
-  
+
   const processRowUpdate = (newRow: GridRowModel) => {
     if(newRow.id === rowIdToSave){
       let dataToSend = {

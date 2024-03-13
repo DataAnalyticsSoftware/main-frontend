@@ -2,3 +2,9 @@
   background-color: #ff5a05 !important;
   margin-top: 20px;
 }
+
+@media (max-width: 768px) {
+  .formDas {
+    text-align: left !important;
+  }
+}
