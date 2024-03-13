@@ -52,7 +52,7 @@ export const Form=()=> {
               defaultValue={email}
               onChange={(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setEmail(event.target.value)}
           />
-          <label style={{color: 'blue', fontSize: 15}}><InfoIcon style={{fontSize: 15}} /> Escribe tu email y obten acceso anticipado a la demo.</label>
+          <label style={{color: 'blue', fontSize: 15, textAlign:'center'}}><InfoIcon style={{fontSize: 15}} />{t('get-demo.title')}</label>
         </div>
 
         {questions.map((value: IQuestions, index: number)=>

@@ -15,6 +15,8 @@
 
     },
     "faq":{
+        "title":"FREQUENTLY ASK",
+        "title2":"QUESTIONS",
         "question-1":"How do I start using the software?",
         "answer-1":"Start by registering on our platform. Then choose the plan that best suits your needs. Log in, and you can import data from files or connect your CRM. It's that easy!",
         "question-2":"How does your SaaS work?",
@@ -130,5 +132,8 @@
         "5-2":"Yes, between €50 and €100 per month.",
         "5-3":"Yes, but not more than €200 per month.",
         "5-4":"I wouldn't be willing to pay."
+    },
+    "get-demo":{
+        "title":"Write your email and get early access to the demo."
     }
 }

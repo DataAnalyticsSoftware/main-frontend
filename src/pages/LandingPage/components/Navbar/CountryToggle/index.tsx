@@ -24,10 +24,10 @@ export const CountryToggle = () => {
             aria-label="text alignment"
             style={{backgroundColor: 'white'}}
         >
-            <ToggleButton value="en" aria-label="en" style={{backgroundColor: countryLanguage === 'en' ? 'rgb(0 0 0 / 29%)' : ''}}>
+            <ToggleButton value="en" aria-label="en" style={{backgroundColor: countryLanguage === 'en' ? '':'rgb(0 0 0 / 29%)'  }}>
                 <GB title="English" style={{width: '25px', height: '25px'}}/>
             </ToggleButton>
-            <ToggleButton value="es" aria-label="es" style={{backgroundColor: countryLanguage === 'es' ? 'rgb(0 0 0 / 29%)' : ''}}>
+            <ToggleButton value="es" aria-label="es" style={{backgroundColor: countryLanguage === 'es' ?  '':'rgb(0 0 0 / 29%)' }}>
                 <ES title="Spanish" style={{width: '25px', height: '25px'}}/>
             </ToggleButton>
         </ToggleButtonGroup>

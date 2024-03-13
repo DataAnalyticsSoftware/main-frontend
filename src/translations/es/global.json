@@ -15,6 +15,8 @@
         "title-7":"Consigue tu DEMO"
     },
     "faq":{
+        "title":"PREGUNTAS",
+        "title2":"FRECUENTES",
         "question-1":"¿Cómo puedo empezar a usar el software?",
         "answer-1":"Comienza registrándote en nuestra plataforma. Luego, elige el plan que mejor se adapte a tus necesidades. Inicia sesión, y ya puedes importar datos desde archivos o conectar tu CRM. ¡Así de fácil!",
         "question-2":"¿Cómo funciona vuestro SaaS?",
@@ -130,5 +132,8 @@
         "5-2":"Sí, entre 50€ y 100€ al mes.",
         "5-3":"Sí, pero no más de 200€ al mes.",
         "5-4":"No estaría dispuesto a pagar."
+    },
+    "get-demo":{
+        "title":"Escribe tu email y obten acceso anticipado a la demo."
     }
 }
