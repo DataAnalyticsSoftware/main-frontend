@@ -18,7 +18,7 @@ export const TopBarComponent = (props:any) => {
                     </div>
                     <div style={{display: 'flex', flexDirection: 'row', gap: '10px'}}>
                         <ButtonDas text='Contact Us' variant='outlined' />
-                        <ButtonDas text={'Sign Up'} variant='contained' onClick={() => {console.log('entro'); navigate('/SignUp', { replace: true })}} />
+                        <ButtonDas text={'Sign Up'} variant='contained' onClick={() => {navigate('/SignUp', { replace: true })}} />
                     </div>
                 </div>
             </nav>

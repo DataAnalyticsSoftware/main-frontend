@@ -36,7 +36,7 @@ export const Support = (props:any) => {
 
         return Unsubscribe
     }, [])
-    
+
 
     if(initializing) return <p>Loading..</p>
 
@@ -47,7 +47,6 @@ export const Support = (props:any) => {
             await auth.signInWithPopup(provider);
         } catch (error) {
             console.log(error);
-            
         }
     };
 
@@ -56,8 +55,7 @@ export const Support = (props:any) => {
             await firebase.auth().signOut();
         }catch(error){
             console.log(error);
-            
-        } 
+        }
     }
 
 
@@ -69,7 +67,6 @@ export const Support = (props:any) => {
                     <Channel user={user} db={db} />
                 </>
             ) : (<ButtonDas text={'Sign in'} onClick={signInWithGoogle} />)}
-            
         </div>
     )
 }

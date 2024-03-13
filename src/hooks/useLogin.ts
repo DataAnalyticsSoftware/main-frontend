@@ -2,7 +2,6 @@ import { useEffect } from "react"
 import { ILoginProps } from "./type"
 
 export const useLogin = ({webDataNetsRequest, userData, login, setToken, setLogin}: ILoginProps) => {
-console.log(userData,login);
 
     useEffect(() => {
         if(!login) return 
