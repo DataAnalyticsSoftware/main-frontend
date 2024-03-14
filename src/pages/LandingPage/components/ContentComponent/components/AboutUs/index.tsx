@@ -6,7 +6,7 @@ export const AboutUs=()=> {
   const { t } = useContext(GenericContext)
 
   return (
-    <div style={{display: 'flex', flexDirection: 'row', gap: '20px', padding: '40px 0', flexWrap: 'wrap',justifyContent: 'space-evenly'}} id='about'>
+    <div style={{display: 'flex', flexDirection: 'row', gap: '20px', padding: '40px 0', flexWrap: 'wrap',justifyContent: 'space-evenly', position: 'relative'}} id='about'>
       <div style={{textAlign: 'left', maxWidth: '550px'}}>
         <h4 style={{color:'#fe5b05', paddingBottom:2, fontWeight:400}}>{t('aboutUs.title')}</h4>
         <h1 style={{fontWeight:600}}>{t('aboutUs.title-description')}<span style={{color:'#fe5b05', paddingBottom:2, paddingLeft:2}}>{t('aboutUs.title-description-color')}</span></h1>

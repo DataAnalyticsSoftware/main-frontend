@@ -10,6 +10,16 @@ export const questions: IQuestions[] = [
         answers: [
             'Sí, a menudo','A veces','No, rara vez'
         ]
+    },{
+        question: "¿Has tenido problemas con la gestión de datos de tus clientes?",
+        answers: [
+            'Sí, a menudo','A veces','No, rara vez','No, rara vez','No, rara vez','No, rara vez'
+        ]
+    },{
+        question: "¿Has tenido problemas con la gestión de datos de tus clientes?",
+        answers: [
+            'Sí, a menudo','A veces','No, rara vez'
+        ]
     },
     {
         question: "Desafíos actuales en la gestión de datos y clientes:",

@@ -4,10 +4,12 @@ import TextField from '@mui/material/TextField'
 import Radio from '@mui/material/Radio'
 import RadioGroup from '@mui/material/RadioGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
-import { Button } from '@mui/material'
+import { Button, MobileStepper } from '@mui/material'
 import styles from './styles.module.scss'
 import { IQuestions, questions } from './questions'
-import InfoIcon from '@mui/icons-material/Info';
+import InfoIcon from '@mui/icons-material/Info'
+import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft'
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight'
 
 export const Form=()=> {
 
@@ -15,7 +17,11 @@ export const Form=()=> {
   const [comment, setComment] = useState<string | null>(null)
   const [responses, setResponses] = useState<any[]>(Array(questions.length).fill(null))
   const [formComplete, setFormComplete ] = useState<boolean>(Boolean(localStorage.getItem('submissionSuccessful')) || false)
+  const [activeStep, setActiveStep] = useState<number>(0)
   const { t, webDataNetsRequest } = useContext(GenericContext)
+
+  const regexEmail =
+  /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
   const handleSubmit = () =>{
     if(!email && responses.filter(x=>x).length === 0) return
@@ -30,10 +36,33 @@ export const Form=()=> {
     })
   }
 
+  const handleNext = () => {
+    if(activeStep === 1 && responses[activeStep-1] !== '0'){
+      let newResponses = [...responses]
+      newResponses[1] = null
+      setResponses(newResponses)
+      setActiveStep((prevActiveStep) => prevActiveStep + 2);
+    }else{
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    }
+  };
+
+  const handleBack = () => {
+    if(activeStep === 3 && responses[0] !== '0')
+      setActiveStep((prevActiveStep) => prevActiveStep - 2);
+    else
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
   const handleResponse = (index: number, value: React.ChangeEvent<HTMLInputElement>) => {
     const newResponses = [...responses]
     newResponses[index] = value.target.value
     setResponses(newResponses)
+  }
+
+  const comprobateStep = (actualStep: number) => {
+    if(!actualStep) return !!email && email.trim() !== '' && email.toLowerCase().match(regexEmail)
+    return !!responses[actualStep-1]
   }
 
   return (
@@ -44,7 +73,7 @@ export const Form=()=> {
       </div> :
       <div style={{ backgroundColor: '#F3F3F3', padding: '60px 10px', textAlign: 'left'}}>
         <div className={styles.formDas} style={{alignItems: 'center', display: 'flex', flexDirection: 'column', gap: '10px', textAlign: 'center'}}>
-        <div style={{display: 'flex', flexDirection: 'column'}}>
+        {activeStep === 0 && <div style={{display: 'flex', flexDirection: 'column'}}>
           <TextField
               label="Email"
               id="outlined-start-adornment"
@@ -53,25 +82,46 @@ export const Form=()=> {
               onChange={(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => setEmail(event.target.value)}
           />
           <label style={{color: 'blue', fontSize: 15, textAlign:'center'}}><InfoIcon style={{fontSize: 15}} />{t('get-demo.title')}</label>
-        </div>
-
-        {questions.map((value: IQuestions, index: number)=>
-          <div key={index}>
-            <label id={`question${index}`}>{t(`questions.${index}`)}</label>
+        </div>}
+        {activeStep > 0 && <div>
+            <label id={`question${activeStep-1}`}>{t(`questions.${activeStep-1}`)}</label>
             <RadioGroup
               row
-              aria-labelledby={`question${index}`}
-              name={`question${index}`}
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) => handleResponse(index, event)}
+              aria-labelledby={`question${activeStep-1}`}
+              name={`question${activeStep-1}`}
+              value={responses[activeStep-1]}
+              onChange={(event: React.ChangeEvent<HTMLInputElement>) => handleResponse(activeStep-1, event)}
             >
-              {value.answers.map((answer: string, indexAnswer: number) =>
-                <FormControlLabel key={indexAnswer} value={indexAnswer} control={<Radio sx={{'&.Mui-checked':{color: '#FF5A05'}}} />} label={t(`posible-answers.${index+1}-${indexAnswer+1}`)} />
+              {questions[activeStep-1].answers.map((answer: string, indexAnswer: number) =>
+                <FormControlLabel key={indexAnswer} value={indexAnswer} control={<Radio sx={{'&.Mui-checked':{color: '#FF5A05'}}} />} label={t(`posible-answers.${activeStep}-${indexAnswer+1}`)} />
               )}
             </RadioGroup>
-          </div>
-        )}
+          </div>}
       </div>
-      <div style={{width: '100%', textAlign: 'center'}}><Button className={styles.buttonResponse} variant='contained' onClick={handleSubmit}>{t('questions.send-response')}</Button></div>
+      <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '20px'}}>
+        <MobileStepper
+          variant="progress"
+          steps={questions.length+1}
+          position="static"
+          activeStep={activeStep}
+          sx={{ maxWidth: 400, flexGrow: 1, bgcolor: '#F3F3F3' }}
+          nextButton={
+           <> {activeStep !== questions.length ? <Button size="small" onClick={handleNext} disabled={!comprobateStep(activeStep)}>
+              Next <KeyboardArrowRight />
+            </Button> :
+            <Button size="small" onClick={handleSubmit} disabled={!comprobateStep(activeStep)}>
+              Finish
+            </Button>
+            }</>
+          }
+          backButton={
+            <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+              <KeyboardArrowLeft />
+              Back
+            </Button>
+          }
+        />
+      </div>
     </div>}
     </>
   )

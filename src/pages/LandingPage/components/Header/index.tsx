@@ -7,10 +7,11 @@ export const Header = () => {
   const theme = useTheme();
 
   return (
-    <Box id='home'>
+    <Box id='home' sx={{position: 'relative'}}>
       <Box sx={{
         display: 'flex',
         flexDirection: 'column',
+        position: 'relative',
         [theme.breakpoints.up('lg')]: {
           flexDirection: 'row',
         },
