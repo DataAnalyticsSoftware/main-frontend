@@ -75,6 +75,23 @@ export const ContentLandingComponent=()=> {
             }
           }
         },
+        {
+          name: "dark",
+          default: {
+            value: true,
+            mode: "dark"
+          },
+          options: {
+            background: {
+              color: "#fff"
+            },
+            particles: {
+              color: {
+                value: "#000"
+              }
+            }
+          }
+        }
       ]
     }),
     [],
