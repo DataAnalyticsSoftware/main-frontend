@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import { useGenericRequest } from '../hooks/useGenericRequest';
 import { initialValue } from './initialValues';
 import { GenericContextValue, IUserData,ISingUpUserData } from './type';
@@ -29,6 +29,11 @@ export default function GenericContextProvider({ children }: any) {
         setMessageToast(message)
     }
 
+    useEffect(() => {
+        i18n.changeLanguage("es")
+    }, [])
+    
+    
     const contextValue: GenericContextValue = {
         token,
         setToken,
