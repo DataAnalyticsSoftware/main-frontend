@@ -1,6 +1,7 @@
 import { Box, Button, Typography, useTheme } from '@mui/material';
 import React, { useContext } from 'react';
 import { GenericContext } from '../../../../context/GenericContext';
+import './styles.module.scss'
 
 export const Header = () => {
   const { t } = useContext(GenericContext);
@@ -22,8 +23,11 @@ export const Header = () => {
             <img height={25} width={256} src={`${process.env.REACT_APP_BACKEND_ENPDOINT}${"/media-files/imagenes/banner-line.png"}`} alt="Banner Line" />
           </Box>
           <p style={{ fontWeight: 400,maxWidth: '375px' }}>{t("header.description")}</p>
-          <Box sx={{display:'none',[theme.breakpoints.up('lg')]: {display: 'block',},}}>
-            <Button sx={{ backgroundColor: '#fe5b05', color: '#FFFFFF', padding: 2, display:{sx:'none'} }}><span>Try Demo</span></Button>
+          <Box  sx={{marginTop:6,display:'none',[theme.breakpoints.up('lg')]: {display: 'block',},}}>
+            <div
+             style={{backgroundColor: '#fe5b05',textAlign:'center',maxWidth:'35%',padding:20,borderRadius:10}} className='tryDemo' >
+              <a style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }} href='#demo'><span>{t('header.trydemo')}</span></a>
+            </div>
           </Box>
         </Box>
 

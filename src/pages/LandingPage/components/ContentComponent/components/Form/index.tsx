@@ -67,11 +67,11 @@ export const Form=()=> {
 
   return (
     <>
-      <h1 style={{fontWeight:700, paddingTop:20}} id='demo'>GET <span style={{color:'#fe5b05'}}> THE DEMO</span></h1>
+      <h1 style={{fontWeight:700, paddingTop:20, paddingBottom:20}} id='demo'>{t('get-demo.header')} <span style={{color:'#fe5b05'}}> {t('get-demo.subheader')}</span></h1>
       {formComplete ? <div style={{ backgroundColor: '#F3F3F3', padding: '60px 10px', textAlign: 'center'}}>
         {t("questions.final-message")}
       </div> :
-      <div style={{ backgroundColor: '#F3F3F3', padding: '60px 10px', textAlign: 'left'}}>
+      <div style={{ backgroundColor: '#F3F3F3', padding: '60px 40px', textAlign: 'left', borderRadius:10}}>
         <div className={styles.formDas} style={{alignItems: 'center', display: 'flex', flexDirection: 'column', gap: '10px', textAlign: 'center'}}>
         {activeStep === 0 && <div style={{display: 'flex', flexDirection: 'column'}}>
           <TextField
@@ -86,6 +86,7 @@ export const Form=()=> {
         {activeStep > 0 && <div>
             <label id={`question${activeStep-1}`}>{t(`questions.${activeStep-1}`)}</label>
             <RadioGroup
+              sx={{justifyContent:'center'}}
               row
               aria-labelledby={`question${activeStep-1}`}
               name={`question${activeStep-1}`}

@@ -2,7 +2,8 @@
     "header":{
         "title-1": "We're Here to Increase Your",
         "title-2": "Productivity",
-        "description": "Transform the way you manage data with Webdatanets, an innovative service dedicated to optimizing, assisting, and revolutionizing your company's databases."
+        "description": "Transform the way you manage data with Webdatanets, an innovative service dedicated to optimizing, assisting, and revolutionizing your company's databases.",
+        "trydemo": "TRY DEMO"   
     },
     "navbar":{
         "title-1":"Home",
@@ -145,6 +146,8 @@
         "7-4":"I wouldn't be willing to pay."
     },
     "get-demo":{
+        "header":"GET",
+        "subheader":"THE DEMO",
         "title":"Write your email and get early access to the demo."
     }
 }

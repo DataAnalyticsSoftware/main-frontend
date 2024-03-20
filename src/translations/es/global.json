@@ -2,7 +2,8 @@
     "header":{
         "title-1": "Estamos aquí para aumentar su",
         "title-2": "Productividad",
-        "description": "Transforme la forma en que administra los datos con Webdatanets, un servicio innovador dedicado a optimizar, ayudar y revolucionar las bases de datos de su empresa."
+        "description": "Transforme la forma en que administra los datos con Webdatanets, un servicio innovador dedicado a optimizar, ayudar y revolucionar las bases de datos de su empresa.",
+        "trydemo": "CONSIGUE TU DEMO"   
 
     },
     "navbar":{
@@ -145,6 +146,8 @@
         "7-4":"No estaría dispuesto a pagar."
     },
     "get-demo":{
+        "header":"CONSIGUE",
+        "subheader":"TU DEMO",
         "title":"Escribe tu email y obten acceso anticipado a la demo."
     }
 }
