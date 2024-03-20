@@ -47,12 +47,16 @@ export const Header = () => {
       </Box>
 
       <Box sx={{
-        textAlign: 'center',
+        justifyContent:'center',
+        textAlign: '-webkit-center',
         [theme.breakpoints.up('lg')]: {
           display: 'none',
         },
       }}>
-        <Button sx={{ backgroundColor: '#fe5b05', color: '#FFFFFF', padding: 2 }}><span>Try Demo</span></Button>
+         <div
+          style={{backgroundColor: '#fe5b05', textAlign:'center', maxWidth:'45%', padding:20, borderRadius:10}} className='tryDemo' >
+            <a style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }} href='#demo'><span>{t('header.trydemo')}</span></a>
+          </div>
       </Box>
     </Box>
   );
