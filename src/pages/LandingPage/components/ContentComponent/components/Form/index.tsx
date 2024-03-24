@@ -6,7 +6,7 @@ import RadioGroup from '@mui/material/RadioGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import { Button, MobileStepper } from '@mui/material'
 import styles from './styles.module.scss'
-import { IQuestions, questions } from './questions'
+import { questions } from './questions'
 import InfoIcon from '@mui/icons-material/Info'
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft'
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight'
@@ -22,6 +22,8 @@ export const Form=()=> {
 
   const regexEmail =
   /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+  const PERCENTAGE_OPTIONS : (string | null)[] =[null, null, '10%', '8%', '4.5%', '2.25%', '1.95%']
 
   const handleSubmit = () =>{
     if(!email && responses.filter(x=>x).length === 0) return
@@ -40,6 +42,12 @@ export const Form=()=> {
     if(activeStep === 1 && responses[activeStep-1] !== '0'){
       let newResponses = [...responses]
       newResponses[1] = null
+      newResponses[2] = null
+      setResponses(newResponses)
+      setActiveStep((prevActiveStep) => prevActiveStep + 3);
+    }else if(activeStep === 2 && (responses[activeStep-1] === '0' || responses[activeStep-1] === '1')){
+      let newResponses = [...responses]
+      newResponses[2] = null
       setResponses(newResponses)
       setActiveStep((prevActiveStep) => prevActiveStep + 2);
     }else{
@@ -48,7 +56,9 @@ export const Form=()=> {
   };
 
   const handleBack = () => {
-    if(activeStep === 3 && responses[0] !== '0')
+    if(activeStep === 4 && responses[0] !== '0')
+      setActiveStep((prevActiveStep) => prevActiveStep - 3);
+    else if(activeStep === 4 && (responses[1] === '0' || responses[1] === '1'))
       setActiveStep((prevActiveStep) => prevActiveStep - 2);
     else
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
@@ -84,7 +94,7 @@ export const Form=()=> {
           <label style={{color: 'blue', fontSize: 15, textAlign:'center'}}><InfoIcon style={{fontSize: 15}} />{t('get-demo.title')}</label>
         </div>}
         {activeStep > 0 && <div>
-            <label id={`question${activeStep-1}`}>{t(`questions.${activeStep-1}`)}</label>
+            <label id={`question${activeStep-1}`}>{t(`questions.${activeStep-1}`).replace('{percentage}',PERCENTAGE_OPTIONS[responses[1]] || '' )}</label>
             <RadioGroup
               sx={{justifyContent:'center'}}
               row
@@ -108,17 +118,17 @@ export const Form=()=> {
           sx={{ maxWidth: 400, flexGrow: 1, bgcolor: '#F3F3F3' }}
           nextButton={
            <> {activeStep !== questions.length ? <Button size="small" onClick={handleNext} disabled={!comprobateStep(activeStep)}>
-              Next <KeyboardArrowRight />
+              {t('questions.next')} <KeyboardArrowRight />
             </Button> :
             <Button size="small" onClick={handleSubmit} disabled={!comprobateStep(activeStep)}>
-              Finish
+              {t('questions.finish')}
             </Button>
             }</>
           }
           backButton={
             <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
               <KeyboardArrowLeft />
-              Back
+              {t('questions.back')}
             </Button>
           }
         />
