@@ -15,6 +15,8 @@ export interface GenericContextValue{
     setOpenToast: React.Dispatch<React.SetStateAction<boolean>>
     t:TFunction<"global", undefined> |( () => string) ,
     i18n:i18n | null
+    openProfile: boolean
+    setOpenProfile: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 

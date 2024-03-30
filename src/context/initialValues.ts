@@ -13,5 +13,7 @@ export const initialValue = {
     handleToast: () => {},
     setOpenToast: () => {},
     t: () => '',
-    i18n: null
+    i18n: null,
+    openProfile: false,
+    setOpenProfile:() => {},
 }

@@ -5,6 +5,7 @@ import { GenericContext } from '../../context/GenericContext'
 import { IMenu } from './type'
 import { List, ListItem, ListItemText } from '@mui/material'
 import style from './styles.module.scss'
+import { PrincipalIconDas } from '../../components/SvgDas'
 
 export const SideMenuComponent = () => {
 
@@ -28,7 +29,11 @@ export const SideMenuComponent = () => {
 
     return (
             <div style={{backgroundColor: '#111827', height: '100%', width: '222px', padding: '16px'}} className="col-3 position-fixed " id="sticky-sidebar">
-                <h1 style={{color: 'white'}} className='mt-4 ml-2 mr-3 mb-5'>Logo</h1>
+                <div style={{color: 'white'}} className='mt-4 ml-2 mr-3 mb-5'>
+                    <div style={{width: '74px', height: '90px'}}>
+                        <PrincipalIconDas/>
+                    </div>
+                </div>
                 <hr style={{backgroundColor: '#F6F6F6', opacity:'10%'}}></hr>
                     <List sx={styles} component="nav" aria-label="mailbox folders">
                         {menu?.map((value: IMenu, index: number) =>

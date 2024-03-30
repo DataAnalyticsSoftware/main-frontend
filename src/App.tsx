@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.scss'
 import {
   Route,
@@ -15,6 +15,7 @@ import { I18nextProvider } from 'react-i18next'
 import i18next from 'i18next'
 import global_es from './translations/es/global.json'
 import global_en from './translations/en/global.json'
+import { GridStack } from 'gridstack'
 
 
 i18next.init({
@@ -31,17 +32,20 @@ i18next.init({
 })
 
 function App() {
+  useEffect(() => {
+    GridStack.init();
+  });
   return (
     <Router>
         <div className="App">
         <I18nextProvider i18n={i18next}>
           <GenericContextProvider>
             <Routes>
-              <Route path='/a' element={<PrincipalPage/>} />
+              <Route path='/' element={<PrincipalPage/>} />
               <Route path='/dashboards' element={<DashboardContainer />} />
               <Route path='/myAccount' element={<UserProfile/>} />
               <Route path='/SignUp' element={<RegistrationComponent/>} />
-              <Route path='/' element={<LandinPage/>} />
+              <Route path='/landing' element={<LandinPage/>} />
             </Routes>
           </GenericContextProvider>
         </I18nextProvider>
