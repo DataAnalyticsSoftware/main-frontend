@@ -1,9 +1,9 @@
 {
     "header":{
-        "title-1": "Estamos aquí para aumentar su",
-        "title-2": "Productividad",
-        "description": "Transforme la forma en que administra los datos con Webdatanets, un servicio innovador dedicado a optimizar, ayudar y revolucionar las bases de datos de su empresa.",
-        "trydemo": "CONSIGUE TU DEMO"   
+        "title-1": "Vende más a",
+        "title-2": " Menor coste",
+        "description": "Administra eficientemente los datos de tus actuales clientes, usa campañas de email para llegar a nuevos y ten una visión de tu negocio mucho más profunda para poder vender más.",
+        "trydemo": "Quiero mi DEMO"   
 
     },
     "navbar":{
@@ -18,69 +18,69 @@
     "faq":{
         "title":"PREGUNTAS",
         "title2":"FRECUENTES",
-        "question-1":"¿Cómo puedo empezar a usar el software?",
-        "answer-1":"Comienza registrándote en nuestra plataforma. Luego, elige el plan que mejor se adapte a tus necesidades. Inicia sesión, y ya puedes importar datos desde archivos o conectar tu CRM. ¡Así de fácil!",
+        "question-1":"¿Cómo puedo empezar a usar vuestro software?",
+        "answer-1":"Regístrate, elige el plan que se adapte a tu negocio y voilá! Importa en un click los datos directamente de tu CRM o Base de Datos.",
         "question-2":"¿Cómo funciona vuestro SaaS?",
-        "answer-2":"El proceso es sencillo. Importa tus datos, crea colecciones para organizarlos y aplicar filtros según tus necesidades. En el apartado de gráficas, elige colecciones y personaliza tus gráficos para obtener insights visuales.",
+        "answer-2":"1-Importa tus datos. 2-Organízalos a tu gusto y aplica los filtros que tú quieras. 3-Personaliza tus gráficos y comienza a leer tu negocio de manera mucho más visual.",
         "question-3":"¿Qué tipos de datos puedo gestionar y analizar con vuestro software?",
-        "answer-3":"Puedes gestionar una variedad de datos, desde información de clientes hasta datos de ventas. La clave para una visualización efectiva es establecer relaciones significativas entre ellos.",
+        "answer-3":"Puedes gestionar datos de todo tipo. Desde información de clientes hasta datos de ventas. La clave está en hacer relaciones entre datos, así podrás tener una visión más clara y observarás correlación entre ellos.",
         "question-4":"¿Cómo podéis simplificar el proceso de gestión de datos para mi empresa?",
-        "answer-4":"Simplificamos con importación automática, creación rápida de colecciones y herramientas intuitivas que ahorran tiempo y mejoran la eficiencia en la gestión de datos.",
+        "answer-4":"Todos nuestros procesos son automatizados para ahorrar tiempo. La importación, la creación de informes personalizados, gráficas, vistas, filtros…etc.",
         "question-5":"¿Ofrecen integraciones con otras herramientas o plataformas?",
         "answer-5":"Sí, nuestra plataforma se integra con varias herramientas populares como Shopify, PrestaShop, Mailchimp, ActiveCampaign, WordPress, Klaviyo, y más, facilitando la sincronización de datos.",
         "question-6":"¿Cuáles son las ventajas de integrar desde un CRM?",
-        "answer-6":"Integrar desde un CRM simplifica la importación y actualización automática de datos, mejorando la eficiencia operativa y garantizando la precisión de la información.",
+        "answer-6":"Es más simple. Y además favorece la sincronización automática de datos garantizando la precisión de información.",
         "question-7":"¿Puedo acceder y gestionar mi base de datos desde cualquier lugar y dispositivo?",
-        "answer-7":"Absolutamente, nuestra plataforma es accesible desde cualquier lugar y dispositivo, brindándote flexibilidad para gestionar tus datos de forma remota.",
+        "answer-7":"Nuestra plataforma es accesible desde cualquier lugar y dispositivo, brindándote flexibilidad para gestionar tus datos de forma remota.",
         "question-8":"¿Cómo ayuda su software a mejorar la eficacia de campañas y estrategias de marketing?",
         "answer-8":"Facilitamos el análisis y la segmentación de datos, proporcionando herramientas para optimizar tus campañas publicitarias y estrategias de marketing de manera efectiva.",
         "question-9":"¿Cuáles son las opciones de soporte técnico disponibles?",
         "answer-9":"Ofrecemos soporte técnico dedicado y recursos de formación para garantizar que aproveches al máximo todas las funcionalidades de nuestro software, asegurando una experiencia sin problemas.",
         "question-10":"¿Cuál es el modelo de precios y qué incluye?",
-        "answer-10":"Contamos con planes flexibles que detallan las funciones específicas incluidas en cada uno. Para obtener más información, consulta nuestra sección de precios."
+        "answer-10":"Consulta nuestra sección de precios aquí"
     },
     "aboutUs":{
-        "title": "Acerca de Nosotros",
-        "title-description": "Solución sencilla para Conexiones ",
-        "title-description-color": "Complejas",
-        "description": "Es un Servicio que se especializa en optimizar, ayudar, filtrar y organizar toda la base de datos de su empresa.",
-        "icon-1":"Análisis de calidad",
+        "title": "Acerca de Webdatanets",
+        "title-description": "Conseguir ventas online cada vez es ",
+        "title-description-color": "MÁS CARO",
+        "description": "La publicidad en Internet ya no es sostenible, los costes se han incrementado y cerrar clientes mediante anuncios se ha convertido en una misión imposible para la mayoría de empresas. Los conocidos Ads, son negocio de las plataformas publicitarias, donde acaban dándote poca información y sólo acaban ganando ellas. Nosotros hemos creado este software para que ganes tú.",
+        "icon-1":"Análisis de calidad", 
         "icon-2": "Plataforma certificada"
     },
     "ourServices":{
         "main-card":{
             "main-title":"NUESTROS SERVICIOS",
-            "title": "La mejor plataforma para tu negocio",
-            "description": "Ofrecemos una variedad de características interesantes que pueden ayudarlo a aumentar su productividad en el trabajo y administrar su negocio fácilmente."
+            "title": "Un software enfocado a los resultados de tu negocio.",
+            "description": "Con Webdatanets podrás analizar de forma sencilla tu empresa creando relaciones entre los datos de tus clientes y ventas que ya dispones."
         },
         "second-card":{
-            "main-title":"¿POR QUÉ",
-            "second-title":"ELEGIRNOS?",
+            "main-title":"¿POR QUÉ ELEGIRNOS Y NO A CUALQUIER OTRO",
+            "second-title":"SOFTWARE DEL MERCADO?",
             "text": "Experimenta el futuro de la gestión de datos comprométete con Webdatanets y eleva tu negocio a nuevas objetivos y metas. Tus datos, Tus reglas, Tú éxito."
         },
         "card-0-title": "Control de datos sin esfuerzo",
-        "card-0-description": "Optimiza tu gestión de datos con nuestro SaaS: control sin esfuerzo. Desde la importación automática hasta la creación rápida de colecciones y gráficas personalizadas, simplificamos cada paso para que puedas enfocarte en estrategias efectivas sin complicaciones.",
-        "card-1-title": "Gráficas",
-        "card-1-description": "Visualiza tus datos de manera impactante con nuestras herramientas de gráficas. Selecciona colecciones, elige entre diversos tipos de gráficos y personaliza tus visualizaciones. Desde análisis detallados hasta una panorámica rápida, nuestras gráficas te ofrecen perspectivas claras para impulsar decisiones informadas y estrategias exitosas.",
-        "card-2-title": "Importar datos en .CSV",
-        "card-2-description": "Importa tus datos de manera rápida y sencilla en formato .CSV. Con solo unos clics, nuestra plataforma facilita la integración de tus archivos, permitiéndote aprovechar al máximo tus datos en cuestión de minutos.",
-        "card-3-title": "Conexión con CRM",
-        "card-3-description": "Conecta sin complicaciones tu CRM a nuestra plataforma. Facilitamos la integración para garantizar una transferencia fluida de datos, permitiéndote aprovechar al máximo las funcionalidades de tu sistema de gestión de relaciones con el cliente (CRM) en conjunto con nuestras potentes herramientas.",
-        "card-4-title": "Correo de Marketing",
-        "card-4-description": "Potencia tu estrategia de marketing por correo electrónico con nuestra plataforma. Desde la gestión eficiente de listas hasta la creación de campañas personalizadas, nuestra herramienta te proporciona las funcionalidades necesarias para optimizar tus campañas de correo electrónico y llegar efectivamente a tu audiencia."
+        "card-0-description": "Optimiza tu gestión de datos con nuestro SaaS: control sin esfuerzo. Desde la importación automática hasta la creación rápida de colecciones y gráficas personalizadas, simplificamos cada paso para que puedas enfocarte en estrategias efectivas sin complicaciones. Y Vendiendo más",
+        "card-1-title": "Crea campañas de marketing que tengan un resultado tangible en tu negocio.",
+        "card-1-description": "Nuestro software contiene una herramienta de email marketing que te permitirá crear campañas de correo eléctronico que te harán llegar a tus potenciales clientes de manera real.",
+        "card-2-title": "Sincroniza tus clientes con nuestra plataforma en un click",
+        "card-2-description": "Te facilitamos todo lo necesario para que conectes tus bases de datos de clientes con nuestra plataforma aunque la tecnología “no sea lo tuyo”",
+        "card-3-title": "No leas los datos, visualízalos",
+        "card-3-description": "Hemos creado una herramienta que te va a permitir visualizar de forma totalmente intuitiva tu base de datos como nunca antes lo habías hecho. Lo que no se mide, no se mejora Gracias a que dispondrás los datos de manera muy visual, esto te permitirá medir mejor el rendimiento de tu empresa y tomar medidas para saber lo que falla y lo que no.",
+        "card-4-title": "Intuitivo al máximo",
+        "card-4-description": "Además, está creado para que puedas hacer uso de nuestra herramienta de forma independiente, por lo que su uso es extremadamente sencillo."
     },
     "whyChooseUs":{
-        "card-0-title": "Control de datos sin esfuerzo",
-        "card-0-description": "Agregue, clasifique, filtre, elimine y actualice sin problemas toda su base de datos con unos pocos clics. Adapte sus datos por fechas, países, idiomas, edad, sexo, compras y más.",
-        "card-1-title": "Visualice conocimientos en tiempo real",
-        "card-1-description": "Sumérgete en gráficos interactivos e información en tiempo real para cada colección. Personalice la visualización de datos para realizar comparaciones complejas, proporcionando una visión profunda de la dinámica de su negocio.",
-        "card-2-title": "Herramientas de comparación optimizadas",
-        "card-2-description": "Compare colecciones sin esfuerzo para descubrir tendencias, patrones y variaciones. Obtenga una ventaja competitiva con un análisis integral de sus conjuntos de datos.",
+        "card-0-title": "Creado por y para empresas",
+        "card-0-description": "Webdatanets está creado para que las empresas puedan entender mejor su negocio",
+        "card-1-title": "Totalmente personalizable",
+        "card-1-description": "Por eso nuestra herramienta es totalmente personalizable y moldeable para que puedas crear informes, gráficas, elementos visuales…etc. totalmente a tu gusto.",
+        "card-2-title": "Único en el mercado",
+        "card-2-description": "Disponemos de un filtro inteligente que no existe en el mercado. El cuál puedes agrupar en un par de clicks datos que consideres relevantes y dejes a un lado aquellos que sólo distorsionan los datos aquello que quieras analizar",
         "card-3-title": "Soluciones publicitarias estratégicas",
         "card-3-description": "Aproveche el poder de la recopilación y visualización de datos para campañas publicitarias dirigidas. Ahorre en costos de pruebas y asegure la precisión en sus estrategias publicitarias."
     },
     "compareTable": {
-        "title-1": "PORQUE SOMOS NOSOTROS ",
+        "title-1": "¿POR QUÉ SOMOS NOSOTROS ",
         "title-2":"LO MEJOR",
         "title-3":" EN EL MERCADO?",
         "table-title-1":"Comparar tabla de software",

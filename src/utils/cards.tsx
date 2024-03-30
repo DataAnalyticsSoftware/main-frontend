@@ -19,7 +19,7 @@ export const Cards=({icon,title,text,button, index, colorIcon = '', colorBackgro
     </div>
     </>
     :
-    <div className='border' style={{paddingBottom:'2px', backgroundColor:`${index===0?'#4252CF':'white'}`,color:`${index===0?'white':'black'}`, padding:'2rem', borderRadius:'10px',marginBottom:'4px',minHeight: '440px', width: '400px', textAlign:'left'}}>
+    <div className='border' style={{paddingBottom:'2px', backgroundColor:`${index===0?'#4252CF':'white'}`,color:`${index===0?'white':'black'}`, padding:'2rem', borderRadius:'10px',marginBottom:'4px',minHeight: '470px', width: '400px', textAlign:'left'}}>
         <Box sx={{mb:4,pl:1, width:'50px', height:'50px', color:`${index===0?'white':'#1F37FF'}`}}>
             <i style={{fontSize:50}} className={icon}></i>
         </Box>
