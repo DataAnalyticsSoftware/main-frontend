@@ -5,13 +5,13 @@ import { TopBarDashboardPage } from '../../modules/TopBarDashboardPage'
 import { ContentComponent } from '../../modules/ContentComponent'
 import { ToastDas } from '../../components/ToastDas'
 import { GenericContext } from '../../context/GenericContext'
+import { UserProfile } from '../UserProfile'
 
 export const DashboardContainer = (props:any) => {
-
-    const { openToast, messageToast, setOpenToast } = useContext(GenericContext)
-
+    const { openToast, messageToast, setOpenToast, openProfile } = useContext(GenericContext)
     return (
         <DashboardContextProvider>
+           {openProfile?<UserProfile/>:''}
             <div className="dashboard-container" style={{width:'100%', backgroundColor:'#fefeff'}}>
                 <div className="container-fluid">
                     <div className="row">

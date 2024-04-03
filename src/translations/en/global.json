@@ -109,7 +109,7 @@
     "questions":{
         "0":"Do you have a business or company?",
         "1":"How much are you billing annually approximately?",
-        "2":"Would you find it reasonable to pay a fixed monthly amount plus a quarterly percentage based on your billing? Of a {percentage}.",
+        "2":"Would you find it reasonable to pay a fixed monthly amount plus a quarterly percentage based on your billing? Of a {percentage} every three months.",
         "3":"Have you had problems with managing your customer data?",
         "4":"Current challenges in managing data and customers:",
         "5":"Are you looking for a solution to manage customer information and your databases?",

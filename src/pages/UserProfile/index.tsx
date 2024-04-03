@@ -133,38 +133,34 @@ export const UserProfile = (props:any) => {
     const handleSubmit=()=>{
     }
     const { openProfile, setOpenProfile } = useContext(GenericContext)
-
+    
     return (
       <Modal
-      open={openProfile}
-      onClose={()=>setOpenProfile(false)}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
+        open={openProfile}
+        onClose={()=>setOpenProfile(false)}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        className={styles.modal}
       >
-    <div className="container-fluid" style={{backgroundColor:'rgb(246, 246, 246)',paddingLeft:'0 !Important', paddingRight:'0px !important'}}>
-          <div>
+    <div className={styles.modalContent} style={{backgroundColor:'rgb(246, 246, 246)',paddingLeft:'0 !Important', paddingRight:'0px !important'}}>
+          <div style={{fontWeight: 500, fontSize: '30px'}}>
             Perfil de usuario
           </div>
             <div className="col-12" style={{backgroundColor:'rgb(246, 246, 246)',paddingLeft:'0 !Important', paddingRight:'0px !important'}}>
                 <div className="container-fluid" style={{backgroundColor:'rgb(246, 246, 246)',paddingLeft:'0 !Important', paddingRight:'0px !important'}}>
                 {itemsData.map((item, index) => (
-
                 <div  key={index} className="container">
-
-                  <div style={{ display:'flex'}}>
-
+                  <div style={{ display:'flex', justifyContent:'center'}}>
                     <div className={`bg-secondary-soft py-5 rounded`} style={{ marginRight: '12px', width:'20%' }}>
                       <div>
                         {imgWasUploaded ? <img style={{height:'200px', width:'200px', marginBottom:'16px', borderRadius:'25px'}}></img> :''}
                       </div>
                     </div>
-
                       <div style={{alignSelf:'center',width:'10%'}}>
                       <input type="file" id="customFile" name="file" hidden />
                       <label className={`btn btn-success-soft btn-block ${styles.title}`} htmlFor="customFile">{item.fileUpload.ProfileImageTxt} </label>
                       {<ButtonDas variant='outlined' text={imgWasUploaded ?item.fileUpload.imgUploaded:item.fileUpload.inputLabel}/>}</div> 
                   </div>
-
                   <hr style={{border:'0.5px solid black', width:'100%'}}></hr>
                   <div className={`bg-secondary-soft px-3 rounded row ${item.secondColumn.bgColor}`}>
                                 {item.secondColumn.fields.map((field, fieldIndex) => (
@@ -176,7 +172,7 @@ export const UserProfile = (props:any) => {
                             </div>
                     <div className="row">
                     </div>
-                    <div style={{ justifyContent: 'center' }}>
+{/*                    <div style={{ justifyContent: 'center' }}>
                         <div className={`col-xxl-6 mb-5 mb-xxl-0 ${item.socialMedia.bgColor} ${item.socialMedia.padding}`}>
                             <div className="row g-3">
                                 {item.socialMedia.fields.map((socialField, socialIndex) => (
@@ -187,20 +183,20 @@ export const UserProfile = (props:any) => {
                                 ))}
                             </div>
                         </div>
-                    </div>
+                                </div>*/}
                     </div>))}
-                    <div className="col">
+                    <div className="col" style={{textAlignLast: 'center'}}>
                         <div className="bg-secondary-soft rounded">
-                            <h4 className="my-4">Change Password send email</h4>
+                            <h4 className="m-4">Change Password send email</h4>
                         </div>
                     </div>
                     {itemsData.map((item, index) => (
-                    <div key={index} className="container ">
+                    <div key={index} className="container" style={{textAlignLast: 'center'}}>
                         <div className="row">
                             <div className="col-12" style={{fontSize:'24px', marginBottom:20}}>
-                                <div className="mt-5">
+                                <div className="mt-2">
                                     {item.profile.buttons.map((button, buttonIndex) => (
-                                    <ButtonDas style={{height:'70px', width:'150px', borderRadius:'12 !important', fontSize:'18px', marginRight:'12px'}} variant={button.text!=='Go Back' ? "contained":"outlined"} key={buttonIndex} text={button.text} onClick={() => button.onClick && button.text!=='Upgrade' ? navigate(button.onClick, { replace: true }) : handleSubmit()}/>))}
+                                    <ButtonDas style={{height:'70px', width:'150px', borderRadius:'12 !important', fontSize:'18px', marginRight:'12px'}} variant={button.text!=='Go Back' ? "contained":"outlined"} key={buttonIndex} text={button.text} onClick={() => button.onClick && button.text!=='Upgrade' ? setOpenProfile(false) : handleSubmit()}/>))}
                                 </div>
                             </div>
                         </div>
@@ -209,7 +205,6 @@ export const UserProfile = (props:any) => {
                 </div>
             </div>
         </div>
-
       </Modal>
      
     )

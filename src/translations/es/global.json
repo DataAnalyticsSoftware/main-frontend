@@ -110,7 +110,7 @@
     "questions":{
         "0":"¿Tienes un negocio o empresa?",
         "1":"¿Cuanto estás facturando anualmente aproximadamente?",
-        "2":"¿Te parecería razonable pagar un monto fijo mensual mas un porcentaje trimestral basado en tu facturación? De un {percentage}.",
+        "2":"¿Te parecería razonable pagar un monto fijo mensual mas un porcentaje trimestral basado en tu facturación? De un {percentage} trimestrales.",
         "3":"¿Has tenido problemas con la gestión de datos de tus clientes?",
         "4":"Desafíos actuales en la gestión de datos y clientes:",
         "5":"¿Buscas una solución para gestionar la información de clientes y tus bases de datos?",

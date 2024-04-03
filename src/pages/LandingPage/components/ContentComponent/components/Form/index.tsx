@@ -10,9 +10,11 @@ import { questions } from './questions'
 import InfoIcon from '@mui/icons-material/Info'
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft'
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight'
+import { useNavigate } from "react-router-dom"
+
 
 export const Form=()=> {
-
+  const navigate = useNavigate()
   const [email, setEmail] = useState<string | null>(null)
   const [comment, setComment] = useState<string | null>(null)
   const [responses, setResponses] = useState<any[]>(Array(questions.length).fill(null))
@@ -26,6 +28,7 @@ export const Form=()=> {
   const PERCENTAGE_OPTIONS : (string | null)[] =[null, null, '10%', '8%', '4.5%', '2.25%', '1.95%']
 
   const handleSubmit = () =>{
+    navigate('/RegisterScreen', { replace: true })
     if(!email && responses.filter(x=>x).length === 0) return
     const data = {
       email: email || 'unknown',
@@ -37,6 +40,7 @@ export const Form=()=> {
       setFormComplete(true)
     })
   }
+console.log(activeStep);
 
   const handleNext = () => {
     if(activeStep === 1 && responses[activeStep-1] !== '0'){

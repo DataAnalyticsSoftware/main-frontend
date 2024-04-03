@@ -10,7 +10,8 @@ export const TopBarDashboardPage = () => {
     const { menuSelected } = useContext(DashboardContext)
     const { setDeleteToken, openProfile,setOpenProfile } = useContext(GenericContext)
     const navigate = useNavigate()
-
+    console.log(openProfile);
+    
     return (
         <>
             <div className="container-fluid" style={{ backgroundColor: '#ededed !important', boxSizing:'border-box',paddingLeft:'32px' }}>
@@ -48,7 +49,7 @@ export const TopBarDashboardPage = () => {
 
                             </a>
                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a className="dropdown-item" href="#" onClick={() =>{navigate('/myAccount', { replace: true }); setOpenProfile(true)} } >My Profile</a>
+                                <a className="dropdown-item" href="#" onClick={() =>{setOpenProfile(true)} } >My Profile</a>
                                 <a className="dropdown-item" onClick={() => setDeleteToken(true)} href="/">Log Out</a>
                             </div>
                         </div>
