@@ -28,7 +28,7 @@ export const Form=()=> {
   const PERCENTAGE_OPTIONS : (string | null)[] =[null, null, '10%', '8%', '4.5%', '2.25%', '1.95%']
 
   const handleSubmit = () =>{
-    navigate('/RegisterScreen', { replace: true })
+    navigate('/RegisterScreen', { replace: false })
     if(!email && responses.filter(x=>x).length === 0) return
     const data = {
       email: email || 'unknown',
@@ -124,7 +124,7 @@ console.log(activeStep);
            <> {activeStep !== questions.length ? <Button size="small" onClick={handleNext} disabled={!comprobateStep(activeStep)}>
               {t('questions.next')} <KeyboardArrowRight />
             </Button> :
-            <Button size="small" onClick={handleSubmit} disabled={!comprobateStep(activeStep)}>
+            <Button size="small" onClick={()=>handleSubmit} disabled={!comprobateStep(activeStep)}>
               {t('questions.finish')}
             </Button>
             }</>

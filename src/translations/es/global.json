@@ -1,7 +1,7 @@
 {
     "header":{
-        "title-1": "Vende más a",
-        "title-2": " Menor coste",
+        "title-1": "VENDE MÁS A",
+        "title-2": " MENOR COSTE",
         "description": "Administra eficientemente los datos de tus actuales clientes, usa campañas de email para llegar a nuevos y ten una visión de tu negocio mucho más profunda para poder vender más.",
         "trydemo": "Quiero mi DEMO"   
 
@@ -122,6 +122,11 @@
         "back":"Atras",
         "finish": "Finalizar"
     },
+    "register-screen":{
+        "title":"¡Gracias por rellenar nuestro formulario!",
+        "subtitle1":"En cuanto tengamos la demo esté lista, te enviaremos un email para acceder a ella.",
+        "subtitle2":"Muchas gracias por confiar en webdatanets, nos vemos pronto."
+    },
     "posible-answers": {
         "1-1":"Sí",
         "1-2":"No",
@@ -149,7 +154,7 @@
         "7-1":"Sí, estoy al tanto.",
         "7-2":"No estoy seguro.",
         "7-3":"No, explícame más.",
-        "8-1":"Si, hasta 30€.",
+        "8-1":"Si, hasta 40€.",
         "8-2":"Sí, entre 50€ y 100€ al mes.",
         "8-3":"Sí, pero no más de 200€ al mes.",
         "8-4":"No estaría dispuesto a pagar."

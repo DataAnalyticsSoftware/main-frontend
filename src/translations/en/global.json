@@ -121,6 +121,11 @@
         "back":"Back",
         "finish": "Finish"
     },
+    "register-screen":{
+        "title":"Thank you for filling out our form!",
+        "subtitle1":"As soon as we have the demo ready, we will send you an email to access it.",
+        "subtitle2":"Thank you very much for trusting webdatanets, see you soon."
+    },
     "posible-answers": {
         "1-1":"Yes",
         "1-2":"No",
@@ -148,7 +153,7 @@
         "7-1":"Yes, I am aware.",
         "7-2":"I'm not sure.",
         "7-3":"No, explain more.",
-        "8-1":"Yes, up to 30€.",
+        "8-1":"Yes, up to 40€.",
         "8-2":"Yes, between 50€ and 100€ per month.",
         "8-3":"Yes, but no more than 200€ per month.",
         "8-4":"I would not be willing to pay."
