@@ -11,17 +11,17 @@ export const useTokenStorage = ({setToken,  token, deleteToken, setDeleteToken}:
     useEffect(() => {
         if(localStorage.getItem('access_token')){
             setToken(localStorage.getItem('access_token'))
-        }else if(!localStorage.getItem('access_token') && location.pathname !== '/'){
+        }else if(!localStorage.getItem('access_token') && location.pathname !== '/' && location.pathname !== '/RegisterScreen'){
            navigate('/', { replace: true })
         }
     }, [])
 
 
     useEffect(() => {
-        if (token && location.pathname !== '/dashboards') {        
+        if (token && location.pathname !== '/dashboards') {  
             localStorage.setItem('access_token', token)
             navigate('/dashboards', { replace: true })
-        } else if(!token && location.pathname !== '/'){
+        } else if(!token && location.pathname !== '/' && location.pathname !== '/RegisterScreen'){
             localStorage.removeItem('access_token')
             navigate('/', { replace: true })
         }

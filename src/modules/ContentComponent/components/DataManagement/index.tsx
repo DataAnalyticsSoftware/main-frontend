@@ -27,6 +27,15 @@ export const DataManagement = () => {
         { field: 'id', headerName: 'ID', width: 150 },
         { field: 'name', headerName: 'Data Name', flex: 0.3, minWidth: 160 },
         { field: 'description', headerName: 'Description', flex: 1, minWidth: 160},
+        { field: 'downloadCsv', headerName: 'Download Csv', flex: 1, minWidth: 160,
+        renderCell: (value) => 
+        <a style={{
+            borderRadius:'12px',
+            paddingTop:'16px', 
+            color:'rgba(79, 70, 229, 1)'}} 
+            onClick={() => handleOpen(value.id as string)} href='#'  >
+            <p>Download CSV Data</p>
+        </a>},
         { field: '', headerName: 'Actions', renderCell: (value) => <button  style={{backgroundColor:'rgba(79, 70, 229, 0.14)',borderRadius:'12px', color:'rgba(79, 70, 229, 1)'}} onClick={() => handleOpen(value.id as string)} type="button" className="btn" data-toggle="modal" data-target={`#exampleModal-${value.id}`} ><EditIconDas /></button>}
       ]
       
