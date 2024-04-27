@@ -5,7 +5,7 @@ import Modal  from '@mui/material/Modal'
 import Box from '@mui/material/Box'
 import { CardInfo } from './components/CardInfo'
 import TableDataContextProvider from './context/TableDataContext'
-import { EditIconDas } from '../../../../components/SvgDas'
+import { DownloadCSV, EditIconDas } from '../../../../components/SvgDas'
 import { CustomPaginationDas } from '../../../../components/PaginationDas'
 
 export const DataManagement = () => {
@@ -27,16 +27,39 @@ export const DataManagement = () => {
         { field: 'id', headerName: 'ID', width: 150 },
         { field: 'name', headerName: 'Data Name', flex: 0.3, minWidth: 160 },
         { field: 'description', headerName: 'Description', flex: 1, minWidth: 160},
-        { field: 'downloadCsv', headerName: 'Download Csv', flex: 1, minWidth: 160,
+        { field: '', headerName: 'Actions',minWidth: 200, 
         renderCell: (value) => 
-        <a style={{
-            borderRadius:'12px',
-            paddingTop:'16px', 
-            color:'rgba(79, 70, 229, 1)'}} 
-            onClick={() => handleOpen(value.id as string)} href='#'  >
-            <p>Download CSV Data</p>
-        </a>},
-        { field: '', headerName: 'Actions', renderCell: (value) => <button  style={{backgroundColor:'rgba(79, 70, 229, 0.14)',borderRadius:'12px', color:'rgba(79, 70, 229, 1)'}} onClick={() => handleOpen(value.id as string)} type="button" className="btn" data-toggle="modal" data-target={`#exampleModal-${value.id}`} ><EditIconDas /></button>}
+        <div>
+                <div style={{display:'flex'}}>
+                    <div style={{marginRight:6,padding:10, borderRadius:10}}>
+                        <button 
+                        style={{ 
+                            borderRadius:'12px', 
+                            color:'rgba(79, 70, 229, 1)', 
+                            backgroundColor:'rgba(79, 70, 229, 0.14)',}} 
+                            data-target={`#exampleModal-${value.id}`} 
+                            onClick={() => handleOpen(value.id as string)} 
+                            type="button" 
+                            className="btn" 
+                            data-toggle="modal" >
+                                <EditIconDas />
+                        </button>
+                    </div>
+                    <div style={{marginRight:28,padding:10, borderRadius:10}}>
+                        <button  
+                        style={{ 
+                            borderRadius:'12px', 
+                            backgroundColor:'rgba(79, 70, 229, 0.14)',
+                            color:'rgba(79, 70, 229, 1)'}} 
+                            type="button" 
+                            className="btn">
+                                <DownloadCSV />
+                            </button>
+                    </div>
+                </div>
+              
+
+            </div>}
       ]
       
     //TODO: Pasar a constantes el sx

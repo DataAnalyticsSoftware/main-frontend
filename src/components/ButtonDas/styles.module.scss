@@ -24,9 +24,23 @@
     background-color: #4F46E5 !important;
     color: white !important;  
 }
-
 .button_disabled {
     background-color: #7a73f3 !important;
     cursor: not-allowed !important;
     pointer-events: all !important;
+}
+.button_not_selected {
+    background-color: #f4f5f4 !important;
+    height: 70px;
+    border-radius: 10px;
+    width: 20%;
+    font-size:16px;
+    color: black !important;
+}
+.button_selected{
+    background-color: #111827 !important;
+    height: 70px;
+    border-radius: 10px;
+    width: 20%;
+    font-size:16px;
 }

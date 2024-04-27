@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from 'react'
 import { GenericContext } from '../../../../../../context/GenericContext'
 import { IDataCollection } from './type'
 import { CollectionContext } from '../../context/CollectionContext'
-import { IconButton, Menu, MenuItem } from '@mui/material'
+import { IconButton, Menu, MenuItem, Tab, Tabs } from '@mui/material'
 import { CardDas } from '../../../../../../components/CardDas'
 import { CardInsideDas } from '../../../../../../components/CardInsideDas'
 import MoreVertIcon from "@mui/icons-material/MoreVert"
 import { EmptyFolderIcon, FolderIconDAS } from '../../../../../../components/SvgDas'
 import styles from './styles.module.scss'
 import moment from 'moment';
+import { CustomTabPanel, customTabStyles } from '../../../../../../utils/TabsComponent'
 
 export const CollectionList = (): JSX.Element  => {
 
@@ -19,6 +20,7 @@ export const CollectionList = (): JSX.Element  => {
     const [ open, setOpen ] = useState<boolean>(false)
     const [ anchorEl, setAnchorEl ] = useState<null | HTMLElement>(null)
     const [ dataSelected, setDataSelected ] = useState<IDataCollection | null>(null)
+    const [value, setValue] = useState<number>(0);
 
     useEffect(() => {
         if(!openModal && search)
@@ -46,14 +48,24 @@ export const CollectionList = (): JSX.Element  => {
         setOpen(false)
         setAnchorEl(null)
     }
-
+    const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+        setValue(newValue);
+      };
 
     const options = [{name: 'Edit', function: editCollection }, {name: 'Delete', function: deleteCollection}]
 
     return (
         <CardDas>
             <>
-                <div style={{display: 'flex', flexDirection: 'row', gap: '20px', flexWrap: 'wrap'}}>
+            <Tabs value={value} onChange={handleChange} centered>
+                <Tab label="Colección de colecciones"  sx={customTabStyles}/>
+                <Tab label="Colecciones"  sx={customTabStyles}/>
+            </Tabs>
+            <CustomTabPanel value={value} index={0}>
+                Coleccion de colecciones
+            </CustomTabPanel>
+            <CustomTabPanel value={value} index={1}>
+            <div style={{display: 'flex', flexDirection: 'row', gap: '20px', flexWrap: 'wrap', marginTop:20}}>
                     {collections?.map((value: IDataCollection, index: number) => {                   
                         return (
                             <CardInsideDas key={index}>
@@ -83,6 +95,7 @@ export const CollectionList = (): JSX.Element  => {
                         })
                     }
                 </div>
+            </CustomTabPanel>
                 {!collections.length && <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
                     <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
                         <EmptyFolderIcon/>

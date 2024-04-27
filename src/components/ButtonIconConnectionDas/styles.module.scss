@@ -1,0 +1,14 @@
+.button_connections{
+    height: 60px;
+    min-width: 250px;
+    border-radius: 10px;
+    .icon{
+        margin-right: 8px;
+    }
+    .button_connection_container{
+        display:flex;
+        justify-content: center;
+    }
+}
+
+

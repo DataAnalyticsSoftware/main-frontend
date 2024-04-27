@@ -7,5 +7,6 @@ export const ROUTES_DASHBOARD = {
     UPGRADE: "/upgrade",
     SUPPORT: "/support",
     ABOUT: "/about",
-    CAMPAIGNS: "/campaigns"
+    CAMPAIGNS: "/campaigns",
+    CONNECTIONS: "/connections"
 }

@@ -7,7 +7,7 @@ interface ICardDas {
 }
 
 export const CardDas = ({ children, style, onClick }: ICardDas): JSX.Element => {
-    return <div onClick={onClick} style={{...style, padding: '25px', borderRadius: '14.5px', backgroundColor: 'white', boxShadow: '0px 4px 50px 0px rgba(0, 0, 0, 0.10)'}}>
-        {children}
+    return <div onClick={onClick} style={{...style, padding: '25px', borderRadius: '14.5px', backgroundColor: 'white', boxShadow: '0px 4px 50px 0px rgba(0, 0, 0, 0.10)'}}> 
+        {children} 
     </div>
 }
