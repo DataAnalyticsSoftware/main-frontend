@@ -9,6 +9,7 @@ import {
   GridRowModesModel,
   GridEventListener,
   GridPaginationModel,
+  GridToolbar,
 } from '@mui/x-data-grid';
 import { GenericContext } from '../../../../../../context/GenericContext';
 import { getData } from '../../../../../../services/DataManagementService';
@@ -135,14 +136,14 @@ export const CardInfo = ({ dataId, closeModal }: any) => {
             checkboxSelection
             isCellEditable={() => true}
             processRowUpdate={processRowUpdate}
-            slotProps={{ toolbar: { setDataCollection, setRowModesModel } }}
+            slotProps={{ toolbar: { setDataCollection, setRowModesModel} }}
             rowCount={rowCountState}
             loading={IsLoading}
             paginationMode="server"
             pageSizeOptions={[5]}
             paginationModel={paginationModel}
             onPaginationModelChange={setPaginationModel}
-            slots={{ pagination: (props) => <CustomPaginationDas {...props} cancelButton closeModal={closeModal} /> }}
+            slots={{toolbar:GridToolbar , pagination: (props) => <CustomPaginationDas {...props} cancelButton closeModal={closeModal} /> } }
           />
         </Paper>
       ) : (

@@ -14,7 +14,7 @@ import { CustomTabPanel, customTabStyles } from '../../../../../../utils/TabsCom
 export const CollectionList = (): JSX.Element  => {
 
     const { webDataNetsRequest, handleToast } = useContext(GenericContext)
-    const { setIsEdit, setDataEdit, setOpenModal, openModal, search, setSearch } = useContext(CollectionContext)
+    const { setIsEdit, setDataEdit, setOpenModal, openModal, search, setSearch, setColOfCollections } = useContext(CollectionContext)
 
     const [collections, setCollections] = useState<IDataCollection[]>([])
     const [ open, setOpen ] = useState<boolean>(false)
@@ -50,6 +50,7 @@ export const CollectionList = (): JSX.Element  => {
     }
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         setValue(newValue);
+        setColOfCollections(newValue);
       };
 
     const options = [{name: 'Edit', function: editCollection }, {name: 'Delete', function: deleteCollection}]

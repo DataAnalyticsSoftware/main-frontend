@@ -20,6 +20,7 @@ export default function GenericContextProvider({ children }: any) {
     const [ openProfile, setOpenProfile ] = useState<boolean>(false)
     const [ messageToast, setMessageToast ] = useState<string>('')
     const { webDataNetsRequest } = useGenericRequest(token, setToken)
+
     const [t, i18n] = useTranslation('global')
     useLogin({webDataNetsRequest, userData, login, setToken, setLogin})
     useSignUp({webDataNetsRequest, userSignUpData, signUp, setSignUp})
@@ -51,7 +52,7 @@ export default function GenericContextProvider({ children }: any) {
         t,
         i18n,
         openProfile, 
-        setOpenProfile
+        setOpenProfile,
     }
 
     return (

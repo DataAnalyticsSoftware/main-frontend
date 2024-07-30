@@ -1,4 +1,4 @@
-import { DataGrid, GridColDef } from '@mui/x-data-grid'
+import { DataGrid, GridColDef, GridFilterOperator, GridToolbar } from '@mui/x-data-grid'
 import React, { useContext, useEffect, useState } from 'react'
 import { GenericContext } from '../../../../context/GenericContext'
 import Modal  from '@mui/material/Modal'
@@ -22,7 +22,7 @@ export const DataManagement = () => {
         setDataId(data_id)
         setOpen(true)
     }
-
+    
     const columns: GridColDef[] = [
         { field: 'id', headerName: 'ID', width: 150 },
         { field: 'name', headerName: 'Data Name', flex: 0.3, minWidth: 160 },
@@ -61,7 +61,7 @@ export const DataManagement = () => {
 
             </div>}
       ]
-      
+
     //TODO: Pasar a constantes el sx
     return  (
         <>
@@ -80,7 +80,8 @@ export const DataManagement = () => {
                       rows={data} columns={columns} initialState={{
                       pagination: { paginationModel: { page: 0, pageSize: 10 } } }}
                       slots={{ pagination: CustomPaginationDas }}
-                      checkboxSelection />
+                      checkboxSelection 
+                      />
                 </Box>
             </div>
             <Modal

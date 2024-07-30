@@ -10,6 +10,8 @@ interface ICollectionContext {
     setDataEdit: React.Dispatch<React.SetStateAction<IDataCollection | null>>,
     search: boolean
     setSearch: React.Dispatch<React.SetStateAction<boolean>>
+    colOfCollections: number
+    setColOfCollections: React.Dispatch<React.SetStateAction<number>>
 }
 
 const initialValues: ICollectionContext = {
@@ -20,7 +22,9 @@ const initialValues: ICollectionContext = {
     setDataEdit: () => {},
     setIsEdit: () => {},
     setOpenModal: () => {},
-    setSearch: () => {}
+    setSearch: () => {},
+    colOfCollections:0,
+    setColOfCollections:() => {},
 }
 
 export const CollectionContext = createContext<ICollectionContext>(initialValues)
@@ -31,9 +35,10 @@ export const CollectionContextProvider = ({children}: any): JSX.Element => {
     const [ isEdit, setIsEdit ] = useState<boolean>(false)
     const [ dataEdit, setDataEdit ] = useState<IDataCollection | null>(null)
     const [search, setSearch ] = useState<boolean>(true)
+    const [ colOfCollections, setColOfCollections ] = useState<number>(0)
 
     const contextValues = {
-        openModal, setOpenModal, isEdit, setIsEdit, dataEdit, setDataEdit, setSearch, search
+        openModal, setOpenModal, isEdit, setIsEdit, dataEdit, setDataEdit, setSearch, search, colOfCollections, setColOfCollections 
     }
 
     return (
