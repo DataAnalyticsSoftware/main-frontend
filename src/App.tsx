@@ -42,10 +42,10 @@ function App() {
         <I18nextProvider i18n={i18next}>
           <GenericContextProvider>
             <Routes>
-              <Route path='/' element={<PrincipalPage/>} />
+              <Route path='/prpage' element={<PrincipalPage/>} />
               <Route path='/dashboards' element={<DashboardContainer />} />
               <Route path='/SignUp' element={<RegistrationComponent/>} />
-              <Route path='/LandingPage' element={<LandinPage/>} />
+              <Route path='/' element={<LandinPage/>} />
               <Route path='/RegisterScreen' element={<RegisterScreen/>} />
             </Routes>
           </GenericContextProvider>
